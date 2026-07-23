@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
-import { ogLocale, siteConfig } from '../config';
+import { ogLocale, siteConfig, resolveBaseUrl } from '../config';
 import { poi } from '../data/poi';
 
 interface Props {
@@ -18,6 +18,7 @@ const htmlLang = htmlLangAttr(lang);
 const alts = buildAlternates(path);
 const canonical = alts[lang] ?? alts.xDefault;
 const { messages } = getI18n(Astro.url);
+const SITE = resolveBaseUrl();
 const attractionName = messages.header?.siteName ?? poi.name[lang] ?? poi.name.en;
 const localName = poi.name[lang] ?? poi.name.en;
 const localOpening = poi.opening[lang] ?? poi.opening.en;
@@ -30,7 +31,7 @@ const jsonLd = {
   alternateName: poi.alternateName[lang] ?? poi.alternateName.en,
   description: description,
   url: canonical,
-  image: siteConfig.baseUrl + poi.heroImage,
+  image: SITE + poi.heroImage,
   address: {
     '@type': 'PostalAddress',
     streetAddress: poi.address,
@@ -70,9 +71,9 @@ const breadcrumbLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: messages.header.home, item: `${siteConfig.baseUrl}/${lang}` },
-    { '@type': 'ListItem', position: 2, name: messages.about.title, item: `${siteConfig.baseUrl}/${lang}#about` },
-    { '@type': 'ListItem', position: 3, name: messages.transport.title, item: `${siteConfig.baseUrl}/${lang}#transport` },
+    { '@type': 'ListItem', position: 1, name: messages.header.home, item: `${SITE}/${lang}` },
+    { '@type': 'ListItem', position: 2, name: messages.about.title, item: `${SITE}/${lang}#about` },
+    { '@type': 'ListItem', position: 3, name: messages.transport.title, item: `${SITE}/${lang}#transport` },
     { '@type': 'ListItem', position: 4, name: attractionName, item: canonical },
   ],
 };
@@ -96,11 +97,12 @@ const breadcrumbLd = {
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
-    <meta property="og:image" content={siteConfig.baseUrl + poi.heroImage} />
+    <meta property="og:site_name" content={attractionName} />
+    <meta property="og:image" content={SITE + poi.heroImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={siteConfig.baseUrl + poi.heroImage} />
+    <meta name="twitter:image" content={SITE + poi.heroImage} />
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>

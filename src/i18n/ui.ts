@@ -1,6 +1,7 @@
 import km from './km.json';
 import en from './en.json';
 import zh from './zh.json';
+import { resolveBaseUrl } from '../config';
 
 // Royal Palace of Cambodia guide: Khmer (default), English, Chinese.
 export const defaultLang = 'km';
@@ -24,9 +25,9 @@ export function getI18n(url: URL) {
   return { lang, messages: ui[lang] };
 }
 
-// Canonical alternates. Update baseUrl in src/config.ts to the real domain.
+// Canonical alternates. Domain is resolved dynamically via resolveBaseUrl().
 export function buildAlternates(slug = '') {
-  const base = 'https://royalpalacephnompenh.com';
+  const base = resolveBaseUrl();
   const make = (l: string) => `${base}/${l}${slug ? '/' + slug : ''}`;
   return {
     km: make('km'),

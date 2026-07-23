@@ -1,5 +1,7 @@
 ---
+import { resolveBaseUrl } from '../config';
 const target = '/km';
+const siteUrl = resolveBaseUrl();
 ---
 
 <!doctype html>
@@ -7,7 +9,7 @@ const target = '/km';
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="refresh" content={`0; url=${target}`} />
-    <link rel="canonical" href="https://royalpalacephnompenh.com/km" />
+    <link rel="canonical" href={`${siteUrl}/km`} />
     <title>Royal Palace of Cambodia · ព្រះបរមរាជវាំង</title>
   </head>
   <body>
