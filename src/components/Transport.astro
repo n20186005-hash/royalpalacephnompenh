@@ -27,6 +27,23 @@ const modes = t.modes ?? [];
       ))}
     </div>
 
+    {t.steps && t.steps.length > 0 && (
+      <div class="card p-6 sm:p-8 max-w-3xl mx-auto mt-10">
+        <h3 class="font-bold text-lg mb-4" style="color: var(--text-primary);">{t.stepsTitle ?? 'Step-by-step'}</h3>
+        <div class="space-y-4">
+          {t.steps.map((s) => (
+            <div class="flex gap-3">
+              <div class="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold" style="background: var(--accent-bg); color: var(--accent-text);">{s.n}</div>
+              <div>
+                <p class="font-medium text-sm" style="color: var(--text-primary);">{s.title}</p>
+                {s.detail && <p class="text-sm mt-0.5" style="color: var(--text-secondary);">{s.detail}</p>}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
     <div class="text-center mt-8">
       <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-primary">
         🗺️ {t.mapCta ?? 'Open in Maps'}

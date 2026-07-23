@@ -150,6 +150,13 @@
       { "icon": "🛺", "name": "嘟嘟车 / 出租车", "desc": "跨城最便捷的方式；可报“Royal Palace”（高棉语：preah ba-rom rea-chh veang）。" },
       { "icon": "🚶", "name": "步行", "desc": "从河滨、国家博物馆、塔山寺步行约 10–20 分钟可达。" }
     ],
+    "stepsTitle": "具体交通步骤",
+    "steps": [
+      { "n": "1", "title": "从机场出发", "detail": "在机场出租车站乘坐正规出租车（起步约 12–15 美元，30–40 分钟）。将“金边王宫，莫尼旺大道（Samdach Sothearos Blvd）”出示给司机。" },
+      { "n": "2", "title": "从市中心 / 河滨出发", "detail": "招手搭乘嘟嘟车或使用 PassApp 叫车软件，车费通常约 2–4 美元。报“Preah Barom Reachea Vaeng”即可。" },
+      { "n": "3", "title": "嘟嘟车到入口", "detail": "请司机在面朝河岸的莫尼旺大道正门下车——售票处就在大门内侧。" },
+      { "n": "4", "title": "步行前往", "detail": "若您在 Sisowath Quay 河滨，向北步行约 3 分钟即见王宫围墙与鎏金尖塔，十分醒目。" }
+    ],
     "mapCta": "在地图中打开"
   },
   "gallery": {

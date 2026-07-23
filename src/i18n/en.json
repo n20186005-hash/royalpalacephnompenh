@@ -150,6 +150,13 @@
       { "icon": "🛺", "name": "By tuk-tuk / taxi", "desc": "The easiest way across town; ask for 'Royal Palace' (preah ba-rom rea-chh veang)." },
       { "icon": "🚶", "name": "On foot", "desc": "Walkable from the Riverside, the National Museum and Wat Phnom in 10–20 min." }
     ],
+    "stepsTitle": "Step-by-step directions",
+    "steps": [
+      { "n": "1", "title": "From the airport", "detail": "Take an official taxi from the airport rank (flagfall ~$12–15 USD, 30–40 min). Show the driver 'Royal Palace, Samdach Sothearos Blvd'." },
+      { "n": "2", "title": "From downtown / Riverside", "detail": "Hail a tuk-tuk or passapp (ride-hailing app); the fare is usually $2–4 USD. Ask for 'Preah Barom Reachea Vaeng'." },
+      { "n": "3", "title": "By tuk-tuk to the gate", "detail": "Ask to be dropped at the main entrance on Samdach Sothearos Blvd, facing the river — the ticket booth is just inside." },
+      { "n": "4", "title": "On foot", "detail": "If you are along Sisowath Quay, walk north ~3 min; the palace walls and golden spires are unmistakable." }
+    ],
     "mapCta": "Open in Maps"
   },
   "gallery": {
