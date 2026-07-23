@@ -20,7 +20,7 @@ import LocalFood from '../../components/LocalFood.astro';
 import Reviews from '../../components/Reviews.astro';
 import Photography from '../../components/Photography.astro';
 import BestTime from '../../components/BestTime.astro';
-import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
 
 const dict = { km, en, zh };
 
@@ -35,23 +35,20 @@ const messages = dict[lang] ?? dict.km;
 
 <BaseLayout lang={lang} path="" title={messages.meta.title} description={messages.meta.description}>
   <NoticeBanner messages={messages} />
-  <Header lang={lang} messages={messages} />
-  <main>
-    <Hero messages={messages} />
-    <InfoCard messages={messages} />
-    <About messages={messages} />
-    <Timeline messages={messages} />
-    <Architecture messages={messages} />
-    <VisitorGuide messages={messages} />
-    <TicketInfo messages={messages} />
-    <DressCode messages={messages} />
-    <Transport messages={messages} />
-    <Gallery messages={messages} />
-    <NearbyPlaces messages={messages} />
-    <LocalFood messages={messages} />
-    <Reviews messages={messages} />
-    <Photography messages={messages} />
-    <BestTime messages={messages} />
-  </main>
-  <Footer messages={messages} />
+  <Hero messages={messages} />
+  <InfoCard messages={messages} />
+  <About messages={messages} />
+  <Timeline messages={messages} />
+  <Architecture messages={messages} />
+  <VisitorGuide messages={messages} />
+  <TicketInfo messages={messages} />
+  <DressCode messages={messages} />
+  <Transport messages={messages} />
+  <Gallery messages={messages} />
+  <NearbyPlaces messages={messages} />
+  <LocalFood messages={messages} />
+  <Reviews messages={messages} />
+  <Photography messages={messages} />
+  <BestTime messages={messages} />
+  <FAQ messages={messages} />
 </BaseLayout>

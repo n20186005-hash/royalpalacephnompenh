@@ -20,7 +20,7 @@ export const poi = {
   country: 'Cambodia',
   countryCode: 'KH',
 
-  rating: 4.3,
+  rating: 4.4,
   reviews: 13632,
 
   lat: 11.5614,
@@ -29,10 +29,13 @@ export const poi = {
   // Stable Google Maps URL (open in maps on every device).
   mapsUrl: 'https://www.google.com/maps/?q=11.5614%2C104.9319',
 
+  // Ticket admission (USD, cash on-site).
+  ticketPrice: '$10 USD',
+
   opening: {
-    km: '០៨:០០ – ១៧:០០',
-    en: '08:00 – 17:00',
-    zh: '08:00 – 17:00',
+    km: '០៨:០០ – ១១:០០ និង ១៤:០០ – ១៧:០០',
+    en: '08:00 – 11:00 & 14:00 – 17:00',
+    zh: '08:00 – 11:00 及 14:00 – 17:00',
   },
   category: {
     km: 'តំបន់ប្រវត្តិសាស្ត្រ',

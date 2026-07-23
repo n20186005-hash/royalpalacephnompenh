@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://faromarina.com/sitemap.xml
+Sitemap: https://royalpalacephnompenh.com/sitemap.xml
