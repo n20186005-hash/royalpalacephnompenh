@@ -144,7 +144,7 @@
   },
   "transport": {
     "title": "交通方式",
-    "intro": "王宫坐落于金边市中心、面朝洞里萨河的莫尼旺大道（Samdach Sothearos Blvd）。",
+    "intro": "王宫坐落于金边市中心、面朝洞里萨河的莫尼旺大道（Samdach Sothearos Boulevard）。",
     "modes": [
       { "icon": "✈️", "name": "飞机", "desc": "金边国际机场乘出租车至王宫约 30 分钟。" },
       { "icon": "🛺", "name": "嘟嘟车 / 出租车", "desc": "跨城最便捷的方式；可报“Royal Palace”（高棉语：preah ba-rom rea-chh veang）。" },
