@@ -410,6 +410,87 @@
     "copyright": "© 2026 Royal Palace of Phnom Penh Travel Guide. All rights reserved.",
     "statement": "This website is an independent non-profit visitor information guide and is not affiliated with any government agency or official organization.",
     "sources": "All attraction information on this site is compiled and cross-checked against public materials from Phnom Penh City Hall, the Phnom Penh Tourism Office and the Cambodia Ministry of Tourism. It contains no commercial endorsements.",
-    "imageRights": "Image rights: All images displayed on this website remain the property of their original photographers and are protected by copyright."
+    "imageRights": "Image rights: All images displayed on this website remain the property of their original photographers and are protected by copyright.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookie": "Cookie Settings"
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service",
+    "cookieTitle": "Cookie Settings",
+    "updated": "Last updated: July 2026",
+    "privacy": {
+      "collectedTitle": "Information we collect",
+      "collectedIntro": "We collect only the minimum data necessary to provide our service. This may include:",
+      "collectedItems": [
+        "Browsing data (IP address, browser type, pages visited)",
+        "Cookies and similar technologies",
+        "Any information you voluntarily provide through our contact form or by email"
+      ],
+      "useTitle": "How we use your information",
+      "useIntro": "We use the information we collect to:",
+      "useItems": [
+        "Improve website content and user experience",
+        "Analyse traffic and usage patterns",
+        "Respond to enquiries",
+        "Comply with our legal obligations"
+      ],
+      "thirdTitle": "Third-party services",
+      "thirdText": "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis) and Unsplash (for imagery). These services have their own privacy policies.",
+      "rightsTitle": "Your rights",
+      "rightsIntro": "Under the General Data Protection Regulation (GDPR) and related laws, you have the right to:",
+      "rightsItems": [
+        "Access your personal data",
+        "Request correction or deletion",
+        "Object to processing",
+        "Lodge a complaint with a supervisory authority"
+      ]
+    },
+    "terms": {
+      "accessTitle": "Access and use",
+      "accessText": "By accessing and using this website, you agree to be bound by these Terms of Service.",
+      "contentTitle": "Use of content",
+      "contentText": "All content on this website is provided for informational purposes only. We are an independent third-party travel information website and are not affiliated with any tourist attraction, government agency or commercial operator.",
+      "accuracyTitle": "Accuracy of information",
+      "accuracyText": "We strive to provide accurate and up-to-date information, but we cannot guarantee its completeness or accuracy. Itineraries, conditions and services are subject to change without notice. Always verify important information through official channels before travelling.",
+      "ipTitle": "Intellectual property",
+      "ipText": "The design and original content of this website are protected by copyright. Images are sourced from Unsplash and used under their licence. Use of Google Maps data complies with Google's Terms of Service.",
+      "liabilityTitle": "Limitation of liability",
+      "liabilityText": "This website is provided \"as is\" without warranties of any kind. We are not liable for any loss arising from the use of information on this website, including but not limited to travel decisions made based on its content."
+    },
+    "cookie": {
+      "intro": "We use cookies to improve your browsing experience. You can manage your preferences below.",
+      "categories": [
+        {
+          "name": "Necessary cookies",
+          "desc": "These cookies are essential for the website to function and cannot be disabled.",
+          "status": "active",
+          "detail": "Always active"
+        },
+        {
+          "name": "Analytics cookies",
+          "desc": "They help us understand how visitors interact with our website by collecting anonymous usage data.",
+          "status": "active",
+          "detail": "Google Analytics — collects anonymous information about how visitors use our site."
+        },
+        {
+          "name": "Preference cookies",
+          "desc": "They remember your settings, such as language and theme preferences.",
+          "status": "active",
+          "detail": "User preferences — saves your language choice and site settings."
+        },
+        {
+          "name": "Marketing cookies",
+          "desc": "They are used to display relevant advertising and measure the effectiveness of advertising campaigns.",
+          "status": "inactive",
+          "detail": "Personalised ads — can show you relevant ads based on your interests."
+        }
+      ],
+      "consentTitle": "Consent management",
+      "consentText": "You can change your cookie settings at any time. Please note that disabling certain cookies may affect the functionality of the website.",
+      "saveLabel": "Save preferences",
+      "rejectLabel": "Reject all"
+    }
   }
 }
