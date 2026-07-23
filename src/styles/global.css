@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ocean-50: #f0f9ff;
+  --color-ocean-100: #e0f2fe;
+  --color-ocean-200: #bae6fd;
+  --color-ocean-300: #7dd3fc;
+  --color-ocean-400: #38bdf8;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0369a1;
+  --color-ocean-700: #075985;
+  --color-ocean-800: #0c4a6e;
+  --color-ocean-900: #082f49;
+
+  --color-sand-50: #fdf6e3;
+  --color-sand-100: #f5deb3;
+  --color-sand-200: #ecd9a8;
+
+  --font-display: "Georgia", "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Theme tokens (light / dark) shared by components via CSS variables */
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --section-bg: #f8fafc;
+  --section-alt: #f0f9ff;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0b1220;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --border-color: #1e293b;
+  --card-bg: #111c30;
+  --section-bg: #0f1a2b;
+  --section-alt: #0d1626;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease both;
+}
+
+/* Reusable button styles */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+.btn-cta-primary {
+  background: var(--color-ocean-600, #0369a1);
+  color: #ffffff;
+}
+.btn-cta-primary:hover {
+  background: var(--color-ocean-700, #075985);
+}
+.btn-cta-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+}
+.btn-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+.hero-maps-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.section-shell {
+  background: var(--section-bg);
+}
+.section-shell-alt {
+  background: var(--section-alt);
+}

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import QuickInfo from '../../components/QuickInfo.astro';
+import About from '../../components/About.astro';
+import ThingsTodo from '../../components/ThingsTodo.astro';
+import Transport from '../../components/Transport.astro';
+import NearbyPlaces from '../../components/NearbyPlaces.astro';
+import FoodCulture from '../../components/FoodCulture.astro';
+import BestTime from '../../components/BestTime.astro';
+import Gallery from '../../components/Gallery.astro';
+import Reviews from '../../components/Reviews.astro';
+import FAQ from '../../components/FAQ.astro';
+import MapSection from '../../components/MapSection.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { messages } = getI18n(Astro.url);
+
+const faqLd = (() => {
+  const items = messages.faq?.items ?? [];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  };
+})();
+---
+
+<BaseLayout title={messages.meta.title} description={messages.meta.description} path="">
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)}></script>
+  <Hero />
+  <QuickInfo />
+  <About />
+  <ThingsTodo />
+  <Transport />
+  <NearbyPlaces />
+  <FoodCulture />
+  <BestTime />
+  <Gallery />
+  <Reviews />
+  <FAQ />
+  <MapSection />
+</BaseLayout>

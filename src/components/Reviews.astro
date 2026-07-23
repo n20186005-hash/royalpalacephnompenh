@@ -1,0 +1,43 @@
+---
+import { getI18n } from '../i18n/ui';
+import { poi } from '../data/poi';
+
+const { lang, messages } = getI18n(Astro.url);
+const r = messages.reviews;
+const likes = r.likes ?? [];
+const tips = r.tips ?? [];
+const reviewCount = poi.reviews.toLocaleString(lang === 'pt' ? 'pt-PT' : lang === 'zh' ? 'zh-CN' : 'en-US');
+---
+
+<section id="reviews" class="section-shell-alt">
+  <div class="max-w-4xl mx-auto px-4 py-16 sm:py-20">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{r.title}</h2>
+    </div>
+
+    <div class="rounded-3xl p-8 text-center mb-8" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+      <div class="text-5xl font-display font-bold" style="color: var(--color-ocean-600, #0369a1);">{poi.rating}</div>
+      <div class="text-amber-400 text-xl my-1" aria-hidden="true">{'★'.repeat(4)}<span style="color: var(--text-muted);">★</span></div>
+      <p class="text-sm" style="color: var(--text-secondary);">{r.ratingLabel}: <strong>{poi.rating} / 5</strong> · {reviewCount} {r.reviewCountLabel}</p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="rounded-2xl p-6" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <h3 class="font-semibold mb-4" style="color: var(--text-primary);">{r.likesTitle}</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+          {likes.map((l) => (
+            <li class="flex items-start gap-2"><span style="color: var(--color-ocean-600, #0369a1);">✓</span><span>{l}</span></li>
+          ))}
+        </ul>
+      </div>
+      <div class="rounded-2xl p-6" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <h3 class="font-semibold mb-4" style="color: var(--text-primary);">{r.tipsTitle}</h3>
+        <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+          {tips.map((t) => (
+            <li class="flex items-start gap-2"><span style="color: #d97706;">!</span><span>{t}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

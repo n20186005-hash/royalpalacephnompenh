@@ -1,0 +1,46 @@
+---
+import { getI18n } from '../i18n/ui';
+import { poi } from '../data/poi';
+
+const { lang, messages } = getI18n(Astro.url);
+const f = messages.footer;
+const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
+const h = messages.header;
+---
+
+<footer class="border-t" style="background: var(--section-bg); border-color: var(--border-color);">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <p class="font-display text-lg font-semibold" style="color: var(--text-primary);">{f.siteName}</p>
+        <p class="text-sm mt-2" style="color: var(--text-secondary);">{f.description}</p>
+        <div class="mt-4">
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-primary">
+            🗺️ {messages.hero.ctaMaps}
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">Faro · Algarve</p>
+        <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
+          <li><a href={`/${lang}#about`} class="hover:opacity-70">{h.visit}</a></li>
+          <li><a href={`/${lang}#transport`} class="hover:opacity-70">{h.transport}</a></li>
+          <li><a href={`/${lang}#nearby`} class="hover:opacity-70">{h.nearby}</a></li>
+          <li><a href={`/${lang}#food`} class="hover:opacity-70">{h.food}</a></li>
+          <li><a href={`/${lang}#faq`} class="hover:opacity-70">{h.faq}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">Info</p>
+        <p class="text-sm" style="color: var(--text-secondary);">{poi.address}</p>
+        <p class="text-xs mt-3" style="color: var(--text-muted);">{f.disclaimer}</p>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t text-center text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
+      {f.copyright}
+    </div>
+  </div>
+</footer>

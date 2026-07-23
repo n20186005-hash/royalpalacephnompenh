@@ -1,0 +1,37 @@
+---
+const { messages } = Astro.props;
+const a = messages.architecture;
+---
+
+<section class="section-padding section-divider" id="architecture">
+  <div class="container-page">
+    <p class="section-eyebrow">Design</p>
+    <h2 class="section-title">{a.title}</h2>
+    {a.intro && <p class="section-intro">{a.intro}</p>}
+
+    <div class="mt-8 grid gap-5 sm:grid-cols-2">
+      {a.items.map((it, i) => (
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-44 bg-soft">
+            <img
+              src={`/gallery/royal-palace-of-cambodia-${i + 2}.jpg`}
+              alt={it.name}
+              loading="lazy"
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-[color:var(--color-text)]">{it.name}</h3>
+            {it.nameLocal && (
+              <p class="text-sm text-[color:var(--color-gold-600)]">{it.nameLocal}</p>
+            )}
+            <p class="mt-2 text-[color:var(--color-muted)] text-sm leading-relaxed">{it.desc}</p>
+            {it.highlight && (
+              <p class="mt-3 inline-block chip">✨ {it.highlight}</p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

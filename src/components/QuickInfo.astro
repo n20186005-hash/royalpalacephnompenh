@@ -1,0 +1,30 @@
+---
+import { getI18n } from '../i18n/ui';
+import { poi } from '../data/poi';
+
+const { lang, messages } = getI18n(Astro.url);
+const q = messages.quickInfo;
+const localOpening = poi.opening[lang] ?? poi.opening.en;
+const localCategory = poi.category[lang] ?? poi.category.en;
+
+const cards = [
+  { icon: '⭐', label: q.rating, value: `${poi.rating} / 5` },
+  { icon: '📍', label: q.location, value: `${poi.city}, ${poi.country}` },
+  { icon: '🕒', label: q.hours, value: localOpening },
+  { icon: '🏛', label: q.category, value: localCategory },
+];
+---
+
+<section class="section-shell-alt border-y" style="border-color: var(--border-color);">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {cards.map((c) => (
+        <div class="rounded-2xl p-4 text-center" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+          <span class="block text-2xl mb-1" aria-hidden="true">{c.icon}</span>
+          <span class="block text-xs uppercase tracking-wide mb-1" style="color: var(--text-muted);">{c.label}</span>
+          <span class="block font-semibold" style="color: var(--text-primary);">{c.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

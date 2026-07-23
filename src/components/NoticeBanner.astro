@@ -1,0 +1,11 @@
+---
+const { messages } = Astro.props;
+const n = messages.notice;
+---
+
+<div class="bg-[color:var(--color-red-700)] text-white/90 text-sm">
+  <div class="container-page py-2 flex items-center gap-2">
+    <span>📢</span>
+    <span><strong class="font-semibold">{n.title}:</strong> {n.text}</span>
+  </div>
+</div>

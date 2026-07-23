@@ -1,0 +1,20 @@
+---
+const { messages } = Astro.props;
+const c = messages.infoCard;
+---
+
+<section class="section-padding bg-soft" id="info">
+  <div class="container-page">
+    <div class="card p-6 sm:p-8 max-w-3xl mx-auto">
+      <h2 class="section-title text-2xl">{c.title}</h2>
+      <dl class="mt-5 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+        {c.rows.map((r) => (
+          <div class="flex flex-col border-b border-[color:var(--color-border)] pb-3">
+            <dt class="text-xs uppercase tracking-wide text-[color:var(--color-muted)]">{r.label}</dt>
+            <dd class="mt-1 font-medium text-[color:var(--color-text)]">{r.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>

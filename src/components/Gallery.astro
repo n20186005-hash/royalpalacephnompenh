@@ -1,0 +1,26 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const g = messages.gallery;
+
+// 14 images renamed to faro-marina-1..14.jpg
+const images = Array.from({ length: 14 }, (_, i) => `/gallery/faro-marina-${i + 1}.jpg`);
+---
+
+<section id="gallery" class="section-shell">
+  <div class="max-w-6xl mx-auto px-4 py-16 sm:py-20">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{g.title}</h2>
+      {g.caption && <p class="mt-3 max-w-2xl mx-auto text-base sm:text-lg" style="color: var(--text-secondary);">{g.caption}</p>}
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      {images.map((src) => (
+        <a href={src} target="_blank" rel="noopener noreferrer" class="group block overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100" style="border: 1px solid var(--border-color);">
+          <img src={src} alt={g.title} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

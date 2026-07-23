@@ -1,0 +1,23 @@
+---
+import { siteConfig } from '../config';
+const { messages } = Astro.props;
+---
+
+<section id="map" class="card overflow-hidden">
+  <div class="aspect-[16/9]">
+    <iframe
+      class="map-embed"
+      title="Royal Palace of Cambodia map"
+      src={siteConfig.mapsEmbedUrl}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="flex items-center justify-between gap-3 p-4 bg-soft">
+    <span class="text-sm text-[color:var(--color-muted)]">Royal Palace of Cambodia · Phnom Penh</span>
+    <a class="btn-cta" href={messages.footer.mapsUrl} target="_blank" rel="noopener">
+      {messages.transport.mapCta} 🗺️
+    </a>
+  </div>
+</section>

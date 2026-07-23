@@ -1,0 +1,28 @@
+---
+const { messages } = Astro.props;
+const t = messages.timeline;
+---
+
+<section class="section-padding bg-soft section-divider" id="history">
+  <div class="container-page">
+    <p class="section-eyebrow">Heritage</p>
+    <h2 class="section-title">{t.title}</h2>
+    {t.subtitle && <p class="section-intro">{t.subtitle}</p>}
+
+    <ol class="timeline mt-8 max-w-2xl">
+      {t.events.map((e, i) => (
+        <li class="timeline-node">
+          <div class="flex flex-col items-center">
+            <span class="timeline-dot"></span>
+            {i < t.events.length - 1 && <span class="timeline-line flex-1"></span>}
+          </div>
+          <div class="pb-6">
+            <span class="chip">{e.year}</span>
+            <h3 class="mt-2 font-bold text-lg text-[color:var(--color-text)]">{e.title}</h3>
+            <p class="mt-1 text-[color:var(--color-muted)]">{e.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

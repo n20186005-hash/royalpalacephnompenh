@@ -1,0 +1,209 @@
+{
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=11.5615%2C104.9312",
+  "meta": {
+    "title": "Royal Palace of Cambodia - History, Visitor Guide & Travel Information",
+    "description": "Explore Royal Palace of Cambodia in Phnom Penh. Discover its history, architecture, visiting information, cultural significance and a practical travel guide."
+  },
+  "common": {
+    "changeLanguage": "Change language",
+    "toggleTheme": "Toggle theme",
+    "readMore": "Read more"
+  },
+  "header": {
+    "siteName": "Royal Palace of Cambodia",
+    "tagline": "Phnom Penh · Cambodia",
+    "home": "Home",
+    "visit": "Visit",
+    "transport": "Getting There",
+    "nearby": "Nearby",
+    "food": "Food",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "map": "Map"
+  },
+  "hero": {
+    "title": "Royal Palace of Cambodia",
+    "subtitle": "Ancient Royal Landmark · Phnom Penh, Cambodia",
+    "ctaMaps": "View on Map",
+    "quickFacts": [
+      { "icon": "📍", "label": "Location", "value": "Phnom Penh, Cambodia" },
+      { "icon": "⭐", "label": "Rating", "value": "4.3 / 5" },
+      { "icon": "🕗", "label": "Hours", "value": "08:00 - 17:00" },
+      { "icon": "🏛️", "label": "Type", "value": "Historical Landmark" }
+    ]
+  },
+  "infoCard": {
+    "title": "Visitor Information",
+    "rows": [
+      { "label": "Address", "value": "Samdach Sothearos Blvd (3), Phnom Penh, Cambodia" },
+      { "label": "Opening Hours", "value": "08:00 - 17:00 (Daily)" },
+      { "label": "Type", "value": "Historical Landmark" },
+      { "label": "Historical Period", "value": "19th century – present" },
+      { "label": "Recommended Stay", "value": "1.5 – 2 hours" }
+    ]
+  },
+  "about": {
+    "title": "About Royal Palace of Cambodia",
+    "paragraphs": [
+      "The Royal Palace of Cambodia is one of Phnom Penh's most important cultural landmarks. Built in the 19th century, it serves as the official residence of the King of Cambodia and represents traditional Khmer architecture combined with influences from historical Southeast Asian royal design.",
+      "The walled compound sits on the west bank of the Tonlé Sap River and contains ceremonial halls, royal residences, gardens and sacred temples. It remains an active royal site and a living symbol of Cambodian heritage.",
+      "More than a monument, the palace is a working institution: state ceremonies, royal audiences and religious rituals continue here. For visitors, it offers a window into the art, religion and history that shaped modern Cambodia."
+    ]
+  },
+  "timeline": {
+    "title": "History Timeline",
+    "subtitle": "From royal residence to national symbol",
+    "events": [
+      { "year": "1860s", "title": "Phnom Penh becomes capital", "desc": "Phnom Penh is established as the capital of the Kingdom of Cambodia, setting the stage for a royal seat." },
+      { "year": "1866", "title": "Palace complex construction begins", "desc": "King Norodom I begins construction of the royal palace compound on the west bank of the Tonlé Sap River." },
+      { "year": "20th century", "title": "Expansion and preservation", "desc": "Successive monarchs expand and restore the buildings, blending Khmer craftsmanship with European and Thai influences." },
+      { "year": "Today", "title": "Cultural landmark & heritage site", "desc": "The palace serves as the official residence of the King and one of Cambodia's most visited cultural attractions." }
+    ]
+  },
+  "architecture": {
+    "title": "Architecture Highlights",
+    "intro": "The compound showcases traditional Khmer design enriched with decorative Thai and European influences.",
+    "items": [
+      { "name": "Throne Hall", "nameLocal": "ព្រះរាជដំណាក់", "desc": "The central ceremonial hall used for coronations and royal receptions, crowned by a tiered golden spire.", "highlight": "Golden spire & murals" },
+      { "name": "Silver Pagoda", "nameLocal": "វត្តប្រាក់", "desc": "Also known as Wat Preah Keo, its floor is paved with more than 5,000 silver tiles and it houses Buddha statues in gold, crystal and emerald.", "highlight": "Silver floor & Emerald Buddha" },
+      { "name": "Royal Buildings", "nameLocal": "អាគាររាជវាំង", "desc": "A collection of pavilions, ministries and residences used for state functions and royal ceremonies.", "highlight": "Napoleon III Pavilion" },
+      { "name": "Khmer Architectural Style", "nameLocal": "រចនាបថខ្មែរ", "desc": "High roofs, ornate nagas and vibrant frescoes reflect classical Khmer craftsmanship.", "highlight": "Naga motifs & frescoes" }
+    ]
+  },
+  "visitorGuide": {
+    "title": "Visitor Guide",
+    "hoursTitle": "Opening Hours",
+    "hoursValue": "Daily 08:00 - 17:00",
+    "durationTitle": "Recommended Visit Duration",
+    "durationValue": "1.5 - 2 hours",
+    "durationNote": "Best in the morning to avoid midday heat and larger crowds.",
+    "tipsTitle": "Visitor Tips",
+    "tips": [
+      "Visit early to avoid the heat",
+      "Wear modest clothing (see dress code)",
+      "Photography is allowed in most outdoor areas",
+      "Allow extra time for the Silver Pagoda"
+    ]
+  },
+  "ticket": {
+    "title": "Entrance Information",
+    "ticketLabel": "Ticket",
+    "ticketValue": "Check current official information",
+    "notesLabel": "Notes",
+    "notes": "Prices and visiting rules may change. Please verify with the official ticket office before your visit."
+  },
+  "dressCode": {
+    "title": "Dress Code",
+    "intro": "The Royal Palace is an active royal and religious site. Visitors are expected to dress respectfully.",
+    "items": [
+      { "icon": "👕", "title": "Shoulders covered", "desc": "Wear tops that cover the shoulders; sleeveless shirts are not permitted." },
+      { "icon": "🙏", "title": "Respectful attire", "desc": "Avoid overly revealing clothing — this is a sacred royal compound." },
+      { "icon": "📷", "title": "Photography", "desc": "Allowed in most courtyards; avoid photographing guarded interiors." }
+    ]
+  },
+  "transport": {
+    "title": "How to Get There",
+    "intro": "The palace sits in central Phnom Penh along the riverfront, easily reached from most parts of the city.",
+    "byAir": {
+      "title": "From Phnom Penh Airport",
+      "body": "Phnom Penh International Airport (PNH) is about 10 km from the palace. Taxis and ride-hailing apps connect the airport to the city center.",
+      "options": ["Taxi", "Ride-hailing", "Airport bus"],
+      "distance": "~10 km"
+    },
+    "byTrain": {
+      "title": "From the City Center",
+      "body": "The palace is a short tuk-tuk ride or walk from the riverside and most central hotels."
+    },
+    "byCar": {
+      "title": "By Tuk-Tuk / Taxi",
+      "body": "Tuk-tuks and taxis are the most common way to reach the palace from anywhere in the city.",
+      "cta": "Open in Maps"
+    },
+    "mapCta": "Open in Google Maps"
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "caption": "The Royal Palace compound, its gardens and the Silver Pagoda."
+  },
+  "nearby": {
+    "title": "Nearby Attractions",
+    "intro": "Within walking distance of the palace, you can explore more of Phnom Penh's heritage.",
+    "items": [
+      { "name": "Riverside (Sisowath Quay)", "distance": "Walking distance" },
+      { "name": "National Museum of Cambodia", "distance": "~5 min walk" },
+      { "name": "Wat Ounalom", "distance": "~10 min walk" },
+      { "name": "Independence Monument", "distance": "~15 min by tuk-tuk" }
+    ]
+  },
+  "food": {
+    "title": "Local Food Experience",
+    "intro": "Phnom Penh's riverside is rich with Khmer cuisine, from street stalls to traditional restaurants.",
+    "items": [
+      { "name": "Khmer Cuisine", "desc": "The foundation of Cambodian food: rice, freshwater fish, lemongrass and kaffir lime.", "dishes": ["Amok", "Khmer noodles (Nom Banh Chok)", "Fresh tropical fruits"] },
+      { "name": "Riverside Cafés", "desc": "Relaxed spots along Sisowath Quay for coffee, smoothies and people-watching.", "dishes": ["Iced coffee", "Fresh juices", "Bagels & pastries"] },
+      { "name": "Night Market Food", "desc": "Evening markets near the palace offer grilled skewers and local snacks.", "dishes": ["Grilled seafood", "Banana fritters", "Khmer BBQ"] }
+    ]
+  },
+  "reviews": {
+    "title": "Visitor Experience Summary",
+    "ratingLabel": "Overall rating",
+    "reviewCountLabel": "Based on visitor reviews",
+    "likesTitle": "What visitors love",
+    "likes": [
+      "Magnificent Khmer architecture",
+      "Rich history and culture",
+      "Convenient central location",
+      "The Silver Pagoda"
+    ],
+    "tipsTitle": "Things to note",
+    "tips": [
+      "Weekends and mornings can be busy",
+      "Outdoor areas get very hot midday",
+      "Modest dress is required"
+    ]
+  },
+  "photography": {
+    "title": "Photography Guide",
+    "timesTitle": "Best times to shoot",
+    "times": [
+      { "name": "Morning", "desc": "Soft light and fewer crowds make for clean compositions." },
+      { "name": "Golden Hour", "desc": "Warm light turns the golden roofs and spires a deep amber." }
+    ],
+    "spotsTitle": "Recommended spots",
+    "spots": [
+      "Golden palace roofs",
+      "Courtyard details & naga railings",
+      "The Silver Pagoda gardens",
+      "Riverside views of the compound"
+    ]
+  },
+  "bestTime": {
+    "title": "Best Time to Visit",
+    "intro": "Cambodia has a tropical climate; the cool dry season is the most comfortable for sightseeing.",
+    "seasons": [
+      { "period": "Nov – Feb", "note": "Cool and dry — the best time to visit." },
+      { "period": "Mar – May", "note": "Hot and dry; plan an early-morning visit." },
+      { "period": "Jun – Oct", "note": "Green rainy season; fewer crowds but afternoon showers." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      { "q": "Where is the Royal Palace of Cambodia?", "a": "On Samdach Sothearos Blvd, by the Tonlé Sap River in central Phnom Penh." },
+      { "q": "What are the opening hours?", "a": "Daily from 08:00 to 17:00." },
+      { "q": "Is there a dress code?", "a": "Yes — shoulders and knees must be covered, as it is an active royal site." },
+      { "q": "How much is the entrance fee?", "a": "Prices may change; please check the official ticket office for current information." }
+    ]
+  },
+  "footer": {
+    "siteName": "Royal Palace of Cambodia Guide",
+    "description": "A non-profit multilingual guide to the Royal Palace of Cambodia.",
+    "disclaimer": "Independent visitor information project. Not affiliated with any government or official body.",
+    "copyright": "© 2026 Royal Palace of Cambodia Guide. All rights reserved."
+  },
+  "notice": {
+    "title": "Notice",
+    "text": "Opening hours and ticket prices may change — please verify with official sources before your visit."
+  }
+}

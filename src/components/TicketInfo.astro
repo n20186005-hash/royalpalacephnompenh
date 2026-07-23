@@ -1,0 +1,22 @@
+---
+const { messages } = Astro.props;
+const t = messages.ticket;
+---
+
+<section class="section-padding section-divider" id="tickets">
+  <div class="container-page max-w-3xl">
+    <div class="card p-6 sm:p-8 border-l-4 border-l-[color:var(--color-gold-500)]">
+      <h2 class="section-title text-2xl">{t.title}</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-[color:var(--color-muted)]">{t.ticketLabel}</p>
+          <p class="mt-1 font-semibold text-[color:var(--color-text)]">{t.ticketValue}</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-[color:var(--color-muted)]">{t.notesLabel}</p>
+          <p class="mt-1 text-[color:var(--color-muted)]">{t.notes}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

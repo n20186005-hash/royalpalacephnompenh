@@ -1,0 +1,58 @@
+---
+import km from '../../i18n/km.json';
+import en from '../../i18n/en.json';
+import zh from '../../i18n/zh.json';
+import { defaultLang, languagesList } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoticeBanner from '../../components/NoticeBanner.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import InfoCard from '../../components/InfoCard.astro';
+import About from '../../components/About.astro';
+import Timeline from '../../components/Timeline.astro';
+import Architecture from '../../components/Architecture.astro';
+import VisitorGuide from '../../components/VisitorGuide.astro';
+import TicketInfo from '../../components/TicketInfo.astro';
+import DressCode from '../../components/DressCode.astro';
+import Transport from '../../components/Transport.astro';
+import Gallery from '../../components/Gallery.astro';
+import NearbyPlaces from '../../components/NearbyPlaces.astro';
+import LocalFood from '../../components/LocalFood.astro';
+import Reviews from '../../components/Reviews.astro';
+import Photography from '../../components/Photography.astro';
+import BestTime from '../../components/BestTime.astro';
+import Footer from '../../components/Footer.astro';
+
+const dict = { km, en, zh };
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const messages = dict[lang] ?? dict[defaultLang];
+const slug = 'royal-palace-of-cambodia';
+---
+
+<BaseLayout lang={lang} path={slug} title={messages.meta.title} description={messages.meta.description}>
+  <NoticeBanner messages={messages} />
+  <Header lang={lang} messages={messages} />
+  <main>
+    <Hero messages={messages} />
+    <InfoCard messages={messages} />
+    <About messages={messages} />
+    <Timeline messages={messages} />
+    <Architecture messages={messages} />
+    <VisitorGuide messages={messages} />
+    <TicketInfo messages={messages} />
+    <DressCode messages={messages} />
+    <Transport messages={messages} />
+    <Gallery messages={messages} />
+    <NearbyPlaces messages={messages} />
+    <LocalFood messages={messages} />
+    <Reviews messages={messages} />
+    <Photography messages={messages} />
+    <BestTime messages={messages} />
+  </main>
+  <Footer messages={messages} />
+</BaseLayout>

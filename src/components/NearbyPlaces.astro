@@ -1,0 +1,28 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const n = messages.nearby;
+const items = n.items ?? [];
+---
+
+<section id="nearby" class="section-shell-alt">
+  <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+    <div class="text-center mb-12">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{n.title}</h2>
+      {n.intro && <p class="mt-3 max-w-2xl mx-auto text-base sm:text-lg" style="color: var(--text-secondary);">{n.intro}</p>}
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      {items.map((it) => (
+        <div class="flex items-center justify-between rounded-2xl p-5" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+          <div class="flex items-center gap-3">
+            <span class="text-xl" aria-hidden="true">📍</span>
+            <span class="font-medium" style="color: var(--text-primary);">{it.name}</span>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full" style="background: var(--color-ocean-50, #f0f9ff); color: var(--color-ocean-700, #075985);">{it.distance}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
