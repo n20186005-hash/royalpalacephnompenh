@@ -3,11 +3,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://faromarina.com',
+  site: 'https://royalpalacephnompenh.com',
   output: 'static',
   i18n: {
-    defaultLocale: 'pt',
-    locales: ['pt', 'en', 'zh'],
+    defaultLocale: 'km',
+    locales: ['km', 'en', 'zh'],
     routing: {
       prefixDefaultLocale: true,
     },

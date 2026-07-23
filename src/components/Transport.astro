@@ -3,8 +3,9 @@ import { getI18n } from '../i18n/ui';
 import { poi } from '../data/poi';
 
 const { lang, messages } = getI18n(Astro.url);
-const t = messages.transport;
+const t = messages.transport ?? {};
 const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
+const modes = t.modes ?? [];
 ---
 
 <section id="transport" class="section-shell">
@@ -15,38 +16,21 @@ const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
     </div>
 
     <div class="grid gap-5 md:grid-cols-3">
-      <div class="rounded-2xl p-6" style="background: var(--card-bg); border: 1px solid var(--border-color);">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="text-2xl" aria-hidden="true">✈️</span>
-          <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{t.byAir.title}</h3>
+      {modes.map((m) => (
+        <div class="rounded-2xl p-6" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl" aria-hidden="true">{m.icon ?? '🚏'}</span>
+            <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{m.name}</h3>
+          </div>
+          <p class="text-sm" style="color: var(--text-secondary);">{m.desc}</p>
         </div>
-        <p class="text-sm mb-3" style="color: var(--text-secondary);">{t.byAir.body}</p>
-        <div class="flex flex-wrap gap-2 mb-3">
-          {(t.byAir.options ?? []).map((o) => (
-            <span class="text-xs px-2.5 py-1 rounded-full" style="background: var(--color-ocean-50, #f0f9ff); color: var(--color-ocean-700, #075985);">{o}</span>
-          ))}
-        </div>
-        <p class="text-xs font-medium" style="color: var(--text-muted);">📏 {t.byAir.distance}</p>
-      </div>
+      ))}
+    </div>
 
-      <div class="rounded-2xl p-6" style="background: var(--card-bg); border: 1px solid var(--border-color);">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="text-2xl" aria-hidden="true">🚆</span>
-          <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{t.byTrain.title}</h3>
-        </div>
-        <p class="text-sm" style="color: var(--text-secondary);">{t.byTrain.body}</p>
-      </div>
-
-      <div class="rounded-2xl p-6 flex flex-col" style="background: var(--card-bg); border: 1px solid var(--border-color);">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="text-2xl" aria-hidden="true">🚗</span>
-          <h3 class="font-semibold text-lg" style="color: var(--text-primary);">{t.byCar.title}</h3>
-        </div>
-        <p class="text-sm flex-1" style="color: var(--text-secondary);">{t.byCar.body}</p>
-        <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-primary mt-4 w-full">
-          🗺️ {t.byCar.cta}
-        </a>
-      </div>
+    <div class="text-center mt-8">
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-primary">
+        🗺️ {t.mapCta ?? 'Open in Maps'}
+      </a>
     </div>
   </div>
 </section>

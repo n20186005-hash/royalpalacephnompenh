@@ -1,50 +1,43 @@
-import pt from './pt.json';
+import km from './km.json';
 import en from './en.json';
 import zh from './zh.json';
 
-export const defaultLang = 'pt';
-export const languagesList = ['pt', 'en', 'zh'] as const;
-
+// Royal Palace of Cambodia guide: Khmer (default), English, Chinese.
+export const defaultLang = 'km';
+export const languagesList = ['km', 'en', 'zh'] as const;
 export const languages: Record<string, string> = {
-  pt: 'Português',
+  km: 'ខ្មែរ',
   en: 'English',
   zh: '中文',
 };
 
-const ui: Record<string, any> = { pt, en, zh };
+const ui: Record<string, any> = { km, en, zh };
 
 export function getLangFromUrl(url: URL): string {
-  const seg = url.pathname.split('/').filter(Boolean);
-  const lang = seg[0];
+  const seg = url.pathname.split('/')[1];
+  const lang = seg || defaultLang;
   return (languagesList as readonly string[]).includes(lang) ? lang : defaultLang;
 }
 
 export function getI18n(url: URL) {
   const lang = getLangFromUrl(url);
-  const messages = ui[lang];
-  const t = (key: string): string => {
-    const found = key
-      .split('.')
-      .reduce<any>((o, i) => (o == null ? undefined : o[i]), messages);
-    return found ?? '';
-  };
-  return { lang, messages, t };
+  return { lang, messages: ui[lang] };
 }
 
-export function buildAlternates(path = ''): Record<string, string> {
-  const base = 'https://faromarina.com';
-  const clean = path.replace(/^\/+/, '').replace(/\/+$/, '');
-  const mk = (l: string) => `${base}/${l}${clean ? '/' + clean : ''}`;
+// Canonical alternates. Update baseUrl in src/config.ts to the real domain.
+export function buildAlternates(slug = '') {
+  const base = 'https://royalpalacephnompenh.com';
+  const make = (l: string) => `${base}/${l}${slug ? '/' + slug : ''}`;
   return {
-    pt: mk('pt'),
-    en: mk('en'),
-    zh: mk('zh'),
-    xDefault: mk('pt'),
+    km: make('km'),
+    en: make('en'),
+    zh: make('zh'),
+    xDefault: make('km'),
   };
 }
 
 export function htmlLangAttr(lang: string): string {
   if (lang === 'zh') return 'zh-CN';
-  if (lang === 'pt') return 'pt-PT';
-  return lang;
+  if (lang === 'km') return 'km';
+  return 'en';
 }

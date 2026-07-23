@@ -1,51 +1,57 @@
 ---
+import km from '../../i18n/km.json';
+import en from '../../i18n/en.json';
+import zh from '../../i18n/zh.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NoticeBanner from '../../components/NoticeBanner.astro';
+import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
-import QuickInfo from '../../components/QuickInfo.astro';
+import InfoCard from '../../components/InfoCard.astro';
 import About from '../../components/About.astro';
-import ThingsTodo from '../../components/ThingsTodo.astro';
+import Timeline from '../../components/Timeline.astro';
+import Architecture from '../../components/Architecture.astro';
+import VisitorGuide from '../../components/VisitorGuide.astro';
+import TicketInfo from '../../components/TicketInfo.astro';
+import DressCode from '../../components/DressCode.astro';
 import Transport from '../../components/Transport.astro';
-import NearbyPlaces from '../../components/NearbyPlaces.astro';
-import FoodCulture from '../../components/FoodCulture.astro';
-import BestTime from '../../components/BestTime.astro';
 import Gallery from '../../components/Gallery.astro';
+import NearbyPlaces from '../../components/NearbyPlaces.astro';
+import LocalFood from '../../components/LocalFood.astro';
 import Reviews from '../../components/Reviews.astro';
-import FAQ from '../../components/FAQ.astro';
-import MapSection from '../../components/MapSection.astro';
-import { getI18n, languagesList } from '../../i18n/ui';
+import Photography from '../../components/Photography.astro';
+import BestTime from '../../components/BestTime.astro';
+import Footer from '../../components/Footer.astro';
+
+const dict = { km, en, zh };
 
 export function getStaticPaths() {
-  return languagesList.map((lang) => ({ params: { lang } }));
+  // Royal Palace guide, available in km / en / zh.
+  return ['km', 'en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
 }
 
-const { messages } = getI18n(Astro.url);
-
-const faqLd = (() => {
-  const items = messages.faq?.items ?? [];
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items.map((it) => ({
-      '@type': 'Question',
-      name: it.q,
-      acceptedAnswer: { '@type': 'Answer', text: it.a },
-    })),
-  };
-})();
+const { lang } = Astro.props;
+const messages = dict[lang] ?? dict.km;
 ---
 
-<BaseLayout title={messages.meta.title} description={messages.meta.description} path="">
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)}></script>
-  <Hero />
-  <QuickInfo />
-  <About />
-  <ThingsTodo />
-  <Transport />
-  <NearbyPlaces />
-  <FoodCulture />
-  <BestTime />
-  <Gallery />
-  <Reviews />
-  <FAQ />
-  <MapSection />
+<BaseLayout lang={lang} path="" title={messages.meta.title} description={messages.meta.description}>
+  <NoticeBanner messages={messages} />
+  <Header lang={lang} messages={messages} />
+  <main>
+    <Hero messages={messages} />
+    <InfoCard messages={messages} />
+    <About messages={messages} />
+    <Timeline messages={messages} />
+    <Architecture messages={messages} />
+    <VisitorGuide messages={messages} />
+    <TicketInfo messages={messages} />
+    <DressCode messages={messages} />
+    <Transport messages={messages} />
+    <Gallery messages={messages} />
+    <NearbyPlaces messages={messages} />
+    <LocalFood messages={messages} />
+    <Reviews messages={messages} />
+    <Photography messages={messages} />
+    <BestTime messages={messages} />
+  </main>
+  <Footer messages={messages} />
 </BaseLayout>

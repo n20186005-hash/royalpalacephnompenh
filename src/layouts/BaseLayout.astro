@@ -16,7 +16,7 @@ const { title, description, path = '' } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const htmlLang = htmlLangAttr(lang);
 const alts = buildAlternates(path);
-const canonical = alts[lang] ?? alts.pt;
+const canonical = alts[lang] ?? alts.xDefault;
 const { messages } = getI18n(Astro.url);
 const attractionName = messages.header?.siteName ?? poi.name[lang] ?? poi.name.en;
 const localName = poi.name[lang] ?? poi.name.en;
@@ -80,7 +80,7 @@ const breadcrumbLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="pt" href={alts.pt} />
+    <link rel="alternate" hreflang="km" href={alts.km} />
     <link rel="alternate" hreflang="en" href={alts.en} />
     <link rel="alternate" hreflang="zh" href={alts.zh} />
     <link rel="alternate" hreflang="x-default" href={alts.xDefault} />

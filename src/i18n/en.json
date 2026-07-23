@@ -150,22 +150,24 @@
   "transport": {
     "title": "How to Get There",
     "intro": "The palace sits in central Phnom Penh along the riverfront, easily reached from most parts of the city.",
-    "byAir": {
-      "title": "From Phnom Penh Airport",
-      "body": "Phnom Penh International Airport (PNH) is about 10 km from the palace. Taxis and ride-hailing apps connect the airport to the city center.",
-      "options": ["Taxi", "Ride-hailing", "Airport bus"],
-      "distance": "~10 km"
-    },
-    "byTrain": {
-      "title": "From the City Center",
-      "body": "The palace is a short tuk-tuk ride or walk from the riverside and most central hotels."
-    },
-    "byCar": {
-      "title": "By Tuk-Tuk / Taxi",
-      "body": "Tuk-tuks and taxis are the most common way to reach the palace from anywhere in the city.",
-      "cta": "Open in Maps"
-    },
-    "mapCta": "Open in Google Maps"
+    "mapCta": "Open in Google Maps",
+    "modes": [
+      {
+        "icon": "✈️",
+        "name": "From Phnom Penh Airport",
+        "desc": "Phnom Penh International Airport (PNH) is about 10 km from the palace. Taxis and ride-hailing apps connect the airport to the city center."
+      },
+      {
+        "icon": "🛺",
+        "name": "Tuk-Tuk / Taxi",
+        "desc": "Tuk-tuks and taxis are the most common way to reach the palace from anywhere in the city."
+      },
+      {
+        "icon": "🚶",
+        "name": "On Foot",
+        "desc": "The palace is a short tuk-tuk ride or walk from the riverside and most central hotels."
+      }
+    ]
   },
   "gallery": {
     "title": "Photo Gallery",

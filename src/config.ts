@@ -1,12 +1,12 @@
 export const siteConfig = {
-  name: 'Faro Marina Guide',
-  baseUrl: 'https://faromarina.com',
-  slug: 'faro-marina',
-  locales: ['pt', 'en', 'zh'] as const,
+  name: 'Royal Palace of Cambodia Guide',
+  baseUrl: 'https://royalpalacephnompenh.com',
+  slug: 'royal-palace-of-cambodia',
+  locales: ['km', 'en', 'zh'] as const,
 };
 
 export const ogLocale: Record<string, string> = {
-  pt: 'pt_PT',
+  km: 'km_KH',
   en: 'en_US',
   zh: 'zh_CN',
 };

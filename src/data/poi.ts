@@ -1,28 +1,44 @@
-// Structured POI data for Faro Marina (Doca de Faro).
+// Structured POI data for the Royal Palace of Cambodia (Phnom Penh).
 // Single source of truth used by BaseLayout JSON-LD, Hero, QuickInfo, etc.
 
 export const poi = {
-  name: { pt: 'Faro Marina', en: 'Faro Marina', zh: '法鲁码头' },
-  alternateName: { pt: 'Doca de Faro', en: 'Doca de Faro', zh: 'Doca de Faro' },
+  name: {
+    km: 'ព្រះបរមរាជវាំង',
+    en: 'Royal Palace of Cambodia',
+    zh: '金边王宫',
+  },
+  alternateName: {
+    km: 'ព្រះបរមរាជវាំងភ្នំពេញ',
+    en: 'Royal Palace Phnom Penh',
+    zh: '金边王宫',
+  },
 
-  address: 'Praça Dom Francisco Gomes, 8000-168 Faro, Portugal',
-  streetAddress: 'Praça Dom Francisco Gomes',
-  city: 'Faro',
-  region: 'Algarve',
-  country: 'Portugal',
-  countryCode: 'PT',
+  address: 'Samdach Sothearos Blvd (3), Phnom Penh, Cambodia',
+  streetAddress: 'Samdach Sothearos Blvd (3)',
+  city: 'Phnom Penh',
+  region: '',
+  country: 'Cambodia',
+  countryCode: 'KH',
 
-  rating: 4.4,
-  reviews: 5181,
+  rating: 4.3,
+  reviews: 13632,
 
-  lat: 37.0154,
-  lng: -7.9347,
+  lat: 11.5614,
+  lng: 104.9319,
 
-  // Stable Google Maps place/search URL (open in maps on every device).
-  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=37.0154%2C-7.9347',
+  // Stable Google Maps URL (open in maps on every device).
+  mapsUrl: 'https://www.google.com/maps/?q=11.5614%2C104.9319',
 
-  opening: { pt: 'Aberto 24 horas', en: 'Open 24 hours', zh: '全天开放' },
-  category: { pt: 'Frente Marítima', en: 'Waterfront', zh: '海滨' },
+  opening: {
+    km: '០៨:០០ – ១៧:០០',
+    en: '08:00 – 17:00',
+    zh: '08:00 – 17:00',
+  },
+  category: {
+    km: 'តំបន់ប្រវត្តិសាស្ត្រ',
+    en: 'Historic Site',
+    zh: '历史古迹',
+  },
 
   heroImage: '/gallery/royal-palace-of-cambodia-1.jpg',
 };
