@@ -31,22 +31,56 @@
     "title": "Royal Palace of Phnom Penh",
     "subtitle": "A living royal residence and Cambodia's most sacred cultural landmark, where Khmer tradition meets French colonial elegance on the banks of the Four Rivers.",
     "quickFacts": [
-      { "icon": "📍", "label": "Location", "value": "Phnom Penh" },
-      { "icon": "🕗", "label": "Hours", "value": "08:00–11:00 · 14:00–17:00" },
-      { "icon": "⭐", "label": "Rating", "value": "4.4 / 5" },
-      { "icon": "🎟️", "label": "Ticket", "value": "$10 USD" }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "value": "Phnom Penh"
+      },
+      {
+        "icon": "🕗",
+        "label": "Hours",
+        "value": "08:00–11:00 · 14:00–17:00"
+      },
+      {
+        "icon": "⭐",
+        "label": "Rating",
+        "value": "4.4 / 5"
+      },
+      {
+        "icon": "🎟️",
+        "label": "Ticket",
+        "value": "$10 USD"
+      }
     ],
     "ctaMaps": "Open in Maps"
   },
   "infoCard": {
     "title": "At a glance",
     "rows": [
-      { "label": "Location", "value": "Samdach Sothearos Blvd, Phnom Penh" },
-      { "label": "Hours", "value": "08:00–11:00 & 14:00–17:00 (closed midday)" },
-      { "label": "Ticket", "value": "$10 USD (cash on-site)" },
-      { "label": "Dress code", "value": "Shoulders & knees covered" },
-      { "label": "Built", "value": "1866" },
-      { "label": "Rating", "value": "4.4 / 5 (13,632 reviews)" }
+      {
+        "label": "Location",
+        "value": "Samdach Sothearos Blvd, Phnom Penh"
+      },
+      {
+        "label": "Hours",
+        "value": "08:00–11:00 & 14:00–17:00 (closed midday)"
+      },
+      {
+        "label": "Ticket",
+        "value": "$10 USD (cash on-site)"
+      },
+      {
+        "label": "Dress code",
+        "value": "Shoulders & knees covered"
+      },
+      {
+        "label": "Built",
+        "value": "1866"
+      },
+      {
+        "label": "Rating",
+        "value": "4.4 / 5 (13,632 reviews)"
+      }
     ]
   },
   "about": {
@@ -61,11 +95,31 @@
     "title": "A brief history",
     "subtitle": "From a royal vision to a living heritage",
     "events": [
-      { "year": "1866", "title": "Capital moved to Phnom Penh", "desc": "King Norodom I relocates the court from Oudong and begins building the palace complex." },
-      { "year": "1870s", "title": "Throne Hall completed", "desc": "The central ceremonial hall rises with its 59-metre gilded tower." },
-      { "year": "1892", "title": "Silver Pagoda established", "desc": "A wooden sanctuary for royal relics is built; later reclad in solid silver." },
-      { "year": "1903–1904", "title": "Reamker murals painted", "desc": "Artists cover the cloister walls with 600 m of the Khmer Ramayana." },
-      { "year": "1993", "title": "Restored as royal residence", "desc": "After turbulent decades, the monarchy is reinstated and the palace reopens to the public." }
+      {
+        "year": "1866",
+        "title": "Capital moved to Phnom Penh",
+        "desc": "King Norodom I relocates the court from Oudong and begins building the palace complex."
+      },
+      {
+        "year": "1870s",
+        "title": "Throne Hall completed",
+        "desc": "The central ceremonial hall rises with its 59-metre gilded tower."
+      },
+      {
+        "year": "1892",
+        "title": "Silver Pagoda established",
+        "desc": "A wooden sanctuary for royal relics is built; later reclad in solid silver."
+      },
+      {
+        "year": "1903–1904",
+        "title": "Reamker murals painted",
+        "desc": "Artists cover the cloister walls with 600 m of the Khmer Ramayana."
+      },
+      {
+        "year": "1993",
+        "title": "Restored as royal residence",
+        "desc": "After turbulent decades, the monarchy is reinstated and the palace reopens to the public."
+      }
     ]
   },
   "architecture": {
@@ -138,25 +192,65 @@
     "title": "Dress code (strictly enforced)",
     "intro": "The palace is an active royal and religious site. Visitors in sleeveless tops, shorts or skirts above the knee are regularly turned away — even a scarf over the shoulders may not be accepted.",
     "items": [
-      { "icon": "❌", "title": "Not allowed", "desc": "Sleeveless tops, shorts, short skirts, ripped jeans, crop tops, see-through fabrics." },
-      { "icon": "✔️", "title": "Required", "desc": "Shoulders and knees fully covered — a T-shirt with sleeves and long trousers or a long skirt." },
-      { "icon": "👟", "title": "Comfort", "desc": "Modest, breathable clothing and comfortable shoes; you will walk outdoors in the heat." }
+      {
+        "icon": "❌",
+        "title": "Not allowed",
+        "desc": "Sleeveless tops, shorts, short skirts, ripped jeans, crop tops, see-through fabrics."
+      },
+      {
+        "icon": "✔️",
+        "title": "Required",
+        "desc": "Shoulders and knees fully covered — a T-shirt with sleeves and long trousers or a long skirt."
+      },
+      {
+        "icon": "👟",
+        "title": "Comfort",
+        "desc": "Modest, breathable clothing and comfortable shoes; you will walk outdoors in the heat."
+      }
     ]
   },
   "transport": {
     "title": "Getting there",
     "intro": "The palace sits on Samdach Sothearos Blvd, facing the Tonlé Sap river in central Phnom Penh.",
     "modes": [
-      { "icon": "✈️", "name": "By air", "desc": "Phnom Penh International Airport is about 30 min by taxi to the palace." },
-      { "icon": "🛺", "name": "By tuk-tuk / taxi", "desc": "The easiest way across town; ask for 'Royal Palace' (preah ba-rom rea-chh veang)." },
-      { "icon": "🚶", "name": "On foot", "desc": "Walkable from the Riverside, the National Museum and Wat Phnom in 10–20 min." }
+      {
+        "icon": "✈️",
+        "name": "By air",
+        "desc": "Phnom Penh International Airport is about 30 min by taxi to the palace."
+      },
+      {
+        "icon": "🛺",
+        "name": "By tuk-tuk / taxi",
+        "desc": "The easiest way across town; ask for 'Royal Palace' (preah ba-rom rea-chh veang)."
+      },
+      {
+        "icon": "🚶",
+        "name": "On foot",
+        "desc": "Walkable from the Riverside, the National Museum and Wat Phnom in 10–20 min."
+      }
     ],
     "stepsTitle": "Step-by-step directions",
     "steps": [
-      { "n": "1", "title": "From the airport", "detail": "Take an official taxi from the airport rank (flagfall ~$12–15 USD, 30–40 min). Show the driver 'Royal Palace, Samdach Sothearos Blvd'." },
-      { "n": "2", "title": "From downtown / Riverside", "detail": "Hail a tuk-tuk or passapp (ride-hailing app); the fare is usually $2–4 USD. Ask for 'Preah Barom Reachea Vaeng'." },
-      { "n": "3", "title": "By tuk-tuk to the gate", "detail": "Ask to be dropped at the main entrance on Samdach Sothearos Blvd, facing the river — the ticket booth is just inside." },
-      { "n": "4", "title": "On foot", "detail": "If you are along Sisowath Quay, walk north ~3 min; the palace walls and golden spires are unmistakable." }
+      {
+        "n": "1",
+        "title": "From the airport",
+        "detail": "Take an official taxi from the airport rank (flagfall ~$12–15 USD, 30–40 min). Show the driver 'Royal Palace, Samdach Sothearos Blvd'."
+      },
+      {
+        "n": "2",
+        "title": "From downtown / Riverside",
+        "detail": "Hail a tuk-tuk or passapp (ride-hailing app); the fare is usually $2–4 USD. Ask for 'Preah Barom Reachea Vaeng'."
+      },
+      {
+        "n": "3",
+        "title": "By tuk-tuk to the gate",
+        "detail": "Ask to be dropped at the main entrance on Samdach Sothearos Blvd, facing the river — the ticket booth is just inside."
+      },
+      {
+        "n": "4",
+        "title": "On foot",
+        "detail": "If you are along Sisowath Quay, walk north ~3 min; the palace walls and golden spires are unmistakable."
+      }
     ],
     "mapCta": "Open in Maps"
   },
@@ -168,19 +262,53 @@
     "title": "Nearby attractions",
     "intro": "Make a day of the riverside quarter.",
     "items": [
-      { "name": "National Museum of Cambodia", "distance": "2 min walk" },
-      { "name": "Riverside (Sisowath Quay)", "distance": "3 min walk" },
-      { "name": "Wat Phnom", "distance": "10 min drive" },
-      { "name": "Central Market (Phsar Thmei)", "distance": "10 min drive" }
+      {
+        "name": "National Museum of Cambodia",
+        "distance": "2 min walk"
+      },
+      {
+        "name": "Riverside (Sisowath Quay)",
+        "distance": "3 min walk"
+      },
+      {
+        "name": "Wat Phnom",
+        "distance": "10 min drive"
+      },
+      {
+        "name": "Central Market (Phsar Thmei)",
+        "distance": "10 min drive"
+      }
     ]
   },
   "food": {
     "title": "Food nearby",
     "intro": "Refuel along the river after your visit.",
     "items": [
-      { "name": "Khmer traditional", "desc": "Try amok, lok lak and beef salad at riverside restaurants.", "dishes": ["Fish amok", "Lok lak", "Nom banh chok"] },
-      { "name": "Riverside cafés", "desc": "Shaded spots for iced coffee, fresh coconut and people-watching.", "dishes": ["Iced coffee", "Fresh coconut"] },
-      { "name": "Night market", "desc": "Evening stalls for grilled skewers, noodles and tropical fruit.", "dishes": ["Grilled skewers", "Fruit shake"] }
+      {
+        "name": "Khmer traditional",
+        "desc": "Try amok, lok lak and beef salad at riverside restaurants.",
+        "dishes": [
+          "Fish amok",
+          "Lok lak",
+          "Nom banh chok"
+        ]
+      },
+      {
+        "name": "Riverside cafés",
+        "desc": "Shaded spots for iced coffee, fresh coconut and people-watching.",
+        "dishes": [
+          "Iced coffee",
+          "Fresh coconut"
+        ]
+      },
+      {
+        "name": "Night market",
+        "desc": "Evening stalls for grilled skewers, noodles and tropical fruit.",
+        "dishes": [
+          "Grilled skewers",
+          "Fruit shake"
+        ]
+      }
     ]
   },
   "reviews": {
@@ -207,8 +335,14 @@
     "intro": "The grounds are a dream for photographers — just respect the no-flash, no-interior rules.",
     "timesTitle": "Best light",
     "times": [
-      { "name": "Morning (08:00–10:00)", "desc": "Soft light and fewer crowds; cool before the heat." },
-      { "name": "Late afternoon (15:00–17:00)", "desc": "Warm gold light on the spires; long shadows in the gardens." }
+      {
+        "name": "Morning (08:00–10:00)",
+        "desc": "Soft light and fewer crowds; cool before the heat."
+      },
+      {
+        "name": "Late afternoon (15:00–17:00)",
+        "desc": "Warm gold light on the spires; long shadows in the gardens."
+      }
     ],
     "spotsTitle": "Great spots",
     "spots": [
@@ -222,27 +356,60 @@
     "title": "Best time to visit",
     "intro": "Phnom Penh is hot year-round; plan around the heat and the rains.",
     "seasons": [
-      { "period": "Nov – Feb (cool & dry)", "note": "Most comfortable; peak season, arrive early." },
-      { "period": "Mar – May (hot)", "note": "Very hot; visit at opening or late afternoon." },
-      { "period": "Jun – Oct (wet)", "note": "Afternoon showers; mornings are clear and green." },
-      { "period": "Any day", "note": "Avoid the 11:00–14:00 midday closure." }
+      {
+        "period": "Nov – Feb (cool & dry)",
+        "note": "Most comfortable; peak season, arrive early."
+      },
+      {
+        "period": "Mar – May (hot)",
+        "note": "Very hot; visit at opening or late afternoon."
+      },
+      {
+        "period": "Jun – Oct (wet)",
+        "note": "Afternoon showers; mornings are clear and green."
+      },
+      {
+        "period": "Any day",
+        "note": "Avoid the 11:00–14:00 midday closure."
+      }
     ]
   },
   "faq": {
     "title": "Frequently asked questions",
     "items": [
-      { "q": "How much is the ticket and where do I buy it?", "a": "About $10 USD, paid in cash on-site at the entrance. Cards are generally not accepted, so bring US-dollar bills." },
-      { "q": "Should I hire a guide?", "a": "Strongly recommended. Official multilingual guides (including Chinese) at the entrance cost about $10–$15 and unlock royal history and hidden details." },
-      { "q": "What is the dress code?", "a": "Shoulders and knees must be fully covered. Sleeveless tops, shorts and short skirts are not allowed, and a scarf over the shoulders may be refused." },
-      { "q": "What are the opening hours?", "a": "08:00–11:00 and 14:00–17:00, with a midday closure from 11:00 to 14:00. The palace may also close for royal ceremonies." },
-      { "q": "Can I take photos inside?", "a": "You may photograph the gardens and exteriors, but photography and video are strictly forbidden inside the Throne Hall and the Silver Pagoda." },
-      { "q": "How long should I plan for?", "a": "About 1.5–2 hours for the highlights: Throne Hall exterior, Silver Pagoda, the Reamker cloister and the royal regalia exhibition." }
+      {
+        "q": "How much is the ticket and where do I buy it?",
+        "a": "About $10 USD, paid in cash on-site at the entrance. Cards are generally not accepted, so bring US-dollar bills."
+      },
+      {
+        "q": "Should I hire a guide?",
+        "a": "Strongly recommended. Official multilingual guides (including Chinese) at the entrance cost about $10–$15 and unlock royal history and hidden details."
+      },
+      {
+        "q": "What is the dress code?",
+        "a": "Shoulders and knees must be fully covered. Sleeveless tops, shorts and short skirts are not allowed, and a scarf over the shoulders may be refused."
+      },
+      {
+        "q": "What are the opening hours?",
+        "a": "08:00–11:00 and 14:00–17:00, with a midday closure from 11:00 to 14:00. The palace may also close for royal ceremonies."
+      },
+      {
+        "q": "Can I take photos inside?",
+        "a": "You may photograph the gardens and exteriors, but photography and video are strictly forbidden inside the Throne Hall and the Silver Pagoda."
+      },
+      {
+        "q": "How long should I plan for?",
+        "a": "About 1.5–2 hours for the highlights: Throne Hall exterior, Silver Pagoda, the Reamker cloister and the royal regalia exhibition."
+      }
     ]
   },
   "footer": {
     "siteName": "Royal Palace of Phnom Penh Guide",
     "description": "An independent visitor guide to Cambodia's Royal Palace — history, tickets, dress code and tips. Not affiliated with the palace administration.",
     "disclaimer": "Unofficial visitor guide. Verify hours and prices before travel.",
-    "copyright": "© 2026 Royal Palace of Phnom Penh Guide. For travellers, not a commercial entity."
+    "copyright": "© 2026 Royal Palace of Phnom Penh Travel Guide. All rights reserved.",
+    "statement": "This website is an independent non-profit visitor information guide and is not affiliated with any government agency or official organization.",
+    "sources": "All attraction information on this site is compiled and cross-checked against public materials from Phnom Penh City Hall, the Phnom Penh Tourism Office and the Cambodia Ministry of Tourism. It contains no commercial endorsements.",
+    "imageRights": "Image rights: All images displayed on this website remain the property of their original photographers and are protected by copyright."
   }
 }

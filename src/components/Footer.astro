@@ -39,8 +39,11 @@ const h = messages.header;
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t text-center text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
-      {f.copyright}
+    <div class="mt-10 pt-6 border-t space-y-3 text-xs leading-relaxed text-center" style="border-color: var(--border-color); color: var(--text-muted);">
+      {f.statement && <p>{f.statement}</p>}
+      {f.sources && <p>{f.sources}</p>}
+      {f.imageRights && <p>{f.imageRights}</p>}
+      <p class="pt-1 font-medium" style="color: var(--text-secondary);">{f.copyright}</p>
     </div>
   </div>
 </footer>
