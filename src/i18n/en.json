@@ -8,7 +8,9 @@
   "common": {
     "changeLanguage": "Language",
     "toggleTheme": "Toggle theme",
-    "home": "Home"
+    "home": "Home",
+    "active": "Active",
+    "inactive": "Inactive"
   },
   "header": {
     "siteName": "Royal Palace of Cambodia",

@@ -1,0 +1,119 @@
+---
+import { getI18n } from '../i18n/ui';
+import { siteConfig } from '../config';
+
+const { kind } = Astro.props as { kind: 'privacy' | 'terms' | 'cookie' };
+const { lang, messages } = getI18n(Astro.url);
+const l = messages.legal;
+
+const titleMap = { privacy: l.privacyTitle, terms: l.termsTitle, cookie: l.cookieTitle } as const;
+const pageTitle = titleMap[kind];
+const data = l[kind];
+
+const statusLabel = (s: string) =>
+  s === 'active' ? messages.common.active ?? 'Active' : messages.common.inactive ?? 'Inactive';
+---
+
+<section class="section-padding">
+  <div class="container-page max-w-3xl">
+    <p class="section-eyebrow">{messages.footer?.siteName ?? siteConfig.name}</p>
+    <h1 class="section-title">{pageTitle}</h1>
+    <p class="text-sm mt-2" style="color: var(--text-muted);">{l.updated}</p>
+
+    <div class="mt-10 space-y-10">
+      {kind === 'privacy' && (
+        <>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.collectedTitle}</h2>
+            <p class="mb-3" style="color: var(--text-secondary);">{data.collectedIntro}</p>
+            <ul class="list-disc pl-6 space-y-2" style="color: var(--text-secondary);">
+              {data.collectedItems.map((i: string) => <li>{i}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.useTitle}</h2>
+            <p class="mb-3" style="color: var(--text-secondary);">{data.useIntro}</p>
+            <ul class="list-disc pl-6 space-y-2" style="color: var(--text-secondary);">
+              {data.useItems.map((i: string) => <li>{i}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.thirdTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.thirdText}</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.rightsTitle}</h2>
+            <p class="mb-3" style="color: var(--text-secondary);">{data.rightsIntro}</p>
+            <ul class="list-disc pl-6 space-y-2" style="color: var(--text-secondary);">
+              {data.rightsItems.map((i: string) => <li>{i}</li>)}
+            </ul>
+          </div>
+        </>
+      )}
+
+      {kind === 'terms' && (
+        <>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.accessTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.accessText}</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.contentTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.contentText}</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.accuracyTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.accuracyText}</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.ipTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.ipText}</p>
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.liabilityTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.liabilityText}</p>
+          </div>
+        </>
+      )}
+
+      {kind === 'cookie' && (
+        <>
+          <div>
+            <p style="color: var(--text-secondary);">{data.intro}</p>
+          </div>
+          <div class="space-y-4">
+            {data.categories.map((c: any) => (
+              <div class="card p-5">
+                <div class="flex items-start justify-between gap-4">
+                  <h3 class="font-semibold text-base" style="color: var(--text-primary);">{c.name}</h3>
+                  <span
+                    class="shrink-0 text-xs px-2.5 py-1 rounded-full font-medium"
+                    style={
+                      c.status === 'active'
+                        ? 'background: color-mix(in srgb, var(--color-gold-500) 18%, transparent); color: var(--color-gold-600);'
+                        : 'background: color-mix(in srgb, var(--color-red-700) 14%, transparent); color: var(--color-red-700);'
+                    }
+                  >{statusLabel(c.status)}</span>
+                </div>
+                <p class="mt-2 text-sm" style="color: var(--text-secondary);">{c.desc}</p>
+                <p class="mt-1 text-xs" style="color: var(--text-muted);">{c.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div>
+            <h2 class="text-xl font-semibold mb-3" style="color: var(--text-primary);">{data.consentTitle}</h2>
+            <p style="color: var(--text-secondary);">{data.consentText}</p>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <button type="button" class="btn-cta btn-cta-primary" onclick="try{localStorage.setItem('cookie-consent','saved');alert('OK');}catch(e){}">{data.saveLabel}</button>
+            <button type="button" class="btn-cta btn-cta-secondary" onclick="try{localStorage.setItem('cookie-consent','rejected');alert('OK');}catch(e){}">{data.rejectLabel}</button>
+          </div>
+        </>
+      )}
+    </div>
+
+    <div class="mt-12 pt-6 border-t" style="border-color: var(--border-color);">
+      <a href={`/${lang}`} class="text-sm hover:opacity-70" style="color: var(--color-gold-600);">← {messages.common.home}</a>
+    </div>
+  </div>
+</section>

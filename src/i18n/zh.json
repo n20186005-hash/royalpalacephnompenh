@@ -8,7 +8,9 @@
   "common": {
     "changeLanguage": "语言",
     "toggleTheme": "切换主题",
-    "home": "首页"
+    "home": "首页",
+    "active": "启用",
+    "inactive": "停用"
   },
   "header": {
     "siteName": "柬埔寨王宫",

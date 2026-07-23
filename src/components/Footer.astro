@@ -43,6 +43,11 @@ const h = messages.header;
       {f.statement && <p>{f.statement}</p>}
       {f.sources && <p>{f.sources}</p>}
       {f.imageRights && <p>{f.imageRights}</p>}
+      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 pt-1">
+        <a href={`/${lang}/privacy-policy`} class="hover:underline" style="color: var(--text-secondary);">{f.privacy}</a>
+        <a href={`/${lang}/terms-of-service`} class="hover:underline" style="color: var(--text-secondary);">{f.terms}</a>
+        <a href={`/${lang}/cookie-settings`} class="hover:underline" style="color: var(--text-secondary);">{f.cookie}</a>
+      </nav>
       <p class="pt-1 font-medium" style="color: var(--text-secondary);">{f.copyright}</p>
     </div>
   </div>
