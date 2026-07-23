@@ -33,6 +33,51 @@
       { "icon": "🏛️", "label": "Type", "value": "Historical Landmark" }
     ]
   },
+  "quickInfo": {
+    "title": "Quick Info",
+    "rating": "Rating",
+    "location": "Location",
+    "hours": "Hours",
+    "category": "Category"
+  },
+  "thingsTodo": {
+    "title": "Things to Do",
+    "intro": "Recommended experiences within the Royal Palace complex and its surroundings.",
+    "items": [
+      {
+        "title": "Visit the Silver Pagoda",
+        "icon": "🛕",
+        "tags": ["Culture", "Architecture"],
+        "duration": "45 min",
+        "description": "Admire the temple floor of silver tiles and the Emerald Buddha figurine."
+      },
+      {
+        "title": "Explore the Throne Hall",
+        "icon": "👑",
+        "tags": ["History", "Ceremony"],
+        "duration": "30 min",
+        "description": "See the central audience hall crowned by a towering gilded spire."
+      },
+      {
+        "title": "Stroll the Royal Gardens",
+        "icon": "🌳",
+        "tags": ["Relax", "Nature"],
+        "duration": "30 min",
+        "description": "Walk the manicured grounds dotted with royal monuments and pavilions."
+      },
+      {
+        "title": "Photography Walk",
+        "icon": "📷",
+        "tags": ["Photography"],
+        "duration": "40 min",
+        "description": "Capture Khmer roofs, naga balustrades and the golden palace spires."
+      }
+    ],
+    "oldTownRoute": {
+      "title": "Walking Route: Palace → Riverside",
+      "steps": ["Royal Palace", "National Museum of Cambodia", "Sisowath Quay", "Riverside Park"]
+    }
+  },
   "infoCard": {
     "title": "Visitor Information",
     "rows": [

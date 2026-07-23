@@ -4,8 +4,8 @@ import { getI18n } from '../i18n/ui';
 const { messages } = getI18n(Astro.url);
 const g = messages.gallery;
 
-// 14 images renamed to faro-marina-1..14.jpg
-const images = Array.from({ length: 14 }, (_, i) => `/gallery/faro-marina-${i + 1}.jpg`);
+// All 24 gallery photos are preserved; reference them by their real filenames.
+const images = Array.from({ length: 24 }, (_, i) => `/gallery/royal-palace-of-cambodia-${i + 1}.jpg`);
 ---
 
 <section id="gallery" class="section-shell">

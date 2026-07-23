@@ -33,6 +33,51 @@
       { "icon": "🏛️", "label": "类型", "value": "历史古迹" }
     ]
   },
+  "quickInfo": {
+    "title": "快速信息",
+    "rating": "评分",
+    "location": "位置",
+    "hours": "开放时间",
+    "category": "类型"
+  },
+  "thingsTodo": {
+    "title": "游玩推荐",
+    "intro": "王宫建筑群及周边值得体验的项目。",
+    "items": [
+      {
+        "title": "参观银阁寺",
+        "icon": "🛕",
+        "tags": ["文化", "建筑"],
+        "duration": "约 45 分钟",
+        "description": "欣赏铺满银砖的寺院地面与翡翠玉佛。"
+      },
+      {
+        "title": "探索王座大厅",
+        "icon": "👑",
+        "tags": ["历史", "典礼"],
+        "duration": "约 30 分钟",
+        "description": "登上以镀金尖塔为顶的中央礼殿。"
+      },
+      {
+        "title": "漫步皇家园林",
+        "icon": "🌳",
+        "tags": ["休闲", "自然"],
+        "duration": "约 30 分钟",
+        "description": "在点缀王室纪念碑的修剪草坪上散步。"
+      },
+      {
+        "title": "摄影漫步",
+        "icon": "📷",
+        "tags": ["摄影"],
+        "duration": "约 40 分钟",
+        "description": "捕捉高棉屋顶、娜迦护栏与金色尖塔。"
+      }
+    ],
+    "oldTownRoute": {
+      "title": "步行路线：王宫 → 河畔",
+      "steps": ["金边王宫", "柬埔寨国家博物馆", "西索瓦码头", "河畔公园"]
+    }
+  },
   "infoCard": {
     "title": "游客信息",
     "rows": [

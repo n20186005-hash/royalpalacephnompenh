@@ -24,7 +24,7 @@ export const poi = {
   opening: { pt: 'Aberto 24 horas', en: 'Open 24 hours', zh: '全天开放' },
   category: { pt: 'Frente Marítima', en: 'Waterfront', zh: '海滨' },
 
-  heroImage: '/gallery/faro-marina-1.jpg',
+  heroImage: '/gallery/royal-palace-of-cambodia-1.jpg',
 };
 
 export type Poi = typeof poi;

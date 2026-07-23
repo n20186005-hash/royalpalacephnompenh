@@ -2,7 +2,6 @@
 import km from '../../i18n/km.json';
 import en from '../../i18n/en.json';
 import zh from '../../i18n/zh.json';
-import { defaultLang, languagesList } from '../../i18n/ui';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NoticeBanner from '../../components/NoticeBanner.astro';
 import Header from '../../components/Header.astro';
@@ -26,11 +25,12 @@ import Footer from '../../components/Footer.astro';
 const dict = { km, en, zh };
 
 export function getStaticPaths() {
-  return languagesList.map((lang) => ({ params: { lang }, props: { lang } }));
+  // This page is the Royal Palace guide, available in km / en / zh only.
+  return ['km', 'en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
 }
 
 const { lang } = Astro.props;
-const messages = dict[lang] ?? dict[defaultLang];
+const messages = dict[lang] ?? dict.km;
 const slug = 'royal-palace-of-cambodia';
 ---
 
