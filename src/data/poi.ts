@@ -27,7 +27,7 @@ export const poi = {
   lng: 104.9319,
 
   // Stable Google Maps URL (open in maps on every device).
-  mapsUrl: 'https://www.google.com/maps/?q=11.5614%2C104.9319',
+  mapsUrl: 'https://maps.app.goo.gl/bEsGRgKQhNudrceN8',
 
   // Ticket admission (USD, cash on-site).
   ticketPrice: '$10 USD',

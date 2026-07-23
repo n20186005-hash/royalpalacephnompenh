@@ -21,6 +21,7 @@ import Reviews from '../../components/Reviews.astro';
 import Photography from '../../components/Photography.astro';
 import BestTime from '../../components/BestTime.astro';
 import FAQ from '../../components/FAQ.astro';
+import MapSection from '../../components/MapSection.astro';
 
 const dict = { km, en, zh };
 
@@ -45,6 +46,7 @@ const messages = dict[lang] ?? dict.km;
   <DressCode messages={messages} />
   <Transport messages={messages} />
   <Gallery messages={messages} />
+  <MapSection messages={messages} />
   <NearbyPlaces messages={messages} />
   <LocalFood messages={messages} />
   <Reviews messages={messages} />

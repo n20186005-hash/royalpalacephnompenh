@@ -16,7 +16,7 @@ const { messages } = Astro.props;
   </div>
   <div class="flex items-center justify-between gap-3 p-4 bg-soft">
     <span class="text-sm text-[color:var(--color-muted)]">Royal Palace of Cambodia · Phnom Penh</span>
-    <a class="btn-cta" href={messages.footer.mapsUrl} target="_blank" rel="noopener">
+    <a class="btn-cta" href={messages.footerMapsUrl ?? messages.mapsUrl} target="_blank" rel="noopener">
       {messages.transport.mapCta} 🗺️
     </a>
   </div>
