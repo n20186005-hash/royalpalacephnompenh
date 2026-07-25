@@ -118,6 +118,15 @@ const breadcrumbLd = {
       })();
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HXM22WWPKP');
+    </script>
+
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-white text-slate-900" style="background: var(--bg-primary); color: var(--text-primary);">
