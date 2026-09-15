@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Workers deployment for the Royal Palace of Cambodia guide.
+  // `astro build` emits the worker at dist/_worker.js and the static assets
+  // (gallery photos, legal pages, manifest) into dist/.
+  "name": "royal-palace-phnom-penh",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

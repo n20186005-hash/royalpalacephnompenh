@@ -4,6 +4,7 @@ import { poi } from '../data/poi';
 
 const { lang, messages } = getI18n(Astro.url);
 const f = messages.footer;
+const attr = messages.attribution ?? {};
 const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
 const h = messages.header;
 ---
@@ -29,12 +30,19 @@ const h = messages.header;
           <li><a href={`/${lang}#nearby`} class="hover:opacity-70">{h.nearby}</a></li>
           <li><a href={`/${lang}#food`} class="hover:opacity-70">{h.food}</a></li>
           <li><a href={`/${lang}#faq`} class="hover:opacity-70">{h.faq}</a></li>
+          <li><a href={`/${lang}#sources`} class="hover:opacity-70">{attr.sourcesTitle}</a></li>
         </ul>
       </div>
 
       <div>
         <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">Info</p>
         <p class="text-sm" style="color: var(--text-secondary);">{poi.address}</p>
+        <p class="text-xs mt-2" style="color: var(--text-muted);">{poi.plusCode} · {poi.lat}, {poi.lng}</p>
+        <p class="text-xs mt-3">
+          <span>{attr.syncLabel}</span>
+          <br />
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="underline" style="color: var(--color-ocean-600, #0369a1);">{attr.reviewsCta} ↗</a>
+        </p>
         <p class="text-xs mt-3" style="color: var(--text-muted);">{f.disclaimer}</p>
       </div>
     </div>
@@ -42,6 +50,7 @@ const h = messages.header;
     <div class="mt-10 pt-6 border-t space-y-3 text-xs leading-relaxed text-center" style="border-color: var(--border-color); color: var(--text-muted);">
       {f.statement && <p>{f.statement}</p>}
       {f.sources && <p>{f.sources}</p>}
+      {attr.reviewsNote && <p>{attr.reviewsNote}</p>}
       {f.imageRights && <p>{f.imageRights}</p>}
       <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 pt-1">
         <a href={`/${lang}/privacy-policy`} class="hover:underline" style="color: var(--text-secondary);">{f.privacy}</a>

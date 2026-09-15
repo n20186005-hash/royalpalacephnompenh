@@ -1,35 +1,77 @@
 ---
 import { getI18n } from '../i18n/ui';
 import { poi } from '../data/poi';
+import { siteConfig } from '../config';
 
 const { lang, messages } = getI18n(Astro.url);
 const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
 const h = messages.header;
+const m = messages.mapSection ?? {};
+const attr = messages.attribution ?? {};
+const fullName = poi.name[lang] ?? poi.name.en;
+const localOpening = poi.opening[lang] ?? poi.opening.en;
 ---
 
 <section id="map" class="section-shell-alt">
   <div class="max-w-6xl mx-auto px-4 py-16 sm:py-20">
     <div class="text-center mb-8">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{h.map}</h2>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{m.title ?? h.map}</h2>
       <p class="mt-3 text-sm" style="color: var(--text-secondary);">{poi.address}</p>
     </div>
 
     <div class="rounded-2xl overflow-hidden border" style="border-color: var(--border-color);">
       <iframe
-        title="Royal Palace of Cambodia map"
+        title={`${fullName} map`}
         class="w-full h-[420px]"
         style="border:0;"
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.8323002158654!2d104.9286718122353!3d11.563876988589499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0xf8f1809319cea6df!2z6YeR6L65546L5a6r!5e0!3m2!1szh-CN!2sus!4v1784818707285!5m2!1szh-CN!2sus">
+        src={siteConfig.mapsEmbedUrl}>
       </iframe>
     </div>
+
+    <dl class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto text-sm">
+      <div class="rounded-2xl p-4" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <dt class="text-[11px] uppercase tracking-wide mb-1" style="color: var(--text-muted);">{m.addressLabel ?? 'Address'}</dt>
+        <dd style="color: var(--text-primary);">{poi.address}</dd>
+      </div>
+      <div class="rounded-2xl p-4" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <dt class="text-[11px] uppercase tracking-wide mb-1" style="color: var(--text-muted);">{m.plusCodeLabel ?? 'Google plus code'}</dt>
+        <dd style="color: var(--text-primary);">{poi.plusCode}</dd>
+      </div>
+      <div class="rounded-2xl p-4" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <dt class="text-[11px] uppercase tracking-wide mb-1" style="color: var(--text-muted);">{m.coordsLabel ?? 'Coordinates'}</dt>
+        <dd style="color: var(--text-primary);">{poi.lat}, {poi.lng}</dd>
+      </div>
+      <div class="rounded-2xl p-4" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <dt class="text-[11px] uppercase tracking-wide mb-1" style="color: var(--text-muted);">{m.hoursLabel ?? 'Opening hours'}</dt>
+        <dd style="color: var(--text-primary);">{localOpening}</dd>
+      </div>
+    </dl>
 
     <div class="mt-6 text-center">
       <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-primary">
         🗺️ {messages.hero.ctaMaps}
       </a>
     </div>
+
+    <p class="mt-6 text-xs text-center max-w-3xl mx-auto leading-relaxed" style="color: var(--text-muted);">
+      {attr.govtText}
+      {' '}
+      <a href={poi.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="underline" style="color: var(--color-ocean-600, #0369a1);">
+        {attr.govtCta ?? 'Official Tourism Portal'}
+      </a>
+      {' · '}
+      <a href={poi.cityHallUrl} target="_blank" rel="noopener noreferrer" class="underline" style="color: var(--color-ocean-600, #0369a1);">
+        {attr.cityHallName ?? 'Phnom Penh City Hall'}
+      </a>
+    </p>
+
+    <p class="mt-2 text-xs text-center" style="color: var(--text-muted);">
+      <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="underline" style="color: var(--color-ocean-600, #0369a1);">
+        {attr.ratingCta ?? 'View all reviews on Google Maps'}
+      </a>
+    </p>
   </div>
 </section>

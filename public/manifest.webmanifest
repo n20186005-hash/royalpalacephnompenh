@@ -1,0 +1,53 @@
+{
+  "id": "/",
+  "name": "Royal Palace of Cambodia — Visitor Guide",
+  "short_name": "Royal Palace",
+  "description": "Independent visitor guide to the Royal Palace of Cambodia in Phnom Penh — opening hours, tickets, dress code, map and travel tips.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#082f49",
+  "theme_color": "#0369a1",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Location & map",
+      "short_name": "Map",
+      "url": "/#map"
+    },
+    {
+      "name": "Reviews",
+      "short_name": "Reviews",
+      "url": "/#reviews"
+    },
+    {
+      "name": "FAQ",
+      "short_name": "FAQ",
+      "url": "/#faq"
+    }
+  ]
+}

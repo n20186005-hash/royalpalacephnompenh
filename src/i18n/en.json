@@ -2,8 +2,8 @@
   "mapsUrl": "https://maps.app.goo.gl/bEsGRgKQhNudrceN8",
   "footerMapsUrl": "https://maps.app.goo.gl/bEsGRgKQhNudrceN8",
   "meta": {
-    "title": "Royal Palace of Phnom Penh | Visitor Guide, History & Tickets",
-    "description": "Plan your visit to the Royal Palace of Phnom Penh — opening hours, $10 ticket, strict dress code, the Silver Pagoda's 5,329 silver tiles, the 9,586-diamond gold Buddha and 600m of Reamker murals."
+    "title": "Royal Palace Phnom Penh (2026) – Opening Hours, Tickets & Rules",
+    "description": "Planning your visit to the Royal Palace of Cambodia? Check 2026 updated opening hours, entrance fees, dress code guidelines, and map location."
   },
   "common": {
     "changeLanguage": "Language",
@@ -16,6 +16,11 @@
     "siteName": "Royal Palace of Cambodia",
     "tagline": "Phnom Penh · Cambodia",
     "visit": "Visit",
+    "weather": "Weather",
+    "routes": "Routes",
+    "seasonal": "Seasons",
+    "services": "Services",
+    "heritage": "Heritage",
     "transport": "Getting there",
     "nearby": "Nearby",
     "food": "Food",
@@ -30,7 +35,7 @@
     "text": "The palace closes for lunch (11:00–14:00) and may close temporarily during royal ceremonies. Shoulders and knees must be covered."
   },
   "hero": {
-    "title": "Royal Palace of Phnom Penh",
+    "title": "Royal Palace of Cambodia (Phnom Penh)",
     "subtitle": "A living royal residence and Cambodia's most sacred cultural landmark, where Khmer tradition meets French colonial elegance on the banks of the Four Rivers.",
     "quickFacts": [
       {
@@ -46,7 +51,7 @@
       {
         "icon": "⭐",
         "label": "Rating",
-        "value": "4.4 / 5"
+        "value": "4.3 / 5"
       },
       {
         "icon": "🎟️",
@@ -61,7 +66,7 @@
     "rows": [
       {
         "label": "Location",
-        "value": "Samdach Sothearos Blvd, Phnom Penh"
+        "value": "Samdach Sothearos Blvd (3), Phnom Penh (plus code HW7J+HG)"
       },
       {
         "label": "Hours",
@@ -81,20 +86,21 @@
       },
       {
         "label": "Rating",
-        "value": "4.4 / 5 (13,632 reviews)"
+        "value": "4.3 / 5 (13,775 Google Maps reviews)"
       }
     ]
   },
   "about": {
-    "title": "About the Royal Palace",
+    "title": "About the Royal Palace of Cambodia",
     "paragraphs": [
+      "Welcome to the Royal Palace of Cambodia, widely recognized as the central Royal Palace Phnom Penh. Located in the heart of Phnom Penh, Cambodia, this destination serves as a primary hub for travelers visiting the region.",
       "The Royal Palace of Phnom Penh was founded in 1866 by King Norodom I, who moved the capital back to Phnom Penh from Oudong. He chose this site at the confluence of the Four Rivers — the Tonlé Sap, the Upper Mekong, the Lower Mekong and the Bassac — a place Khmer geomancy regards as a protective, prosperity-bringing heart of the kingdom.",
       "More than a museum, the palace remains the official residence of the Cambodian royal family and the stage for coronations, royal weddings and state ceremonies. Its layout blends traditional Khmer architecture with the French colonial influences introduced during the protectorate.",
       "Did you know? When the golden royal flag flies above the palace's tallest spire, it means the reigning monarch — King Norodom Sihamoni — is inside."
     ]
   },
   "timeline": {
-    "title": "A brief history",
+    "title": "History & Significance of the Royal Palace of Cambodia",
     "subtitle": "From a royal vision to a living heritage",
     "events": [
       {
@@ -261,8 +267,8 @@
     "caption": "Glimpses of the gilded spires, silver floors and tranquil gardens of the Royal Palace."
   },
   "nearby": {
-    "title": "Nearby attractions",
-    "intro": "Make a day of the riverside quarter.",
+    "title": "Landmarks & Attractions Around the Royal Palace Phnom Penh",
+    "intro": "When visiting the Royal Palace of Cambodia, visitors can easily explore surrounding historical landmarks and points of interest, including the National Museum of Cambodia and the Riverside (Sisowath Quay). Make a day of the riverside quarter.",
     "items": [
       {
         "name": "National Museum of Cambodia",
@@ -330,7 +336,9 @@
       "Bring USD cash",
       "Avoid midday (11:00–14:00 closed)",
       "Hire a guide for the stories"
-    ]
+    ],
+    "sourceNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceCta": "View all reviews on Google Maps"
   },
   "photography": {
     "title": "Photography tips",
@@ -402,8 +410,412 @@
       {
         "q": "How long should I plan for?",
         "a": "About 1.5–2 hours for the highlights: Throne Hall exterior, Silver Pagoda, the Reamker cloister and the royal regalia exhibition."
+      },
+      {
+        "q": "Where is the Royal Palace of Cambodia located?",
+        "a": "The Royal Palace of Cambodia is located on Samdach Sothearos Blvd (3) in Phnom Penh, Cambodia (Google plus code HW7J+HG), on the west bank of the Tonlé Sap river next to the National Museum of Cambodia."
+      },
+      {
+        "q": "Is the Royal Palace of Cambodia free to visit?",
+        "a": "No. General admission is about $10 USD per person and is paid in cash at the entrance; there is no free general admission."
       }
     ]
+  },
+  "attribution": {
+    "ratingNote": "Rating and review count synced from Google Maps user reviews · September 2026",
+    "ratingCta": "View all reviews on Google Maps",
+    "reviewsNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "reviewsCta": "View all reviews on Google Maps",
+    "syncLabel": "Reviews · synced September 2026",
+    "sourcesTitle": "Sources & references",
+    "sourcesIntro": "This is an independent visitor guide. Attraction details are cross-checked against the public and official sources below; ratings and review counts are synced from Google Maps.",
+    "reviewsSourceName": "Google Maps — Royal Palace of Cambodia ratings & reviews",
+    "govtText": "For official updates and regional tourism information, visit the Cambodia / Phnom Penh official tourism portal.",
+    "govtCta": "Cambodia Official Tourism Portal",
+    "cityHallName": "Phnom Penh City Hall",
+    "imageRightsTitle": "Image rights",
+    "imageRightsNote": "Image rights: all images displayed on this website remain the property of their original photographers and are protected by copyright."
+  },
+  "entity": {
+    "breadcrumbLabel": "Location hierarchy",
+    "breadcrumbCity": "Phnom Penh",
+    "breadcrumbCountry": "Cambodia"
+  },
+  "mapSection": {
+    "title": "Location & How to Visit the Royal Palace of Cambodia in Phnom Penh",
+    "addressLabel": "Address",
+    "plusCodeLabel": "Google plus code",
+    "hoursLabel": "Opening hours",
+    "coordsLabel": "Coordinates"
+  },
+  "weather": {
+    "title": "Weather & What to Pack",
+    "intro": "Current conditions at the Royal Palace of Cambodia and a seven-day outlook for Phnom Penh, refreshed automatically.",
+    "nowLabel": "Now",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "rainChance": "Rain chance",
+    "uvIndex": "UV index",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "updatedLabel": "Updated",
+    "forecastTitle": "Seven-day outlook",
+    "todayLabel": "Today",
+    "minMax": "Low / High",
+    "rain": "Rain",
+    "adviceTitle": "What this means for your visit",
+    "labelAlert": "Risk alert",
+    "labelOutfit": "What to wear",
+    "labelPlan": "How to plan the day",
+    "labelPack": "What to pack",
+    "noAlert": "No weather risks flagged for today.",
+    "alertNote": "Alerts are generated automatically from the forecast as a planning aid. They are not official government weather warnings.",
+    "windowsTitle": "Today's visit windows",
+    "windowMorning": "Morning 08:00–11:00",
+    "windowAfternoon": "Afternoon 14:00–17:00",
+    "windowTemp": "Temp",
+    "windowRain": "Rain",
+    "windowWind": "Wind",
+    "windowUv": "UV",
+    "windForceLabel": "Force {n}",
+    "uvLevelLabel": "UV",
+    "uvLevel": {
+      "weak": "Weak",
+      "moderate": "Moderate",
+      "strong": "Strong",
+      "veryStrong": "Very strong",
+      "extreme": "Extreme"
+    },
+    "unavailableTitle": "Live weather is temporarily unavailable",
+    "unavailableText": "The live forecast could not be loaded at this moment. Phnom Penh is hot all year: expect 25–35 °C, high humidity and a possible afternoon shower. Carry water, sun protection and a light rain layer.",
+    "codes": {
+      "0": "Clear sky",
+      "1": "Mainly clear",
+      "2": "Partly cloudy",
+      "3": "Overcast",
+      "45": "Fog",
+      "48": "Freezing fog",
+      "51": "Light drizzle",
+      "53": "Drizzle",
+      "55": "Dense drizzle",
+      "61": "Light rain",
+      "63": "Rain",
+      "65": "Heavy rain",
+      "66": "Freezing rain",
+      "67": "Heavy freezing rain",
+      "80": "Light showers",
+      "81": "Showers",
+      "82": "Violent showers",
+      "95": "Thunderstorm",
+      "96": "Thunderstorm with hail",
+      "99": "Severe thunderstorm with hail"
+    },
+    "lib": {
+      "alertThunder": "Thunderstorms in the forecast: do not shelter under large trees, and stay clear of the riverbank and the water's edge.",
+      "alertRainHeavy": "Heavy rain forecast. Low-lying streets flood quickly and stone paving turns slippery — plan around it rather than through it.",
+      "alertWind7": "Strong wind: keep clear of signboards, trees and the riverfront railings.",
+      "alertFog": "Low visibility. River ferries and flights are often delayed, and long views will be poor.",
+      "outfitRain6": "Rain is likely this afternoon — dress light and quick-drying rather than water-resistant.",
+      "outfitRainLight": "Light drizzle around, so surfaces will be damp underfoot.",
+      "outfitWind56": "Breezy conditions, so keep hats, scarves and loose items under control.",
+      "outfitHot": "Hot day ahead — leave the heavy layers behind and wear loose, breathable clothing.",
+      "outfitUv": "The sun here is strong, so cover up rather than trusting shade alone.",
+      "outfitMuggy": "High humidity makes it feel hotter than the number suggests — choose quick-drying fabrics.",
+      "outfitDiurnal": "There is a real gap between day and night temperatures, so keep one light layer for the evening.",
+      "outfitWarmNight": "It stays warm and humid after dark, so light clothing works right through the evening.",
+      "outfitCold": "Cool by local standards — bring a warm layer for the early morning.",
+      "outfitClear": "Clear skies and strong light: excellent for photographs, hard on bare skin.",
+      "outfitCloudy": "Soft, even light — the best conditions of the week for photographing murals and facades.",
+      "planThunder": "River cruises and water-based activities are usually suspended during storms — move to the covered galleries and temple halls.",
+      "planRainHeavy": "Outdoor sightseeing is not advisable during the downpour; the National Museum five minutes away is the obvious wet-weather substitute.",
+      "planRain6": "Front-load the outdoor courtyards and keep the indoor halls in reserve for the afternoon shower.",
+      "planRainLight": "Outdoor areas lose some of their appeal, so start with the cloister and the temple buildings.",
+      "planWind56": "River cruises and some open-air attractions may be suspended, so check before you commit.",
+      "planWind7": "Expect open-air and riverfront activities to close; switch to an indoor itinerary.",
+      "planFog": "Not a day for viewpoints — the interiors and the museum make better use of the time.",
+      "planHot": "Shorten each stretch outdoors and use the midday closure for shade, water and a proper sit-down.",
+      "planClear": "A fine day for the courtyards, and good light for sunrise or sunset over the river.",
+      "planCloudy": "No burning sun today, which makes a long unhurried walk through the whole complex comfortable.",
+      "planWindowMorning": "The morning window is much drier than the afternoon, so go early.",
+      "planWindowAfternoon": "Rain is more likely in the morning, which makes the afternoon window the safer bet.",
+      "planWindowUv": "UV peaks in the afternoon; the morning window is the gentler choice.",
+      "planHours": "The palace opens 08:00–11:00 and 14:00–17:00 and closes over midday — the break suits lunch and the museum.",
+      "packRain6": "A compact umbrella or a light rain jacket",
+      "packRainLight": "A folding umbrella",
+      "packRainHeavy": "A rain jacket rather than a long umbrella — wind makes long umbrellas useless",
+      "packWind56": "A hat that stays put; skip the loose long skirt or scarf",
+      "packHot": "Plenty of drinking water plus rehydration salts",
+      "packUv": "Sunscreen, sunglasses and a hat",
+      "packCold": "A warm coat and a scarf",
+      "packClear": "Sunscreen, even if the shade feels cool",
+      "packFog": "Allow extra buffer time for ferry, coach or flight delays",
+      "tipThunder": "Storms — keep away from the riverbank",
+      "tipWind": "Very windy",
+      "tipRainHeavy": "Heavy rain — plan an indoor day",
+      "tipRain": "Rain likely — take an umbrella",
+      "tipHotUv": "Hot with high UV — go early",
+      "tipHot": "Hot — avoid the midday hours",
+      "tipUv": "Strong UV — cover up",
+      "tipClear": "Clear and bright — good photo light",
+      "tipCloudy": "Cloudy — gentle light, easy walking",
+      "tipMild": "Mixed conditions — keep the plan flexible"
+    }
+  },
+  "services": {
+    "title": "Visitor Services & Nearby Facilities",
+    "intro": "A category-by-category overview of the practical facilities around the Royal Palace of Cambodia — which types of service exist within walking or short-drive distance, and how they usually work.",
+    "neutralNote": "This guide is non-commercial and does not name or recommend individual businesses. Establishments and opening conditions change frequently, so treat the notes below as general categories and confirm details on site.",
+    "items": [
+      {
+        "icon": "🚻",
+        "title": "Toilets & drinking water",
+        "text": "Public restrooms are available near the entrance area and beside the Silver Pagoda. Tap water in Phnom Penh is not drinking water; bottled water is sold by small shops around the entrance and along the riverside.",
+        "tip": "Use the restrooms before you enter the interior courtyards — facilities inside the grounds are limited."
+      },
+      {
+        "icon": "🅿️",
+        "title": "Parking",
+        "text": "There is no large dedicated car park. Cars generally use paid or marked street parking along Samdach Sothearos Blvd and the surrounding blocks, and tour coaches stop at designated curbside points. Motorcycle parking is easier to find close by.",
+        "tip": "Ride-hailing apps and tuk-tuks avoid the parking question altogether, especially at peak hours."
+      },
+      {
+        "icon": "🍽️",
+        "title": "Food & drink",
+        "text": "There is no full-service restaurant inside the grounds. Within a five to fifteen minute walk you will find a wide range of local restaurants, cafés, bakeries and street-food stalls, concentrated in the riverside quarter.",
+        "tip": "Budget stalls, mid-range dining rooms and upscale places sit side by side — compare a couple before committing."
+      },
+      {
+        "icon": "🛏️",
+        "title": "Accommodation",
+        "text": "The immediate palace district is a low-rise historic quarter with no accommodation inside the grounds. Hostels, boutique guesthouses and international hotels cluster in the riverside and central districts, mostly a short ride away.",
+        "tip": "Staying riverside keeps the palace, the National Museum and the night market within walking distance."
+      },
+      {
+        "icon": "🛒",
+        "title": "Shops & convenience stores",
+        "text": "Convenience stores and small supermarkets within walking distance cover water, sun protection and basic supplies. Larger shopping centres sit a short drive away in the central commercial district.",
+        "tip": "Small shops still prefer cash — keep low-denomination US dollar notes and some riel for change."
+      },
+      {
+        "icon": "⛽",
+        "title": "Fuel & EV charging",
+        "text": "Petrol stations sit mainly on the city's arterial roads rather than in the historic centre. Public electric-vehicle charging is still developing in Phnom Penh, with a limited number of points in service.",
+        "tip": "Drivers and EV users should plan a refuelling or charging stop outside the palace district and allow extra time."
+      },
+      {
+        "icon": "💳",
+        "title": "Money & connectivity",
+        "text": "ATMs and currency-exchange counters operate around the entrance area and the riverside, handling both US dollars and Cambodian riel. Local prepaid SIM cards and eSIM plans are available in the city centre.",
+        "tip": "Admission is paid in cash in US dollars — carry small notes, as card readers are not always available."
+      },
+      {
+        "icon": "➕",
+        "title": "Health & pharmacies",
+        "text": "Pharmacies operate in the surrounding blocks; 24-hour pharmacies and international clinics require a short drive into the central districts. There is no on-site medical facility for visitors.",
+        "tip": "Bring rehydration salts, insect repellent and any regular medication — heat and dehydration are the most common travel complaints here."
+      },
+      {
+        "icon": "♿",
+        "title": "Access, luggage & guides",
+        "text": "Much of the grounds is stone and gravel paving with flights of steps at the Silver Pagoda, so wheelchairs and strollers meet uneven surfaces. Licensed multi-language guides offer their services near the entrance, and left-luggage arrangements are usually informal.",
+        "tip": "Travel light, and ask staff at the entrance which route has the fewest steps on the day of your visit."
+      }
+    ]
+  },
+  "seasonal": {
+    "title": "Seasonal Visiting Strategy",
+    "intro": "Climate, crowds and light conditions season by season, so you can choose the right month, the right hour and the right clothing.",
+    "sourceNote": "Climate figures follow the 1991–2020 thirty-year normals published by NOAA's National Centers for Environmental Information together with Cambodia's Ministry of Water Resources and Meteorology. Crowd and light notes describe typical seasonal patterns rather than guarantees.",
+    "columns": {
+      "season": "Season",
+      "temp": "Typical temperature",
+      "rain": "Rainfall",
+      "crowd": "Crowds",
+      "light": "Light & photography",
+      "wear": "What to wear",
+      "strategy": "Strategy"
+    },
+    "rows": [
+      {
+        "season": "Cool dry season",
+        "period": "November – February",
+        "temp": "21–31 °C, humidity at its lowest",
+        "rain": "Very little — roughly 5–25 mm a month",
+        "crowd": "Peak season, busiest from December to January",
+        "light": "Clear skies and soft side light in the early morning; long shadows after 15:00",
+        "wear": "Long trousers or a long skirt with a shoulder-covering top — the dress code applies all year",
+        "strategy": "The most comfortable window. Arrive at the 08:00 opening, clear the courtyards before the coach groups, and use the 11:00–14:00 closure for a riverside lunch."
+      },
+      {
+        "season": "Hot season",
+        "period": "March – May",
+        "temp": "26–36 °C, hottest in April with a higher apparent temperature",
+        "rain": "Occasional short showers as the monsoon builds",
+        "crowd": "Moderate, but exceptionally busy around Khmer New Year in mid-April",
+        "light": "Harsh overhead light at midday; best contrast before 10:00 and after 15:30",
+        "wear": "Light, loose, pale clothing with a hat, sunglasses and sunscreen",
+        "strategy": "Split the day around the heat: courtyards from 08:00 to 10:00, shade and fluids through midday, then return in the late afternoon."
+      },
+      {
+        "season": "Rainy season",
+        "period": "June – October",
+        "temp": "25–33 °C with high humidity",
+        "rain": "150–250 mm a month, mostly short afternoon downpours",
+        "crowd": "The quietest months, with September and October the lowest of all",
+        "light": "Dramatic cloudscapes after rain and strong reflections on wet stone",
+        "wear": "Quick-drying clothing with a compact umbrella or light rain shell",
+        "strategy": "Use the dry mornings for the courtyards, keep a waterproof bag for electronics, and stay out of open areas during thunderstorms."
+      },
+      {
+        "season": "Shoulder weeks",
+        "period": "Late October & early November",
+        "temp": "24–32 °C, humidity easing",
+        "rain": "Rain tapering off with occasional showers",
+        "crowd": "Rising as the dry season approaches",
+        "light": "Mixed cloud and sun; good diffused light for the murals",
+        "wear": "Light removable layers",
+        "strategy": "A good compromise: noticeably fewer visitors than peak season, with the grounds green from the rains."
+      }
+    ]
+  },
+  "audience": {
+    "title": "Visit Plans by Traveller Type",
+    "intro": "Three tailored routes — families with children, photographers and nature lovers, and low-mobility visitors who need the flattest paths. Choose by travelling party and the pace you want.",
+    "groups": [
+      {
+        "icon": "👨‍👩‍👧‍👦",
+        "title": "Families with children",
+        "duration": "About 2 hours",
+        "steps": [
+          "Start in the shaded courtyards so children can settle before the heat builds.",
+          "At the Throne Hall, tell the story of the coronation ceremonies that still take place here.",
+          "Turn the Silver Pagoda into a treasure hunt: count the silver floor tiles and find the emerald Buddha.",
+          "In the mural galleries, retell the Reamker as a monkey-army adventure.",
+          "Finish in the greener riverside space outside the gate to cool down."
+        ],
+        "tip": "Leave before the 11:00 closure and use the entrance-area restrooms first. Strollers cope better with the flat entry paths than with the interior stone steps."
+      },
+      {
+        "icon": "📷",
+        "title": "Photographers & nature lovers",
+        "duration": "About 2.5–3 hours",
+        "steps": [
+          "Be at the gate for the 08:00 opening to shoot the courtyards before the crowds arrive.",
+          "Use the morning side light along the Throne Hall facade.",
+          "Work the Silver Pagoda steps and gilded spires against the sky.",
+          "Move to the cloister for mural details and the play of light and shadow.",
+          "Return after 15:00 for warm light on the spires and the riverside promenade."
+        ],
+        "tip": "Photography is restricted indoors: no flash, and tripods and drones generally need permission. Midday hours give the flattest, least rewarding light."
+      },
+      {
+        "icon": "♿",
+        "title": "Low-mobility & step-free visitors",
+        "duration": "About 1.5 hours including rest stops",
+        "steps": [
+          "Ask at the entrance which route has the fewest steps on the day of your visit.",
+          "Follow the main axis and its flatter paving to view the Throne Hall exterior.",
+          "View the Silver Pagoda from the terrace in front rather than climbing its steps.",
+          "Use the shaded seating for a hydration break before continuing.",
+          "Finish before the hottest hours and before the 11:00 closure."
+        ],
+        "tip": "Gravel and stone paving make wheelchairs and walking frames difficult in places — bring a companion, water and sun protection, and allow generous time."
+      }
+    ]
+  },
+  "routes": {
+    "title": "Recommended Routes (Half Day / Full Day)",
+    "intro": "Two ready-made itineraries built around the palace's 08:00–11:00 and 14:00–17:00 opening windows and the midday closure.",
+    "halfDay": {
+      "title": "Half day · 3 hours",
+      "duration": "08:00 – 11:00",
+      "label": "Morning window",
+      "steps": [
+        { "time": "08:00", "text": "Buy your ticket at the main gate and enter as the grounds open." },
+        { "time": "08:15", "text": "Cross the courtyards to the Throne Hall and its coronation hall." },
+        { "time": "09:00", "text": "Silver Pagoda: the emerald Buddha, the silver-tiled floor and the regalia display." },
+        { "time": "09:45", "text": "Mural galleries — the long Reamker cycle along the inner wall." },
+        { "time": "10:15", "text": "Ceremonial objects and the French-colonial facades of the inner court." },
+        { "time": "10:45", "text": "Final pass through the gardens and the Angkor Wat model." },
+        { "time": "11:00", "text": "Exit at the midday closure and walk five minutes to the riverside for an early lunch." }
+      ],
+      "note": "The whole morning covers roughly 1.5 km of gentle walking within a compact footprint, with shade and benches throughout."
+    },
+    "fullDay": {
+      "title": "Full day · 6–7 hours",
+      "duration": "08:00 – 17:00",
+      "label": "Palace plus riverside quarter",
+      "steps": [
+        { "time": "08:00", "text": "Palace grounds, Throne Hall and Silver Pagoda in the morning window." },
+        { "time": "11:00", "text": "Exit at the closure and walk five minutes to the National Museum of Cambodia." },
+        { "time": "12:30", "text": "Lunch in the riverside quarter and rest through the hottest hours." },
+        { "time": "14:00", "text": "Return for the afternoon window, or visit Wat Phnom for the city's founding legend." },
+        { "time": "15:30", "text": "Stroll Sisowath Quay and the riverside promenade." },
+        { "time": "16:45", "text": "Sunset over the four-faced confluence, then the night market for dinner." }
+      ],
+      "note": "The 11:00–14:00 closure is not dead time — the National Museum next door and the riverside restaurants fill it comfortably."
+    }
+  },
+  "heritage": {
+    "title": "Understanding the Palace & Visitor Responsibility",
+    "intro": "The Royal Palace of Cambodia is a working royal and religious complex rather than a museum set. Knowing what you are looking at — and how to behave around it — makes the visit far richer.",
+    "knowledgeTitle": "Reading the architecture",
+    "items": [
+      {
+        "title": "Naga, garuda and the Khmer cosmos",
+        "text": "Roof ridges and stairways carry naga serpent balustrades and garuda bird-man figures. In Khmer cosmology the naga guards water and earth while the garuda guards the sky, so together they frame each building as a model of the universe."
+      },
+      {
+        "title": "The Throne Hall and the coronation tradition",
+        "text": "The tiered roof and gilded spire of the Throne Hall represent Mount Meru, the centre of the cosmos. Coronations, royal audiences and state ceremonies have been held here across successive reigns, and the hall is still in ceremonial use."
+      },
+      {
+        "title": "The Silver Pagoda",
+        "text": "Its floor is paved with more than five thousand silver tiles, and its collection includes the emerald Buddha and a gold Buddha studded with thousands of diamonds. It works as the temple of the palace, cared for by monks, rather than as an exhibition hall."
+      },
+      {
+        "title": "The painted Reamker cycle",
+        "text": "The cloister wall carries a continuous painted narrative of the Reamker, the Khmer Ramayana. The paintings are meant to be read in sequence, which is why the surface is protected from touch and from flash photography."
+      },
+      {
+        "title": "A residence still in use",
+        "text": "Parts of the complex remain the royal residence. When religious or state ceremonies take place, sections close to visitors at short notice — read a closure as a sign of a living institution rather than a poorly run attraction."
+      }
+    ],
+    "legendsTitle": "Legends & symbolism",
+    "legends": [
+      {
+        "title": "The widow Penh and the hill of the four faces",
+        "text": "The founding legend tells of a wealthy widow named Penh who found four Buddha images in the river and raised a hill to enshrine them. The hill became Wat Phnom, and the city took its name from it: Phnom Penh, the hill of Penh."
+      },
+      {
+        "title": "Why the palace stands at this bend",
+        "text": "The palace overlooks the Chatomuk, the four-faced confluence where the Tonlé Sap meets the Mekong and the Bassac. Traditional Khmer geomancy reads the meeting of waters as a place of power and protection, which is why the capital was moved here from Oudong in 1866."
+      },
+      {
+        "title": "The emerald Buddha",
+        "text": "The temple of the palace takes its name from its emerald-coloured Buddha image. Comparable emerald figures across Southeast Asia are treated as palladia — protective images on which the wellbeing of a kingdom is said to rest."
+      },
+      {
+        "title": "The naga as water guardian",
+        "text": "The nagas on the stairways and the many-headed serpent hoods above the doorways recall the Khmer myth of the naga princess and the origin of the royal line, a reminder that the palace stands for sacred as well as political continuity."
+      }
+    ],
+    "responsibilityTitle": "Visitor responsibility",
+    "responsibilityIntro": "The palace is an active religious and royal site and it belongs to the people who live with it. A few habits keep it open and undamaged for the next visitor.",
+    "responsibility": [
+      "Dress respectfully — shoulders and knees covered — and remove shoes and hats before entering temple buildings.",
+      "Keep your voice low, and never lean on, climb or turn your back on Buddha images, naga figures or other sculpture.",
+      "Do not touch mural paintings, gilded surfaces or textiles: skin oils and abrasion are the fastest forms of damage.",
+      "Flash photography and indoor video are generally not allowed, and drones or professional equipment usually require permission.",
+      "Ask before photographing people, monks or worshippers, and step aside during prayers.",
+      "Women should avoid touching monks or handing objects to them directly; place items on a surface or pass them via a companion.",
+      "Take everything you bring away with you — waste collection inside the grounds is limited.",
+      "If a section is closed for a ceremony, accept it quietly: closures protect living traditions rather than inconvenience tourists."
+    ],
+    "closingTitle": "About this guide",
+    "closingText": "This is an independent, non-commercial educational resource: no ticket commissions, no affiliate links and no advertising. Information is cross-checked against public and official sources, and every figure quoted on this page is listed in the sources section below."
   },
   "footer": {
     "siteName": "Royal Palace of Phnom Penh Guide",

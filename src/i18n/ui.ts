@@ -8,8 +8,8 @@ export const defaultLang = 'km';
 export const languagesList = ['km', 'en', 'zh'] as const;
 export const languages: Record<string, string> = {
   km: 'ខ្មែរ',
-  en: 'English',
-  zh: '中文',
+  zh: '中',
+  en: 'en',
 };
 
 const ui: Record<string, any> = { km, en, zh };
@@ -26,14 +26,18 @@ export function getI18n(url: URL) {
 }
 
 // Canonical alternates. Domain is resolved dynamically via resolveBaseUrl().
+// Every URL is absolute, HTTPS-only, on the non-www host and ends with a
+// trailing slash, so it matches the <link rel="canonical"> tag byte for byte.
 export function buildAlternates(slug = '') {
   const base = resolveBaseUrl();
-  const make = (l: string) => `${base}/${l}${slug ? '/' + slug : ''}`;
+  const clean = slug.replace(/^\/+|\/+$/g, '');
+  const make = (l: string) => `${base}/${l}${clean ? '/' + clean : ''}/`;
   return {
     km: make('km'),
     en: make('en'),
     zh: make('zh'),
-    xDefault: make('km'),
+    // x-default points at the English edition — the broadest audience.
+    xDefault: make('en'),
   };
 }
 

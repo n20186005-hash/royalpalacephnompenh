@@ -1,11 +1,13 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { poi, galleryImages } from '../data/poi';
 
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const g = messages.gallery;
+const fullName = poi.name[lang] ?? poi.name.en;
 
 // All 24 gallery photos are preserved; reference them by their real filenames.
-const images = Array.from({ length: 24 }, (_, i) => `/gallery/royal-palace-of-cambodia-${i + 1}.jpg`);
+const images = galleryImages;
 ---
 
 <section id="gallery" class="section-shell">
@@ -16,11 +18,21 @@ const images = Array.from({ length: 24 }, (_, i) => `/gallery/royal-palace-of-ca
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-      {images.map((src) => (
+      {images.map((src, i) => (
         <a href={src} target="_blank" rel="noopener noreferrer" class="group block overflow-hidden rounded-2xl aspect-[4/3] bg-slate-100" style="border: 1px solid var(--border-color);">
-          <img src={src} alt={g.title} loading="lazy" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+          <img
+            src={src}
+            alt={`${fullName} in ${poi.city}, ${poi.country} — photo ${i + 1} of ${images.length}`}
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="600"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
         </a>
       ))}
     </div>
+
+    <p class="mt-6 text-xs text-center" style="color: var(--text-muted);">{messages.footer?.imageRights}</p>
   </div>
 </section>

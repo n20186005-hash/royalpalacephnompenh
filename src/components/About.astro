@@ -1,14 +1,27 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { poi } from '../data/poi';
 
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const a = messages.about;
+const e = messages.entity ?? {};
 const paragraphs = a.paragraphs ?? [];
+const fullName = poi.name[lang] ?? poi.name.en;
 ---
 
 <section id="about" class="section-shell">
   <div class="max-w-3xl mx-auto px-4 py-16 sm:py-20">
     <p class="text-sm font-semibold uppercase tracking-[0.2em] mb-3" style="color: var(--color-ocean-600, #0369a1);">Phnom Penh · Cambodia</p>
+
+    <!-- Geographic breadcrumb: Attraction → City → Country -->
+    <nav aria-label={e.breadcrumbLabel ?? 'Location hierarchy'} class="mb-4 text-xs" style="color: var(--text-muted);">
+      <span>{fullName}</span>
+      <span aria-hidden="true"> → </span>
+      <a href="#map" class="hover:underline" style="color: var(--text-secondary);">{e.breadcrumbCity ?? poi.city}</a>
+      <span aria-hidden="true"> → </span>
+      <span>{e.breadcrumbCountry ?? poi.country}</span>
+    </nav>
+
     <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6" style="color: var(--text-primary);">{a.title}</h2>
     <div class="space-y-4 text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">
       {paragraphs.map((p) => (

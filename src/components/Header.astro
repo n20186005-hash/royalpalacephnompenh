@@ -17,8 +17,13 @@ const switchTo = (l: string) => (pageSeg ? `/${l}/${pageSeg}` : `/${l}`);
       <span class="text-[11px] tracking-wide" style="color: var(--text-muted);">{h.tagline}</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-4 text-sm lg:gap-5" style="color: var(--text-secondary);">
+    <nav class="hidden md:flex flex-wrap justify-end items-center gap-x-3.5 gap-y-1 text-[13px] lg:gap-x-4" style="color: var(--text-secondary);">
       <a href={`/${lang}#about`} class="hover:opacity-70">{h.visit}</a>
+      <a href={`/${lang}#weather`} class="hover:opacity-70">{h.weather}</a>
+      <a href={`/${lang}#routes`} class="hover:opacity-70">{h.routes}</a>
+      <a href={`/${lang}#seasonal`} class="hover:opacity-70">{h.seasonal}</a>
+      <a href={`/${lang}#services`} class="hover:opacity-70">{h.services}</a>
+      <a href={`/${lang}#heritage`} class="hover:opacity-70">{h.heritage}</a>
       <a href={`/${lang}#transport`} class="hover:opacity-70">{h.transport}</a>
       <a href={`/${lang}#nearby`} class="hover:opacity-70">{h.nearby}</a>
       <a href={`/${lang}#food`} class="hover:opacity-70">{h.food}</a>
@@ -55,6 +60,11 @@ const switchTo = (l: string) => (pageSeg ? `/${l}/${pageSeg}` : `/${l}`);
   <div id="mobile-menu" class="md:hidden hidden border-t px-4 py-4" style="border-color: var(--border-color); background: color-mix(in srgb, var(--bg-primary) 96%, transparent);">
     <nav class="grid grid-cols-2 gap-2 text-sm" style="color: var(--text-secondary);">
       <a href={`/${lang}#about`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.visit}</a>
+      <a href={`/${lang}#weather`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.weather}</a>
+      <a href={`/${lang}#routes`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.routes}</a>
+      <a href={`/${lang}#seasonal`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.seasonal}</a>
+      <a href={`/${lang}#services`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.services}</a>
+      <a href={`/${lang}#heritage`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.heritage}</a>
       <a href={`/${lang}#transport`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.transport}</a>
       <a href={`/${lang}#nearby`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.nearby}</a>
       <a href={`/${lang}#food`} class="rounded-lg px-3 py-2 border hover:opacity-80" style="border-color: var(--border-color);">{h.food}</a>

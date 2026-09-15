@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Canonical URLs: non-www host, HTTPS, always trailing slash. x-default = /en/. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://royalpalacephnompenh.com/km</loc>
-    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/km"/>
+    <loc>https://royalpalacephnompenh.com/km/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/"/>
   </url>
   <url>
-    <loc>https://royalpalacephnompenh.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/km"/>
+    <loc>https://royalpalacephnompenh.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/"/>
   </url>
   <url>
-    <loc>https://royalpalacephnompenh.com/zh</loc>
-    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/km"/>
+    <loc>https://royalpalacephnompenh.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/km/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/en/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/zh/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/privacy-policy/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/km/terms-of-service/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/en/terms-of-service/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/zh/terms-of-service/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/terms-of-service/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/terms-of-service/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/km/cookie-settings/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/en/cookie-settings/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
+  </url>
+  <url>
+    <loc>https://royalpalacephnompenh.com/zh/cookie-settings/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://royalpalacephnompenh.com/km/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://royalpalacephnompenh.com/zh/cookie-settings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://royalpalacephnompenh.com/en/cookie-settings/"/>
   </url>
 </urlset>

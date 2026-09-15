@@ -1,0 +1,82 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const s = messages.seasonal;
+const cols = s?.columns ?? {};
+const rows = s?.rows ?? [];
+
+const columnDefs = [
+  { key: 'season', label: cols.season, highlight: true },
+  { key: 'temp', label: cols.temp },
+  { key: 'rain', label: cols.rain },
+  { key: 'crowd', label: cols.crowd },
+  { key: 'light', label: cols.light },
+  { key: 'wear', label: cols.wear },
+  { key: 'strategy', label: cols.strategy },
+];
+---
+
+<section id="seasonal" class="section-shell-alt">
+  <div class="max-w-6xl mx-auto px-4 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color: var(--text-primary);">{s.title}</h2>
+      {s.intro && <p class="mt-3 max-w-2xl mx-auto text-base sm:text-lg" style="color: var(--text-secondary);">{s.intro}</p>}
+    </div>
+
+    <!-- Wide screens: full comparison table -->
+    <div class="hidden md:block card overflow-x-auto">
+      <table class="w-full text-left border-collapse min-w-[60rem]">
+        <thead>
+          <tr style="background: var(--section-alt);">
+            {columnDefs.map((col) => (
+              <th scope="col" class="px-4 py-3 text-xs font-semibold uppercase tracking-wide align-bottom" style="color: var(--text-muted);">
+                {col.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr style="border-top: 1px solid var(--border-color);">
+              {columnDefs.map((col) => (
+                <td class="px-4 py-4 text-sm leading-relaxed align-top" style="color: var(--text-secondary);">
+                  {col.highlight ? (
+                    <>
+                      <span class="block font-semibold" style="color: var(--text-primary);">{row.season}</span>
+                      <span class="block mt-0.5 text-xs" style="color: var(--text-muted);">{row.period}</span>
+                    </>
+                  ) : (
+                    row[col.key]
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Small screens: one card per season -->
+    <div class="md:hidden space-y-4">
+      {rows.map((row) => (
+        <div class="card p-5">
+          <p class="font-semibold" style="color: var(--text-primary);">{row.season}</p>
+          <p class="text-xs" style="color: var(--text-muted);">{row.period}</p>
+          <dl class="mt-4 space-y-2.5">
+            {columnDefs.slice(1).map((col) => (
+              <div class="grid grid-cols-3 gap-3 text-sm">
+                <dt class="text-xs" style="color: var(--text-muted);">{col.label}</dt>
+                <dd class="col-span-2 leading-relaxed" style="color: var(--text-secondary);">{row[col.key]}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
+    </div>
+
+    {s.sourceNote && (
+      <p class="mt-6 text-xs leading-relaxed max-w-4xl mx-auto text-center" style="color: var(--text-muted);">{s.sourceNote}</p>
+    )}
+  </div>
+</section>

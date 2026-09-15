@@ -13,25 +13,37 @@ import Architecture from '../../components/Architecture.astro';
 import VisitorGuide from '../../components/VisitorGuide.astro';
 import TicketInfo from '../../components/TicketInfo.astro';
 import DressCode from '../../components/DressCode.astro';
+import Weather from '../../components/Weather.astro';
+import Routes from '../../components/Routes.astro';
+import Audience from '../../components/Audience.astro';
 import Transport from '../../components/Transport.astro';
+import Services from '../../components/Services.astro';
 import Gallery from '../../components/Gallery.astro';
+import MapSection from '../../components/MapSection.astro';
 import NearbyPlaces from '../../components/NearbyPlaces.astro';
 import LocalFood from '../../components/LocalFood.astro';
 import Reviews from '../../components/Reviews.astro';
 import Photography from '../../components/Photography.astro';
 import BestTime from '../../components/BestTime.astro';
+import Seasonal from '../../components/Seasonal.astro';
+import Heritage from '../../components/Heritage.astro';
 import FAQ from '../../components/FAQ.astro';
-import MapSection from '../../components/MapSection.astro';
+import Sources from '../../components/Sources.astro';
 
-const dict = { km, en, zh };
+const dict: Record<string, any> = { km, en, zh };
+const available = ['km', 'en', 'zh'];
 
-export function getStaticPaths() {
-  // Royal Palace guide, available in km / en / zh.
-  return ['km', 'en', 'zh'].map((lang) => ({ params: { lang }, props: { lang } }));
+// Rendered on demand: the weather module reads the live forecast on every
+// request, so this guide page cannot be baked at build time.
+export const prerender = false;
+
+const param = String(Astro.params.lang ?? '');
+if (!available.includes(param)) {
+  return Astro.redirect('/km', 302);
 }
 
-const { lang } = Astro.props;
-const messages = dict[lang] ?? dict.km;
+const lang = param;
+const messages = dict[lang];
 ---
 
 <BaseLayout lang={lang} path="" title={messages.meta.title} description={messages.meta.description}>
@@ -44,7 +56,11 @@ const messages = dict[lang] ?? dict.km;
   <VisitorGuide messages={messages} />
   <TicketInfo messages={messages} />
   <DressCode messages={messages} />
+  <Weather messages={messages} />
+  <Routes messages={messages} />
+  <Audience messages={messages} />
   <Transport messages={messages} />
+  <Services messages={messages} />
   <Gallery messages={messages} />
   <MapSection messages={messages} />
   <NearbyPlaces messages={messages} />
@@ -52,5 +68,8 @@ const messages = dict[lang] ?? dict.km;
   <Reviews messages={messages} />
   <Photography messages={messages} />
   <BestTime messages={messages} />
+  <Seasonal messages={messages} />
+  <Heritage messages={messages} />
   <FAQ messages={messages} />
+  <Sources messages={messages} />
 </BaseLayout>
