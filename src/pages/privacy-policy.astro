@@ -1,0 +1,18 @@
+---
+// Khmer (default) privacy policy served directly at "/privacy-policy/".
+// en/zh variants live under /[lang]/privacy-policy.astro.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalLayout from '../components/LegalLayout.astro';
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const title = messages.legal.privacyTitle;
+const meta = messages.footer?.siteName ?? messages.header?.siteName ?? '';
+---
+
+<BaseLayout
+  title={`${title} · ${meta}`}
+  description={messages.legal.privacy.collectedIntro}
+>
+  <LegalLayout kind="privacy" />
+</BaseLayout>

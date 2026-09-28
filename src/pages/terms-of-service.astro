@@ -1,0 +1,18 @@
+---
+// Khmer (default) terms of service served directly at "/terms-of-service/".
+// en/zh variants live under /[lang]/terms-of-service.astro.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalLayout from '../components/LegalLayout.astro';
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+const title = messages.legal.termsTitle;
+const meta = messages.footer?.siteName ?? messages.header?.siteName ?? '';
+---
+
+<BaseLayout
+  title={`${title} · ${meta}`}
+  description={messages.legal.terms.accessText}
+>
+  <LegalLayout kind="terms" />
+</BaseLayout>
