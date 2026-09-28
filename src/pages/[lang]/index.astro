@@ -31,18 +31,17 @@ import FAQ from '../../components/FAQ.astro';
 import Sources from '../../components/Sources.astro';
 
 const dict: Record<string, any> = { km, en, zh };
-const available = ['km', 'en', 'zh'];
 
-// Rendered on demand: the weather module reads the live forecast on every
-// request, so this guide page cannot be baked at build time.
-export const prerender = false;
-
-const param = String(Astro.params.lang ?? '');
-if (!available.includes(param)) {
-  return Astro.redirect('/km/', 302);
+// Prerender one static page per locale. This makes /km/, /en/ and /zh/ real
+// static files (matching the legal pages, which already work in the Cloudflare
+// static-asset deployment). Depending on on-demand SSR here caused the worker
+// fallback to serve the root index.html for every locale path, which
+// meta-refreshed to /km/ and looped.
+export function getStaticPaths() {
+  return (['km', 'en', 'zh'] as const).map((lang) => ({ params: { lang } }));
 }
 
-const lang = param;
+const lang = String(Astro.params.lang);
 const messages = dict[lang];
 ---
 

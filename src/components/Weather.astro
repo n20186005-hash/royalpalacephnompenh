@@ -1,54 +1,12 @@
 ---
 import { getI18n } from '../i18n/ui';
-import { getWeather, uvLevelKey } from '../lib/weather';
 
 const { lang, messages } = getI18n(Astro.url);
 const w = messages.weather;
-const data = await getWeather();
 
-const locale = lang === 'zh' ? 'zh-CN' : lang === 'km' ? 'km-KH' : 'en-US';
-
-const weekday = (iso: string) => {
-  try {
-    return new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(new Date(`${iso}T12:00:00`));
-  } catch {
-    return iso.slice(5).replace('-', '/');
-  }
-};
-const dayMonth = (iso: string) => iso.slice(8, 10).replace(/^0/, '') + '/' + iso.slice(5, 7).replace(/^0/, '');
-const clock = (iso: string) => {
-  const m = String(iso).match(/T(\d{2}:\d{2})/);
-  return m ? m[1] : String(iso).slice(11, 16);
-};
-
-const lib = (key: string): string => w.lib?.[key] ?? key;
-const condition = (code: number): string => w.codes?.[String(code)] ?? '';
-const uvLabel = (uv: number): string => w.uvLevel?.[uvLevelKey(uv)] ?? '';
-const windLabel = (force: number): string => String(w.windForceLabel ?? '{n}').replace('{n}', String(force));
-
-const adviceBlocks = data
-  ? [
-      { icon: '🧥', label: w.labelOutfit, items: data.advice.outfit },
-      { icon: '🗺️', label: w.labelPlan, items: data.advice.plan },
-      { icon: '🎒', label: w.labelPack, items: data.advice.pack },
-    ].filter((b) => b.items.length > 0)
-  : [];
-
-const today = data?.days[0];
-const windows = data?.windows ?? [];
-const windowLabel = (key: string) => (key === 'morning' ? w.windowMorning : w.windowAfternoon);
-
-const metrics = data && today
-  ? [
-      { label: w.feelsLike, value: `${data.now.apparent}°` },
-      { label: w.humidity, value: `${data.now.humidity}%` },
-      { label: w.wind, value: `${data.now.windSpeed} km/h` },
-      { label: w.rainChance, value: `${today.rainChance}%` },
-      { label: w.uvIndex, value: String(today.uvMax) },
-      { label: w.sunrise, value: today.sunrise },
-      { label: w.sunset, value: today.sunset },
-    ]
-  : [];
+// The forecast is fetched on the client (see the <script> below) so this page
+// can stay fully prerendered as a static file. Open-Meteo allows cross-origin
+// browser requests, so no server round-trip is needed.
 ---
 
 <section id="weather" class="section-shell-alt">
@@ -58,140 +16,193 @@ const metrics = data && today
       {w.intro && <p class="mt-3 max-w-2xl mx-auto text-base sm:text-lg" style="color: var(--text-secondary);">{w.intro}</p>}
     </div>
 
-    {!data || !today ? (
+    <!-- Populated by the client script; shows a graceful fallback if JS is off. -->
+    <div
+      id="weather-content"
+      data-lang={lang}
+      data-weather={JSON.stringify(w)}
+    >
       <div class="card p-6 sm:p-8 max-w-2xl mx-auto text-center">
         <p class="text-2xl" aria-hidden="true">🌦️</p>
         <h3 class="mt-3 font-semibold" style="color: var(--text-primary);">{w.unavailableTitle}</h3>
         <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">{w.unavailableText}</p>
       </div>
-    ) : (
-      <div class="space-y-6">
-        {/* Risk alerts — always on top, hidden when nothing is flagged */}
-        {data.advice.alerts.length > 0 ? (
-          <div class="rounded-2xl p-5 sm:p-6" style="background: rgba(185, 28, 28, 0.08); border: 1px solid rgba(185, 28, 28, 0.35);">
-            <p class="flex items-center gap-2 font-semibold" style="color: #b91c1c;">
-              <span aria-hidden="true">⚠️</span> {w.labelAlert}
-            </p>
-            <ul class="mt-3 space-y-2 text-sm leading-relaxed" style="color: var(--text-primary);">
-              {data.advice.alerts.map((key) => (
-                <li class="flex gap-2">
-                  <span aria-hidden="true" style="color: #b91c1c;">•</span>
-                  <span>{lib(key)}</span>
-                </li>
-              ))}
-            </ul>
-            <p class="mt-3 text-[11px] leading-relaxed" style="color: var(--text-muted);">{w.alertNote}</p>
-          </div>
-        ) : (
-          <p class="text-sm text-center" style="color: var(--text-muted);">✓ {w.noAlert}</p>
-        )}
-
-        <div class="grid gap-5 lg:grid-cols-3">
-          {/* Current conditions */}
-          <div class="card p-6">
-            <p class="text-[11px] uppercase tracking-[0.2em]" style="color: var(--text-muted);">{w.nowLabel}</p>
-            <div class="mt-3 flex items-end justify-between gap-3">
-              <span class="font-display text-5xl font-bold" style="color: var(--text-primary);">{data.now.temperature}°</span>
-              <span class="text-4xl" aria-hidden="true">{data.now.icon}</span>
-            </div>
-            <p class="mt-2 text-sm" style="color: var(--text-secondary);">{condition(data.now.code)}</p>
-
-            <dl class="mt-5 grid grid-cols-2 gap-2.5 text-sm">
-              {metrics.map((m) => (
-                <div class="rounded-xl px-3 py-2" style="background: var(--section-alt);">
-                  <dt class="text-[11px]" style="color: var(--text-muted);">{m.label}</dt>
-                  <dd class="font-semibold" style="color: var(--text-primary);">{m.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p class="mt-4 text-[11px]" style="color: var(--text-muted);">
-              {w.updatedLabel} {clock(data.updatedAt)} · {w.todayLabel} {today.tMin}–{today.tMax}°
-            </p>
-          </div>
-
-          {/* Actionable advice: only blocks that actually apply are rendered */}
-          <div class="lg:col-span-2 space-y-4">
-            {adviceBlocks.map((block) => (
-              <div class="card p-5 sm:p-6">
-                <p class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
-                  <span class="text-lg" aria-hidden="true">{block.icon}</span>
-                  {block.label}
-                </p>
-                <ul class="mt-3 space-y-2 text-sm leading-relaxed" style="color: var(--text-secondary);">
-                  {block.items.map((key) => (
-                    <li class="flex gap-2">
-                      <span style="color: var(--color-ocean-600, #0369a1);">•</span>
-                      <span>{lib(key)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <p class="text-xs leading-relaxed px-1" style="color: var(--text-muted);">{lib('planHours')}</p>
-          </div>
-        </div>
-
-        {/* The two opening windows, side by side */}
-        {windows.length > 0 && (
-          <div>
-            <h3 class="font-semibold mb-3" style="color: var(--text-primary);">{w.windowsTitle}</h3>
-            <div class="grid gap-3 sm:grid-cols-2">
-              {windows.map((win) => (
-                <div class="card p-4 sm:p-5">
-                  <p class="text-sm font-semibold" style="color: var(--text-primary);">{windowLabel(win.key)}</p>
-                  <div class="mt-3 grid grid-cols-3 gap-2 text-center">
-                    <div>
-                      <p class="text-[11px]" style="color: var(--text-muted);">{w.windowTemp}</p>
-                      <p class="text-lg font-semibold" style="color: var(--text-primary);">{win.temp}°</p>
-                    </div>
-                    <div>
-                      <p class="text-[11px]" style="color: var(--text-muted);">{w.windowRain}</p>
-                      <p class="text-lg font-semibold" style="color: var(--text-primary);">{win.rainChance}%</p>
-                    </div>
-                    <div>
-                      <p class="text-[11px]" style="color: var(--text-muted);">{w.windowUv}</p>
-                      <p class="text-lg font-semibold" style="color: var(--text-primary);">{win.uv}</p>
-                    </div>
-                  </div>
-                  <div class="mt-3 h-1.5 rounded-full overflow-hidden" style="background: var(--border-color);">
-                    <div style={`width:${win.rainChance}%;height:100%;background:var(--color-ocean-500,#0ea5e9);`}></div>
-                  </div>
-                  <p class="mt-2 text-[11px]" style="color: var(--text-muted);">
-                    {w.windowWind}: {windLabel(win.windForce)} · {w.uvLevelLabel}: {uvLabel(win.uv)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Seven days, each with a single headline action */}
-        <div>
-          <h3 class="font-semibold mb-3" style="color: var(--text-primary);">{w.forecastTitle}</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
-            {data.days.map((day, i) => (
-              <div
-                class={i === 0 ? 'card p-3.5' : 'card p-3.5'}
-                style={i === 0 ? 'outline: 2px solid var(--color-ocean-500, #0ea5e9); outline-offset: -1px;' : undefined}
-              >
-                <p class="text-xs font-semibold" style="color: var(--text-primary);">
-                  {i === 0 ? w.todayLabel : weekday(day.date)}
-                </p>
-                <p class="text-[11px]" style="color: var(--text-muted);">{dayMonth(day.date)}</p>
-                <p class="mt-2 text-2xl" aria-hidden="true">{day.icon}</p>
-                <p class="mt-1 text-xs" style="color: var(--text-secondary);">{condition(day.code)}</p>
-                <p class="mt-1.5 text-sm font-semibold" style="color: var(--text-primary);">
-                  {day.tMin}° / {day.tMax}°
-                </p>
-                <p class="mt-1 text-[11px]" style="color: var(--text-muted);">
-                  {w.rain} {day.rainChance}% · {w.windowUv} {day.uvMax}
-                </p>
-                <p class="mt-2 text-[11px] leading-snug" style="color: var(--color-ocean-600, #0369a1);">{lib(day.tip)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    )}
+    </div>
   </div>
 </section>
+
+<script>
+  import { getWeather, weatherIcon, uvLevelKey } from '../lib/weather';
+
+  const root = document.getElementById('weather-content') as HTMLElement | null;
+  if (root) {
+    const w = JSON.parse(root.getAttribute('data-weather') || '{}');
+    const lang = root.getAttribute('data-lang') || 'km';
+    const locale = lang === 'zh' ? 'zh-CN' : lang === 'km' ? 'km-KH' : 'en-US';
+
+    const esc = (s: unknown) =>
+      String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
+
+    const weekday = (iso: string) => {
+      try {
+        return new Intl.DateTimeFormat(locale, { weekday: 'short' }).format(new Date(`${iso}T12:00:00`));
+      } catch {
+        return iso.slice(5).replace('-', '/');
+      }
+    };
+    const dayMonth = (iso: string) => iso.slice(8, 10).replace(/^0/, '') + '/' + iso.slice(5, 7).replace(/^0/, '');
+    const clock = (iso: string) => {
+      const m = String(iso).match(/T(\d{2}:\d{2})/);
+      return m ? m[1] : String(iso).slice(11, 16);
+    };
+    const lib = (k: string) => w.lib?.[k] ?? k;
+    const condition = (code: number) => w.codes?.[String(code)] ?? '';
+    const uvLabel = (uv: number) => w.uvLevel?.[uvLevelKey(uv)] ?? '';
+    const windLabel = (force: number) => String(w.windForceLabel ?? '{n}').replace('{n}', String(force));
+
+    function render(data: any) {
+      const today = data.days[0];
+      const advice = data.advice;
+      const windows = data.windows ?? [];
+      const windowLabel = (key: string) => (key === 'morning' ? w.windowMorning : w.windowAfternoon);
+
+      const alertsHtml =
+        advice.alerts.length > 0
+          ? `<div class="rounded-2xl p-5 sm:p-6" style="background: rgba(185,28,28,0.08); border: 1px solid rgba(185,28,28,0.35);">
+               <p class="flex items-center gap-2 font-semibold" style="color: #b91c1c;">
+                 <span aria-hidden="true">⚠️</span> ${esc(w.labelAlert)}
+               </p>
+               <ul class="mt-3 space-y-2 text-sm leading-relaxed" style="color: var(--text-primary);">
+                 ${advice.alerts.map((k: string) => `<li class="flex gap-2"><span aria-hidden="true" style="color: #b91c1c;">•</span><span>${esc(lib(k))}</span></li>`).join('')}
+               </ul>
+               <p class="mt-3 text-[11px] leading-relaxed" style="color: var(--text-muted);">${esc(w.alertNote)}</p>
+             </div>`
+          : `<p class="text-sm text-center" style="color: var(--text-muted);">✓ ${esc(w.noAlert)}</p>`;
+
+      const metrics = [
+        { label: w.feelsLike, value: `${data.now.apparent}°` },
+        { label: w.humidity, value: `${data.now.humidity}%` },
+        { label: w.wind, value: `${data.now.windSpeed} km/h` },
+        { label: w.rainChance, value: `${today.rainChance}%` },
+        { label: w.uvIndex, value: String(today.uvMax) },
+        { label: w.sunrise, value: today.sunrise },
+        { label: w.sunset, value: today.sunset },
+      ];
+
+      const adviceBlocks = [
+        { icon: '🧥', label: w.labelOutfit, items: advice.outfit },
+        { icon: '🗺️', label: w.labelPlan, items: advice.plan },
+        { icon: '🎒', label: w.labelPack, items: advice.pack },
+      ].filter((b) => b.items.length > 0);
+
+      const windowsHtml =
+        windows.length > 0
+          ? `<div>
+               <h3 class="font-semibold mb-3" style="color: var(--text-primary);">${esc(w.windowsTitle)}</h3>
+               <div class="grid gap-3 sm:grid-cols-2">
+                 ${windows
+                   .map(
+                     (win: any) => `<div class="card p-4 sm:p-5">
+                       <p class="text-sm font-semibold" style="color: var(--text-primary);">${esc(windowLabel(win.key))}</p>
+                       <div class="mt-3 grid grid-cols-3 gap-2 text-center">
+                         <div><p class="text-[11px]" style="color: var(--text-muted);">${esc(w.windowTemp)}</p><p class="text-lg font-semibold" style="color: var(--text-primary);">${win.temp}°</p></div>
+                         <div><p class="text-[11px]" style="color: var(--text-muted);">${esc(w.windowRain)}</p><p class="text-lg font-semibold" style="color: var(--text-primary);">${win.rainChance}%</p></div>
+                         <div><p class="text-[11px]" style="color: var(--text-muted);">${esc(w.windowUv)}</p><p class="text-lg font-semibold" style="color: var(--text-primary);">${win.uv}</p></div>
+                       </div>
+                       <div class="mt-3 h-1.5 rounded-full overflow-hidden" style="background: var(--border-color);">
+                         <div style="width:${win.rainChance}%;height:100%;background:var(--color-ocean-500,#0ea5e9);"></div>
+                       </div>
+                       <p class="mt-2 text-[11px]" style="color: var(--text-muted);">
+                         ${esc(w.windowWind)}: ${esc(windLabel(win.windForce))} · ${esc(w.uvLevelLabel)}: ${esc(uvLabel(win.uv))}
+                       </p>
+                     </div>`,
+                   )
+                   .join('')}
+               </div>
+             </div>`
+          : '';
+
+      const forecastHtml = `<div>
+          <h3 class="font-semibold mb-3" style="color: var(--text-primary);">${esc(w.forecastTitle)}</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5">
+            ${data.days
+              .map(
+                (day: any, i: number) => `<div class="card p-3.5" style="${i === 0 ? 'outline: 2px solid var(--color-ocean-500, #0ea5e9); outline-offset: -1px;' : ''}">
+                  <p class="text-xs font-semibold" style="color: var(--text-primary);">${i === 0 ? esc(w.todayLabel) : esc(weekday(day.date))}</p>
+                  <p class="text-[11px]" style="color: var(--text-muted);">${esc(dayMonth(day.date))}</p>
+                  <p class="mt-2 text-2xl" aria-hidden="true">${weatherIcon(day.code)}</p>
+                  <p class="mt-1 text-xs" style="color: var(--text-secondary);">${esc(condition(day.code))}</p>
+                  <p class="mt-1.5 text-sm font-semibold" style="color: var(--text-primary);">${day.tMin}° / ${day.tMax}°</p>
+                  <p class="mt-1 text-[11px]" style="color: var(--text-muted);">${esc(w.rain)} ${day.rainChance}% · ${esc(w.windowUv)} ${day.uvMax}</p>
+                  <p class="mt-2 text-[11px] leading-snug" style="color: var(--color-ocean-600, #0369a1);">${esc(lib(day.tip))}</p>
+                </div>`,
+              )
+              .join('')}
+          </div>
+        </div>`;
+
+      const adviceHtml = adviceBlocks
+        .map(
+          (block) => `<div class="card p-5 sm:p-6">
+              <p class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                <span class="text-lg" aria-hidden="true">${block.icon}</span>${esc(block.label)}
+              </p>
+              <ul class="mt-3 space-y-2 text-sm leading-relaxed" style="color: var(--text-secondary);">
+                ${block.items.map((key: string) => `<li class="flex gap-2"><span style="color: var(--color-ocean-600, #0369a1);">•</span><span>${esc(lib(key))}</span></li>`).join('')}
+              </ul>
+            </div>`,
+        )
+        .join('');
+
+      root!.innerHTML = `
+        <div class="space-y-6">
+          ${alertsHtml}
+          <div class="grid gap-5 lg:grid-cols-3">
+            <div class="card p-6">
+              <p class="text-[11px] uppercase tracking-[0.2em]" style="color: var(--text-muted);">${esc(w.nowLabel)}</p>
+              <div class="mt-3 flex items-end justify-between gap-3">
+                <span class="font-display text-5xl font-bold" style="color: var(--text-primary);">${data.now.temperature}°</span>
+                <span class="text-4xl" aria-hidden="true">${weatherIcon(data.now.code)}</span>
+              </div>
+              <p class="mt-2 text-sm" style="color: var(--text-secondary);">${esc(condition(data.now.code))}</p>
+              <dl class="mt-5 grid grid-cols-2 gap-2.5 text-sm">
+                ${metrics
+                  .map(
+                    (m) => `<div class="rounded-xl px-3 py-2" style="background: var(--section-alt);">
+                      <dt class="text-[11px]" style="color: var(--text-muted);">${esc(m.label)}</dt>
+                      <dd class="font-semibold" style="color: var(--text-primary);">${esc(m.value)}</dd>
+                    </div>`,
+                  )
+                  .join('')}
+              </dl>
+              <p class="mt-4 text-[11px]" style="color: var(--text-muted);">
+                ${esc(w.updatedLabel)} ${esc(clock(data.updatedAt))} · ${esc(w.todayLabel)} ${today.tMin}–${today.tMax}°
+              </p>
+            </div>
+            <div class="lg:col-span-2 space-y-4">
+              ${adviceHtml}
+              <p class="text-xs leading-relaxed px-1" style="color: var(--text-muted);">${esc(lib('planHours'))}</p>
+            </div>
+          </div>
+          ${windowsHtml}
+          ${forecastHtml}
+        </div>`;
+    }
+
+    function showFallback() {
+      root!.innerHTML = `
+        <div class="card p-6 sm:p-8 max-w-2xl mx-auto text-center">
+          <p class="text-2xl" aria-hidden="true">🌦️</p>
+          <h3 class="mt-3 font-semibold" style="color: var(--text-primary);">${esc(w.unavailableTitle)}</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">${esc(w.unavailableText)}</p>
+        </div>`;
+    }
+
+    getWeather()
+      .then((data) => {
+        if (!data || !data.days || !data.days[0]) showFallback();
+        else render(data);
+      })
+      .catch(() => showFallback());
+  }
+</script>
