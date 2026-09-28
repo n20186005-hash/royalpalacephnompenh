@@ -2,72 +2,19 @@
 import km from '../../i18n/km.json';
 import en from '../../i18n/en.json';
 import zh from '../../i18n/zh.json';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import NoticeBanner from '../../components/NoticeBanner.astro';
-import Header from '../../components/Header.astro';
-import Hero from '../../components/Hero.astro';
-import InfoCard from '../../components/InfoCard.astro';
-import About from '../../components/About.astro';
-import Timeline from '../../components/Timeline.astro';
-import Architecture from '../../components/Architecture.astro';
-import VisitorGuide from '../../components/VisitorGuide.astro';
-import TicketInfo from '../../components/TicketInfo.astro';
-import DressCode from '../../components/DressCode.astro';
-import Weather from '../../components/Weather.astro';
-import Routes from '../../components/Routes.astro';
-import Audience from '../../components/Audience.astro';
-import Transport from '../../components/Transport.astro';
-import Services from '../../components/Services.astro';
-import Gallery from '../../components/Gallery.astro';
-import MapSection from '../../components/MapSection.astro';
-import NearbyPlaces from '../../components/NearbyPlaces.astro';
-import LocalFood from '../../components/LocalFood.astro';
-import Reviews from '../../components/Reviews.astro';
-import Photography from '../../components/Photography.astro';
-import BestTime from '../../components/BestTime.astro';
-import Seasonal from '../../components/Seasonal.astro';
-import Heritage from '../../components/Heritage.astro';
-import FAQ from '../../components/FAQ.astro';
-import Sources from '../../components/Sources.astro';
+import HomePage from '../../components/HomePage.astro';
 
 const dict: Record<string, any> = { km, en, zh };
 
-// Prerender one static page per locale. With prefixDefaultLocale: false the
-// default locale (km) is served at the root "/", and en/zh at /en/ and /zh/
-// (matching the legal pages, which already work in the Cloudflare deployment).
-// The root index.astro redirect page was removed so "/" lands directly here.
+// Only en/zh live under a prefix. The default locale (km) is served directly
+// at the root "/" by src/pages/index.astro, so it is deliberately excluded
+// here to avoid a duplicate /km/ route.
 export function getStaticPaths() {
-  return (['km', 'en', 'zh'] as const).map((lang) => ({ params: { lang } }));
+  return (['en', 'zh'] as const).map((lang) => ({ params: { lang } }));
 }
 
 const lang = String(Astro.params.lang);
 const messages = dict[lang];
 ---
 
-<BaseLayout lang={lang} path="" title={messages.meta.title} description={messages.meta.description}>
-  <NoticeBanner messages={messages} />
-  <Hero messages={messages} />
-  <InfoCard messages={messages} />
-  <About messages={messages} />
-  <Timeline messages={messages} />
-  <Architecture messages={messages} />
-  <VisitorGuide messages={messages} />
-  <TicketInfo messages={messages} />
-  <DressCode messages={messages} />
-  <Weather messages={messages} />
-  <Routes messages={messages} />
-  <Audience messages={messages} />
-  <Transport messages={messages} />
-  <Services messages={messages} />
-  <Gallery messages={messages} />
-  <MapSection messages={messages} />
-  <NearbyPlaces messages={messages} />
-  <LocalFood messages={messages} />
-  <Reviews messages={messages} />
-  <Photography messages={messages} />
-  <BestTime messages={messages} />
-  <Seasonal messages={messages} />
-  <Heritage messages={messages} />
-  <FAQ messages={messages} />
-  <Sources messages={messages} />
-</BaseLayout>
+<HomePage lang={lang} messages={messages} />

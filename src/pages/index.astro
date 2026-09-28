@@ -1,0 +1,10 @@
+---
+// Root home page: serves the Khmer (default) edition directly at "/",
+// so https://royalpalacephnompenh.com opens with no intermediate redirect
+// to /km/. The /km/… form is handled as a legacy alias by middleware.ts
+// (stripped back to "/").
+import km from '../i18n/km.json';
+import HomePage from '../components/HomePage.astro';
+---
+
+<HomePage lang="km" messages={km} />
