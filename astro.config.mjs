@@ -5,10 +5,11 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://royalpalacephnompenh.com',
-  // Hybrid mode so middleware.ts runs on Cloudflare Pages (static output would
-  // ignore middleware entirely, leading to Astro's default "Redirecting…"
-  // intermediate page on every i18n redirect).
-  output: 'hybrid',
+  // In Astro 5 `output: 'hybrid'` was removed; `static` now behaves the same
+  // way — pages are prerendered but the Cloudflare worker still runs
+  // middleware.ts (for www → apex, http → https and /km/ → / normalisation).
+  // Per-page `export const prerender = false` opts a route into on-demand SSR.
+  output: 'static',
   adapter: cloudflare({
     imageService: 'compile',
   }),
