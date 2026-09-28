@@ -4,7 +4,9 @@ import LegalLayout from '../../components/LegalLayout.astro';
 import { getI18n, languagesList } from '../../i18n/ui';
 
 export function getStaticPaths() {
-  return languagesList.map((lang) => ({ params: { lang } }));
+  // Only en/zh under a prefix; the Khmer edition is at the root
+  // "/terms-of-service/" (src/pages/terms-of-service.astro).
+  return languagesList.filter((l) => l !== 'km').map((lang) => ({ params: { lang } }));
 }
 
 const { lang, messages } = getI18n(Astro.url);
