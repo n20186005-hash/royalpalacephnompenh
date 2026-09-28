@@ -1,9 +1,0 @@
----
-// Opt into SSR so Astro.redirect() emits a real HTTP 301 instead of Astro's
-// static meta-refresh fallback page ("Redirecting from / to …").
-// Middleware.ts runs first and normally handles "/" → "/km/" before this
-// page ever executes; this server-side redirect is the safety net.
-export const prerender = false;
-
-return Astro.redirect('/km/', 301);
----

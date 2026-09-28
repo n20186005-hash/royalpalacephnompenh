@@ -1,5 +1,5 @@
 ---
-import { getI18n } from '../i18n/ui';
+import { getI18n, localizedPath } from '../i18n/ui';
 import { siteConfig } from '../config';
 
 const { kind } = Astro.props as { kind: 'privacy' | 'terms' | 'cookie' };
@@ -113,7 +113,7 @@ const statusLabel = (s: string) =>
     </div>
 
     <div class="mt-12 pt-6 border-t" style="border-color: var(--border-color);">
-      <a href={`/${lang}`} class="text-sm hover:opacity-70" style="color: var(--color-gold-600);">← {messages.common.home}</a>
+      <a href={localizedPath(lang)} class="text-sm hover:opacity-70" style="color: var(--color-gold-600);">← {messages.common.home}</a>
     </div>
   </div>
 </section>

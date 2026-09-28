@@ -16,10 +16,13 @@ export default defineConfig({
     defaultLocale: 'km',
     locales: ['km', 'en', 'zh'],
     routing: {
-      prefixDefaultLocale: true,
+      // The default locale (km) is served directly at the root "/", so
+      // https://royalpalacephnompenh.com lands on the home page with no
+      // intermediate redirect to /km/. Only en/ and zh/ carry a prefix.
+      prefixDefaultLocale: false,
       // Do NOT let Astro generate its own meta-refresh redirect pages.
-      // All redirects (root → /km/, www → non-www, trailing slash) are
-      // handled by middleware.ts as clean 301s with no intermediate page.
+      // All redirects (www → non-www, http → https, trailing slash, the
+      // legacy /km/… → /… form) are handled by middleware.ts as clean 301s.
       redirectToDefaultLocale: false,
     },
   },

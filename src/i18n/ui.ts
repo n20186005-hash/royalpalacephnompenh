@@ -25,13 +25,23 @@ export function getI18n(url: URL) {
   return { lang, messages: ui[lang] };
 }
 
+// Locale-aware path builder. The default locale (km) is served WITHOUT a
+// prefix at the root, so localizedPath('km') === '/' and
+// localizedPath('km', 'privacy-policy') === '/privacy-policy/'. Non-default
+// locales keep their prefix: localizedPath('en') === '/en/'.
+export function localizedPath(lang: string, slug = ''): string {
+  const clean = slug.replace(/^\/+|\/+$/g, '');
+  if (lang === defaultLang) return clean ? `/${clean}/` : '/';
+  return clean ? `/${lang}/${clean}/` : `/${lang}/`;
+}
+
 // Canonical alternates. Domain is resolved dynamically via resolveBaseUrl().
 // Every URL is absolute, HTTPS-only, on the non-www host and ends with a
 // trailing slash, so it matches the <link rel="canonical"> tag byte for byte.
 export function buildAlternates(slug = '') {
   const base = resolveBaseUrl();
   const clean = slug.replace(/^\/+|\/+$/g, '');
-  const make = (l: string) => `${base}/${l}${clean ? '/' + clean : ''}/`;
+  const make = (l: string) => `${base}${localizedPath(l, clean)}`;
   return {
     km: make('km'),
     en: make('en'),

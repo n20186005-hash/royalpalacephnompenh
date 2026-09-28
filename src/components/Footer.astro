@@ -1,5 +1,5 @@
 ---
-import { getI18n } from '../i18n/ui';
+import { getI18n, localizedPath } from '../i18n/ui';
 import { poi } from '../data/poi';
 
 const { lang, messages } = getI18n(Astro.url);
@@ -25,12 +25,12 @@ const h = messages.header;
       <div>
         <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">Phnom Penh · Cambodia</p>
         <ul class="space-y-2 text-sm" style="color: var(--text-secondary);">
-          <li><a href={`/${lang}#about`} class="hover:opacity-70">{h.visit}</a></li>
-          <li><a href={`/${lang}#transport`} class="hover:opacity-70">{h.transport}</a></li>
-          <li><a href={`/${lang}#nearby`} class="hover:opacity-70">{h.nearby}</a></li>
-          <li><a href={`/${lang}#food`} class="hover:opacity-70">{h.food}</a></li>
-          <li><a href={`/${lang}#faq`} class="hover:opacity-70">{h.faq}</a></li>
-          <li><a href={`/${lang}#sources`} class="hover:opacity-70">{attr.sourcesTitle}</a></li>
+          <li><a href={`${localizedPath(lang)}#about`} class="hover:opacity-70">{h.visit}</a></li>
+          <li><a href={`${localizedPath(lang)}#transport`} class="hover:opacity-70">{h.transport}</a></li>
+          <li><a href={`${localizedPath(lang)}#nearby`} class="hover:opacity-70">{h.nearby}</a></li>
+          <li><a href={`${localizedPath(lang)}#food`} class="hover:opacity-70">{h.food}</a></li>
+          <li><a href={`${localizedPath(lang)}#faq`} class="hover:opacity-70">{h.faq}</a></li>
+          <li><a href={`${localizedPath(lang)}#sources`} class="hover:opacity-70">{attr.sourcesTitle}</a></li>
         </ul>
       </div>
 
@@ -53,9 +53,9 @@ const h = messages.header;
       {attr.reviewsNote && <p>{attr.reviewsNote}</p>}
       {f.imageRights && <p>{f.imageRights}</p>}
       <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 pt-1">
-        <a href={`/${lang}/privacy-policy`} class="hover:underline" style="color: var(--text-secondary);">{f.privacy}</a>
-        <a href={`/${lang}/terms-of-service`} class="hover:underline" style="color: var(--text-secondary);">{f.terms}</a>
-        <a href={`/${lang}/cookie-settings`} class="hover:underline" style="color: var(--text-secondary);">{f.cookie}</a>
+        <a href={localizedPath(lang, 'privacy-policy')} class="hover:underline" style="color: var(--text-secondary);">{f.privacy}</a>
+        <a href={localizedPath(lang, 'terms-of-service')} class="hover:underline" style="color: var(--text-secondary);">{f.terms}</a>
+        <a href={localizedPath(lang, 'cookie-settings')} class="hover:underline" style="color: var(--text-secondary);">{f.cookie}</a>
       </nav>
       <p class="pt-1 font-medium" style="color: var(--text-secondary);">{f.copyright}</p>
     </div>

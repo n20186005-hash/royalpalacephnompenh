@@ -32,11 +32,10 @@ import Sources from '../../components/Sources.astro';
 
 const dict: Record<string, any> = { km, en, zh };
 
-// Prerender one static page per locale. This makes /km/, /en/ and /zh/ real
-// static files (matching the legal pages, which already work in the Cloudflare
-// static-asset deployment). Depending on on-demand SSR here caused the worker
-// fallback to serve the root index.html for every locale path, which
-// meta-refreshed to /km/ and looped.
+// Prerender one static page per locale. With prefixDefaultLocale: false the
+// default locale (km) is served at the root "/", and en/zh at /en/ and /zh/
+// (matching the legal pages, which already work in the Cloudflare deployment).
+// The root index.astro redirect page was removed so "/" lands directly here.
 export function getStaticPaths() {
   return (['km', 'en', 'zh'] as const).map((lang) => ({ params: { lang } }));
 }
