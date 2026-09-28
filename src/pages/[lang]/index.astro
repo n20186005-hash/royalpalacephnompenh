@@ -39,7 +39,7 @@ export const prerender = false;
 
 const param = String(Astro.params.lang ?? '');
 if (!available.includes(param)) {
-  return Astro.redirect('/km', 302);
+  return Astro.redirect('/km/', 302);
 }
 
 const lang = param;

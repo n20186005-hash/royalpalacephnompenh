@@ -1,8 +1,12 @@
-# Cloudflare static-asset redirects (relative paths only — the www -> non-www
-# host rule lives in src/middleware.ts because this file cannot match a host).
-# Every rule here pins the trailing-slash canonical form with a permanent 301.
-
-/  /km/  301
+# Cloudflare static-asset redirects.
+#
+# IMPORTANT: Host-level (www → non-www), protocol-level (http → https),
+# trailing-slash normalization AND root → /km/ language dispatch are all
+# handled in src/middleware.ts in ONE redirect hop. Keep this file minimal
+# so it does not fight the middleware and create redirect loops.
+#
+# Only legacy /en /zh /km → trailing-slash variants live here as an extra
+# safety net; middleware already adds the slash anyway.
 
 /en  /en/  301
 /zh  /zh/  301
