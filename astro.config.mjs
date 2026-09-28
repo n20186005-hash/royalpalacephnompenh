@@ -5,13 +5,11 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://royalpalacephnompenh.com',
-  // The site is static by default; the three guide pages opt into on-demand
-  // rendering (see src/pages/[lang]/index.astro) so the live forecast is
-  // fetched per request and cached at the edge.
-  output: 'static',
+  // Hybrid mode so middleware.ts runs on Cloudflare Pages (static output would
+  // ignore middleware entirely, leading to Astro's default "Redirecting…"
+  // intermediate page on every i18n redirect).
+  output: 'hybrid',
   adapter: cloudflare({
-    // Only prerendered pages go through the image pipeline; the guide pages
-    // stay on-demand and serve the photos as static files.
     imageService: 'compile',
   }),
   i18n: {
@@ -19,6 +17,10 @@ export default defineConfig({
     locales: ['km', 'en', 'zh'],
     routing: {
       prefixDefaultLocale: true,
+      // Do NOT let Astro generate its own meta-refresh redirect pages.
+      // All redirects (root → /km/, www → non-www, trailing slash) are
+      // handled by middleware.ts as clean 301s with no intermediate page.
+      redirectToDefaultLocale: false,
     },
   },
   vite: {

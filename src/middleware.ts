@@ -4,8 +4,9 @@ import { resolveBaseUrl } from './config';
 import { defaultLang, languagesList } from './i18n/ui';
 
 // Files (photo.jpg, sitemap.xml, sw.js, manifest.webmanifest, ...) must never
-// gain a language prefix or a trailing slash.
-const HAS_FILE_EXTENSION = /\.[a-z0-9]{2,6}$/i;
+// gain a language prefix or a trailing slash. Covers up to 12-char extensions
+// so newer formats like .webmanifest, .avif, .webp2, .map are covered.
+const HAS_FILE_EXTENSION = /\.[a-z0-9]{2,12}$/i;
 
 /**
  * 301-redirects every non-canonical URL (www host, http, missing trailing

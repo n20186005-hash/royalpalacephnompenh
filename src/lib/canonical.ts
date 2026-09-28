@@ -11,8 +11,9 @@
  */
 
 // Files (photo.jpg, sitemap.xml, sw.js, manifest.webmanifest, ...) must never
-// gain a trailing slash.
-const HAS_FILE_EXTENSION = /\.[a-z0-9]{2,6}$/i;
+// gain a trailing slash. Covers up to 12-char extensions so newer formats
+// like .webmanifest, .avif, .webp2, .map are covered.
+const HAS_FILE_EXTENSION = /\.[a-z0-9]{2,12}$/i;
 
 /**
  * Returns the absolute URL a request must be 301-redirected to, or `null` when
