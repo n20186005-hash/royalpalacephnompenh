@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NoticeBanner from './NoticeBanner.astro';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import InfoCard from './InfoCard.astro';
+import About from './About.astro';
+import Timeline from './Timeline.astro';
+import Architecture from './Architecture.astro';
+import VisitorGuide from './VisitorGuide.astro';
+import TicketInfo from './TicketInfo.astro';
+import DressCode from './DressCode.astro';
+import Weather from './Weather.astro';
+import Routes from './Routes.astro';
+import Audience from './Audience.astro';
+import Transport from './Transport.astro';
+import Services from './Services.astro';
+import Gallery from './Gallery.astro';
+import MapSection from './MapSection.astro';
+import NearbyPlaces from './NearbyPlaces.astro';
+import LocalFood from './LocalFood.astro';
+import Reviews from './Reviews.astro';
+import Photography from './Photography.astro';
+import BestTime from './BestTime.astro';
+import Seasonal from './Seasonal.astro';
+import Heritage from './Heritage.astro';
+import FAQ from './FAQ.astro';
+import Sources from './Sources.astro';
+
+interface Props {
+  lang: string;
+  messages: any;
+}
+
+const { lang, messages } = Astro.props;
+---
+
+<BaseLayout lang={lang} path="" title={messages.meta.title} description={messages.meta.description}>
+  <NoticeBanner messages={messages} />
+  <Hero messages={messages} />
+  <InfoCard messages={messages} />
+  <About messages={messages} />
+  <Timeline messages={messages} />
+  <Architecture messages={messages} />
+  <VisitorGuide messages={messages} />
+  <TicketInfo messages={messages} />
+  <DressCode messages={messages} />
+  <Weather messages={messages} />
+  <Routes messages={messages} />
+  <Audience messages={messages} />
+  <Transport messages={messages} />
+  <Services messages={messages} />
+  <Gallery messages={messages} />
+  <MapSection messages={messages} />
+  <NearbyPlaces messages={messages} />
+  <LocalFood messages={messages} />
+  <Reviews messages={messages} />
+  <Photography messages={messages} />
+  <BestTime messages={messages} />
+  <Seasonal messages={messages} />
+  <Heritage messages={messages} />
+  <FAQ messages={messages} />
+  <Sources messages={messages} />
+</BaseLayout>
