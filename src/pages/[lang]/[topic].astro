@@ -1,0 +1,36 @@
+---
+import { getI18n, languagesList, defaultLang } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicPage from '../../components/TopicPage.astro';
+import { TOPIC_SLUGS } from '../../lib/topics';
+
+// The default locale (km) is served at the root (see src/pages/[topic].astro),
+// so only the non-default prefixes (en, zh) live under /[lang]/.
+export function getStaticPaths() {
+  const langs = languagesList.filter((l) => l !== defaultLang);
+  const paths: { params: { lang: string; topic: string } }[] = [];
+  for (const lang of langs) {
+    for (const slug of TOPIC_SLUGS) {
+      paths.push({ params: { lang, topic: slug } });
+    }
+  }
+  return paths;
+}
+
+const { lang, topic } = Astro.params as { lang: string; topic: string };
+const { messages } = getI18n(Astro.url);
+const topicData = messages.topics?.[topic];
+
+if (!topicData) {
+  return Astro.redirect(lang === defaultLang ? '/' : `/${lang}/`);
+}
+---
+
+<BaseLayout
+  title={topicData.title}
+  description={topicData.meta ?? ''}
+  lang={lang}
+  faqItems={topicData.faq ?? []}
+>
+  <TopicPage lang={lang} slug={topic} data={topicData} messages={messages} />
+</BaseLayout>

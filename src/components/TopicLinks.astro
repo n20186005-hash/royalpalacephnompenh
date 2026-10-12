@@ -1,0 +1,38 @@
+---
+import { localizedPath } from '../i18n/ui';
+import { TOPIC_SLUGS } from '../lib/topics';
+
+interface Props {
+  lang: string;
+  messages: any;
+  title?: string;
+}
+
+const { lang, messages, title } = Astro.props;
+const heading = title ?? messages.topics?.moreLabel ?? 'More visitor guides';
+
+const links = TOPIC_SLUGS.map((slug) => ({
+  slug,
+  href: localizedPath(lang, slug),
+  label: messages.topics?.[slug]?.title ?? slug,
+}));
+---
+
+<section class="section-padding">
+  <div class="container-page">
+    <h2 class="section-title text-2xl sm:text-3xl">{heading}</h2>
+    <p class="section-intro">{messages.topics?.indexBlurb ?? 'Dive deeper into the practical details of visiting the Royal Palace.'}</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="card p-6 block transition hover:opacity-90"
+          style="border: 1px solid var(--border-color);"
+        >
+          <span class="text-lg font-semibold" style="color: var(--text-primary);">{l.label}</span>
+          <span class="mt-1 block text-sm" style="color: var(--text-muted);">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

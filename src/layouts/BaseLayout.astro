@@ -12,6 +12,8 @@ interface Props {
   path?: string;
   /** Optional locale override; by default the locale is read from the URL. */
   lang?: string;
+  /** Override the FAQ items used for the FAQPage JSON-LD (e.g. for topic pages). */
+  faqItems?: { q: string; a: string }[];
 }
 
 const { title, description, path = '' } = Astro.props;
@@ -146,11 +148,11 @@ const breadcrumbLd = {
   ],
 };
 
-const faqItems = messages.faq?.items ?? [];
+const faqItems = Astro.props.faqItems ?? messages.faq?.items ?? [];
 const faqLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  '@id': `${SITE}${localizedPath(lang)}#faq`,
+  '@id': `${canonical}#faq`,
   mainEntity: faqItems.map((it: { q: string; a: string }) => ({
     '@type': 'Question',
     name: it.q,
@@ -198,7 +200,7 @@ const faqLd = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
-    {isGuidePage && faqItems.length > 0 && (
+    {faqItems.length > 0 && (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)}></script>
     )}
 

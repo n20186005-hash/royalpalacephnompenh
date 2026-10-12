@@ -17,6 +17,12 @@ const t = messages.ticket;
           <p class="mt-1 text-[color:var(--color-muted)]">{t.notes}</p>
         </div>
       </div>
+      {t.verifiedNote && (
+        <p class="mt-4 text-xs flex items-start gap-1.5" style="color: var(--color-muted);">
+          <span aria-hidden="true">✅</span>
+          <span>{t.verifiedNote}</span>
+        </p>
+      )}
     </div>
   </div>
 </section>

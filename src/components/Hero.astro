@@ -43,6 +43,13 @@ const heroAlt = `${fullName} - Main view in ${poi.city}, ${poi.country}`;
       {h.title}
     </h1>
 
+    {h.independentNote && (
+      <p class="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.25);">
+        <span aria-hidden="true">ℹ️</span>
+        <span>{h.independentNote}</span>
+      </p>
+    )}
+
     <p class="text-sm sm:text-lg text-white/90 mb-7 max-w-2xl mx-auto leading-relaxed">
       {h.subtitle}
     </p>

@@ -10,6 +10,7 @@ import Architecture from './Architecture.astro';
 import VisitorGuide from './VisitorGuide.astro';
 import TicketInfo from './TicketInfo.astro';
 import DressCode from './DressCode.astro';
+import TopicLinks from './TopicLinks.astro';
 import Weather from './Weather.astro';
 import Routes from './Routes.astro';
 import Audience from './Audience.astro';
@@ -45,6 +46,7 @@ const { lang, messages } = Astro.props;
   <VisitorGuide messages={messages} />
   <TicketInfo messages={messages} />
   <DressCode messages={messages} />
+  <TopicLinks lang={lang} messages={messages} />
   <Weather messages={messages} />
   <Routes messages={messages} />
   <Audience messages={messages} />

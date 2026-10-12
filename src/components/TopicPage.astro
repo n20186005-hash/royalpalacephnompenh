@@ -1,0 +1,72 @@
+---
+import { localizedPath } from '../i18n/ui';
+import { TOPIC_SLUGS } from '../lib/topics';
+
+interface Props {
+  lang: string;
+  slug: string;
+  data: any;
+  messages: any;
+}
+
+const { lang, slug, data, messages } = Astro.props;
+const t = data ?? {};
+const common = messages.common ?? {};
+const faqTitle = t.faqTitle ?? messages.faq?.title ?? 'FAQ';
+
+// Other topics in the same language, for cross-linking.
+const related = TOPIC_SLUGS.filter((s) => s !== slug).map((s) => ({
+  slug: s,
+  title: messages.topics?.[s]?.title ?? s,
+}));
+---
+
+<article class="section-padding">
+  <div class="container-page max-w-3xl">
+    <p class="section-eyebrow">
+      <a href={localizedPath(lang)} class="hover:opacity-70">← {common.home ?? 'Home'}</a>
+    </p>
+    <h1 class="section-title text-3xl sm:text-4xl">{t.title}</h1>
+    {t.intro && <p class="section-intro">{t.intro}</p>}
+
+    {t.sections?.length > 0 && (
+      <div class="mt-8 space-y-8">
+        {t.sections.map((s: any) => (
+          <section>
+            <h2 class="font-display text-xl sm:text-2xl font-bold mb-2" style="color: var(--text-primary);">{s.heading}</h2>
+            <p class="leading-relaxed" style="color: var(--text-secondary);">{s.body}</p>
+          </section>
+        ))}
+      </div>
+    )}
+
+    {t.faq?.length > 0 && (
+      <section class="mt-12">
+        <h2 class="font-display text-2xl font-bold mb-4" style="color: var(--text-primary);">{faqTitle}</h2>
+        <div class="space-y-3">
+          {t.faq.map((item: any) => (
+            <details class="card p-5" style="border: 1px solid var(--border-color);">
+              <summary class="font-semibold cursor-pointer" style="color: var(--text-primary);">{item.q}</summary>
+              <p class="mt-2 text-sm leading-relaxed" style="color: var(--text-secondary);">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <nav class="mt-12 pt-6 border-t" style="border-color: var(--border-color);">
+        <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">{t.moreLabel ?? 'More visitor guides'}</p>
+        <ul class="flex flex-wrap gap-2">
+          {related.map((r) => (
+            <li>
+              <a href={localizedPath(lang, r.slug)} class="inline-block rounded-full px-3 py-1.5 text-sm border hover:opacity-80" style="border-color: var(--border-color); color: var(--text-secondary);">
+                {r.title} →
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
+  </div>
+</article>

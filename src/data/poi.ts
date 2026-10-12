@@ -35,13 +35,13 @@ export const poi = {
   countryCode: 'KH',
   postalCode: '12000',
 
-  // Synced from the Google Maps listing — September 2026.
+  // Synced from the Google Maps listing — October 2026.
   rating: 4.3,
-  reviews: 13775,
+  reviews: 13827,
   reviewSyncPeriod: {
-    km: 'កញ្ញា ២០២៦',
-    en: 'September 2026',
-    zh: '2026 年 9 月',
+    km: 'តុលា ២០២៦',
+    en: 'October 2026',
+    zh: '2026 年 10 月',
   },
 
   // Google Maps marker — centre of Google plus code HW7J+HG.

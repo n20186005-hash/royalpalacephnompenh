@@ -1,0 +1,29 @@
+---
+import { getI18n, defaultLang } from '../i18n/ui';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicPage from '../components/TopicPage.astro';
+import { TOPIC_SLUGS } from '../lib/topics';
+
+// Default-locale (km) topic pages live at the root, e.g. /tickets/, matching the
+// default locale's prefix-less routing. The /km/… form redirects here.
+export function getStaticPaths() {
+  return TOPIC_SLUGS.map((slug) => ({ params: { topic: slug } }));
+}
+
+const { topic } = Astro.params as { topic: string };
+const { messages } = getI18n(Astro.url);
+const topicData = messages.topics?.[topic];
+
+if (!topicData) {
+  return Astro.redirect('/');
+}
+---
+
+<BaseLayout
+  title={topicData.title}
+  description={topicData.meta ?? ''}
+  lang={defaultLang}
+  faqItems={topicData.faq ?? []}
+>
+  <TopicPage lang={defaultLang} slug={topic} data={topicData} messages={messages} />
+</BaseLayout>

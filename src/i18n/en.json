@@ -2,8 +2,186 @@
   "mapsUrl": "https://maps.app.goo.gl/bEsGRgKQhNudrceN8",
   "footerMapsUrl": "https://maps.app.goo.gl/bEsGRgKQhNudrceN8",
   "meta": {
-    "title": "Royal Palace Phnom Penh (2026) – Opening Hours, Tickets & Rules",
-    "description": "Planning your visit to the Royal Palace of Cambodia? Check 2026 updated opening hours, entrance fees, dress code guidelines, and map location."
+    "title": "Royal Palace Phnom Penh 2026: Tickets, Opening Hours & Dress Code",
+    "description": "Plan your visit to the Royal Palace in Phnom Penh. Find 2026 ticket information, opening hours, dress code, Silver Pagoda highlights, directions and visitor tips."
+  },
+  "topics": {
+    "indexBlurb": "Dive deeper into the practical details of visiting the Royal Palace.",
+    "tickets": {
+      "title": "Royal Palace Phnom Penh Tickets 2026",
+      "meta": "Royal Palace of Cambodia ticket price, what's included, where to buy and how to pay — updated 2026.",
+      "intro": "General admission to the Royal Palace of Cambodia is a flat foreign-visitor ticket sold at the gate. This page summarises the price, what you get and how payment works so you can arrive ready.",
+      "moreLabel": "More visitor guides",
+      "sections": [
+        {
+          "heading": "Ticket price",
+          "body": "The standard foreign-visitor ticket is about US$10 per person, paid in cash at the entrance booth. Cambodian nationals and children often pay a much lower local rate or enter free; carry your passport as proof of eligibility."
+        },
+        {
+          "heading": "What's included",
+          "body": "The ticket covers the palace grounds, the exterior of the Throne Hall and entry to the Silver Pagoda (Wat Preah Keo Morakot) and its cloister murals. It does not include guided tours, which are hired separately at the gate."
+        },
+        {
+          "heading": "Where and how to buy",
+          "body": "Buy on arrival at the main ticket booth on Samdach Sothearos Blvd, facing the river. There is no official online ticketing — beware of third-party resellers. Bring small US-dollar bills; card readers are rarely available."
+        }
+      ],
+      "faqTitle": "Tickets FAQ",
+      "faq": [
+        {
+          "q": "Can I buy tickets online?",
+          "a": "No. Tickets are sold only at the on-site booth in cash (US dollars). Any website offering to sell them in advance is a reseller."
+        },
+        {
+          "q": "Are children free?",
+          "a": "Local Cambodian children and students typically enter free or at a reduced rate on presentation of ID; foreign children usually pay the standard foreign rate. Confirm at the booth."
+        },
+        {
+          "q": "Is the Silver Pagoda included?",
+          "a": "Yes. The Silver Pagoda and its Reamker cloister murals are part of the same ticket as the palace grounds."
+        }
+      ]
+    },
+    "opening-hours": {
+      "title": "Royal Palace Phnom Penh Opening Hours 2026",
+      "meta": "Opening hours, the midday closure, last entry and how royal ceremonies can close the palace temporarily.",
+      "intro": "The palace keeps a two-session schedule with a long midday break. Plan around it so you are not turned away at the gate.",
+      "moreLabel": "More visitor guides",
+      "sections": [
+        {
+          "heading": "Daily schedule",
+          "body": "The palace is open 08:00–11:00 in the morning and 14:00–17:00 in the afternoon, seven days a week. The ticket booth usually stops selling about 30 minutes before each closing."
+        },
+        {
+          "heading": "The midday closure",
+          "body": "Between 11:00 and 14:00 the inner courtyards close for lunch and rest. Use the break for a riverside lunch nearby; the National Museum is a five-minute walk and stays open."
+        },
+        {
+          "heading": "Last entry & temporary closures",
+          "body": "Aim to enter before 10:30 or after 14:30. The palace can close sections or the whole site at short notice for royal ceremonies or state events — there is no fixed calendar, so verify on the day if a visit is critical."
+        }
+      ],
+      "faqTitle": "Opening hours FAQ",
+      "faq": [
+        {
+          "q": "What time is the last entry?",
+          "a": "The booth typically closes around 30 minutes before the 11:00 and 17:00 closures, so last practical entry is about 10:30 and 16:30."
+        },
+        {
+          "q": "Is the palace open on public holidays?",
+          "a": "It generally follows the same 08:00–11:00 / 14:00–17:00 schedule, but royal or national ceremonies can override it. Check locally on the day."
+        },
+        {
+          "q": "Why is it closed at midday?",
+          "a": "The midday break lets staff rest and the site recover from the heat; it is a long-standing schedule, not a daily exception."
+        }
+      ]
+    },
+    "dress-code": {
+      "title": "Royal Palace Phnom Penh Dress Code 2026",
+      "meta": "The strict dress code at the Royal Palace of Cambodia: what you can and cannot wear, and tips if you arrive underdressed.",
+      "intro": "The Royal Palace is an active royal and religious site, and the dress rule is enforced at the gate. Cover shoulders and knees or you may be refused entry.",
+      "moreLabel": "More visitor guides",
+      "sections": [
+        {
+          "heading": "What is required",
+          "body": "Shoulders and knees must be fully covered. Wear a T-shirt or shirt with sleeves and long trousers or a long skirt. A scarf over bare shoulders is often not accepted, so dress properly before you arrive."
+        },
+        {
+          "heading": "What is not allowed",
+          "body": "Sleeveless tops, shorts, short skirts, ripped jeans, crop tops and see-through fabrics are turned away. Comfortable closed shoes are best for the stone and gravel paths."
+        },
+        {
+          "heading": "If you arrive underdressed",
+          "body": "Vendors near the entrance sometimes sell or lend sarongs and long wraps. Buy or borrow one to cover up, then keep it for the rest of your visit."
+        }
+      ],
+      "faqTitle": "Dress code FAQ",
+      "faq": [
+        {
+          "q": "Can I wear a scarf instead of sleeves?",
+          "a": "Often no. Staff usually require actual sleeves and a hem below the knee; a loose scarf is not a reliable substitute."
+        },
+        {
+          "q": "Are shoes checked?",
+          "a": "Footwear is not restricted, but remove shoes and hats before entering temple buildings such as the Silver Pagoda."
+        },
+        {
+          "q": "Does the dress code apply to children?",
+          "a": "Yes, the same shoulders-and-knees rule applies to all visitors, including children."
+        }
+      ]
+    },
+    "silver-pagoda": {
+      "title": "Silver Pagoda Phnom Penh (Wat Preah Keo Morakot)",
+      "meta": "Inside the Royal Palace: the Silver Pagoda's silver-tiled floor, gold and emerald Buddhas, and the Reamker murals — what to see and the rules.",
+      "intro": "The Silver Pagoda sits inside the palace walls and is the temple of the royal family. It holds some of Cambodia's most precious treasures.",
+      "moreLabel": "More visitor guides",
+      "sections": [
+        {
+          "heading": "The silver floor & Buddha images",
+          "body": "The pagoda's floor is laid with more than 5,000 solid silver tiles, and inside stand a 90 kg solid-gold Buddha encrusted with thousands of diamonds and a 17th-century crystal (Emerald) Buddha."
+        },
+        {
+          "heading": "The Reamker murals",
+          "body": "A 600-metre cloister wall is covered with murals (1903–1904) depicting the Reamker, Cambodia's version of the Ramayana. Walk the gallery in order to read the story."
+        },
+        {
+          "heading": "Visiting rules",
+          "body": "Photography and video are strictly forbidden inside the Silver Pagoda, and you must remove shoes and hats before entering. The same palace ticket covers it, and the dress code applies."
+        }
+      ],
+      "faqTitle": "Silver Pagoda FAQ",
+      "faq": [
+        {
+          "q": "Is the Silver Pagoda included in the ticket?",
+          "a": "Yes — it is part of the same Royal Palace admission, together with the palace grounds and the Throne Hall exterior."
+        },
+        {
+          "q": "Can I take photos inside?",
+          "a": "No. Photography and video are forbidden inside the Silver Pagoda and the Throne Hall; only the gardens and exteriors may be photographed."
+        },
+        {
+          "q": "Why is it called the Silver Pagoda?",
+          "a": "Because of the floor of roughly 5,000 solid silver tiles laid beneath the building."
+        }
+      ]
+    },
+    "how-to-get-there": {
+      "title": "How to Get to the Royal Palace Phnom Penh",
+      "meta": "Directions to the Royal Palace of Cambodia: location, distance from Techo International Airport, tuk-tuk, taxi and walking access.",
+      "intro": "The palace sits on Samdach Sothearos Blvd, facing the Tonlé Sap river in central Phnom Penh, next to the National Museum. Here is how to reach it.",
+      "moreLabel": "More visitor guides",
+      "sections": [
+        {
+          "heading": "Location",
+          "body": "Address: Samdach Sothearos Blvd (3), Phnom Penh, Cambodia (Google plus code HW7J+HG). It is on the west bank of the Tonlé Sap river, a short walk from the Riverside (Sisowath Quay) and the National Museum."
+        },
+        {
+          "heading": "From Techo International Airport (KTI)",
+          "body": "Phnom Penh's main airport since September 2025 is about 20 km south of the centre. An official taxi to the palace takes roughly 40–50 minutes (estimate, traffic varies); allow extra time."
+        },
+        {
+          "heading": "Around the city",
+          "body": "From the Riverside or downtown, a tuk-tuk or ride-hailing app (PassApp) costs about US$2–4. The palace is also walkable — about 10–20 minutes from Sisowath Quay, the National Museum or Wat Phnom."
+        }
+      ],
+      "faqTitle": "Getting there FAQ",
+      "faq": [
+        {
+          "q": "How far is the palace from the airport?",
+          "a": "About 20 km. From Techo International Airport (KTI) a taxi takes roughly 40–50 minutes depending on traffic."
+        },
+        {
+          "q": "Can I walk from the Riverside?",
+          "a": "Yes. From Sisowath Quay it is a flat 10–20 minute walk along the river to the palace walls."
+        },
+        {
+          "q": "Where exactly is the entrance?",
+          "a": "Ask to be dropped at the main gate on Samdach Sothearos Blvd facing the river; the ticket booth is just inside."
+        }
+      ]
+    }
   },
   "common": {
     "changeLanguage": "Language",
@@ -37,6 +215,7 @@
   "hero": {
     "title": "Royal Palace of Cambodia (Phnom Penh)",
     "subtitle": "A living royal residence and Cambodia's most sacred cultural landmark, where Khmer tradition meets French colonial elegance on the banks of the Four Rivers.",
+    "independentNote": "Independent, non-commercial guide — not affiliated with the palace administration",
     "quickFacts": [
       {
         "icon": "📍",
@@ -86,7 +265,7 @@
       },
       {
         "label": "Rating",
-        "value": "4.3 / 5 (13,775 Google Maps reviews)"
+        "value": "4.3 / 5 (13,827 Google Maps reviews)"
       }
     ]
   },
@@ -173,6 +352,7 @@
     "durationTitle": "Suggested visit",
     "durationValue": "1.5–2 hours",
     "durationNote": "Go early (08:00) or after 14:30 to beat the heat and the crowds.",
+    "hoursVerified": "Opening hours and closure rules checked October 2026. Verify on the day, as royal ceremonies can close sections at short notice.",
     "tipsTitle": "Good to know",
     "tips": [
       "Hire an official guide at the entrance ($10–$15) for royal stories and hidden details.",
@@ -194,7 +374,8 @@
     "ticketLabel": "Admission",
     "ticketValue": "$10 USD (cash, paid on-site)",
     "notesLabel": "Notes",
-    "notes": "Includes the palace grounds, Throne Hall exterior and the Silver Pagoda. Photos are NOT allowed inside the Throne Hall or the Silver Pagoda. Bring your passport; the dress code is enforced."
+    "notes": "Includes the palace grounds, Throne Hall exterior and the Silver Pagoda. Photos are NOT allowed inside the Throne Hall or the Silver Pagoda. Bring your passport; the dress code is enforced.",
+    "verifiedNote": "Ticket price and entry rules checked October 2026. Confirm at the gate before visiting, as prices and conditions can change."
   },
   "dressCode": {
     "title": "Dress code (strictly enforced)",
@@ -242,7 +423,7 @@
       {
         "n": "1",
         "title": "From the airport",
-        "detail": "Take an official taxi from the airport rank (flagfall ~$12–15 USD, 30–40 min). Show the driver 'Royal Palace, Samdach Sothearos Blvd'."
+        "detail": "Take an official taxi from the Techo International Airport (KTI) rank. The ride is about 20 km and 40–50 minutes — allow extra time in traffic. Show the driver 'Royal Palace, Samdach Sothearos Blvd'."
       },
       {
         "n": "2",
@@ -337,7 +518,7 @@
       "Avoid midday (11:00–14:00 closed)",
       "Hire a guide for the stories"
     ],
-    "sourceNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "sourceNote": "Synced from Google Maps user reviews, synced October 2026; copyright belongs to the original authors and Google Maps.",
     "sourceCta": "View all reviews on Google Maps"
   },
   "photography": {
@@ -422,11 +603,11 @@
     ]
   },
   "attribution": {
-    "ratingNote": "Rating and review count synced from Google Maps user reviews · September 2026",
+    "ratingNote": "Rating and review count synced from Google Maps user reviews · October 2026",
     "ratingCta": "View all reviews on Google Maps",
-    "reviewsNote": "Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.",
+    "reviewsNote": "Synced from Google Maps user reviews, synced October 2026; copyright belongs to the original authors and Google Maps.",
     "reviewsCta": "View all reviews on Google Maps",
-    "syncLabel": "Reviews · synced September 2026",
+    "syncLabel": "Reviews · synced October 2026",
     "sourcesTitle": "Sources & references",
     "sourcesIntro": "This is an independent visitor guide. Attraction details are cross-checked against the public and official sources below; ratings and review counts are synced from Google Maps.",
     "reviewsSourceName": "Google Maps — Royal Palace of Cambodia ratings & reviews",
