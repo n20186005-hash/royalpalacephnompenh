@@ -38,26 +38,19 @@ const h = messages.header;
         <p class="text-xs uppercase tracking-[0.18em] mb-3 font-semibold" style="color: var(--text-muted);">Info</p>
         <p class="text-sm" style="color: var(--text-secondary);">{poi.address}</p>
         <p class="text-xs mt-2" style="color: var(--text-muted);">{poi.plusCode} · {poi.lat}, {poi.lng}</p>
-        <p class="text-xs mt-3">
-          <span>{attr.syncLabel}</span>
-          <br />
-          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="underline" style="color: var(--color-ocean-600, #0369a1);">{attr.reviewsCta} ↗</a>
-        </p>
-        <p class="text-xs mt-3" style="color: var(--text-muted);">{f.disclaimer}</p>
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t space-y-3 text-xs leading-relaxed text-center" style="border-color: var(--border-color); color: var(--text-muted);">
-      {f.statement && <p>{f.statement}</p>}
-      {f.sources && <p>{f.sources}</p>}
-      {attr.reviewsNote && <p>{attr.reviewsNote}</p>}
-      {f.imageRights && <p>{f.imageRights}</p>}
-      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-1 pt-1">
+    <div class="mt-10 pt-6 border-t flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs leading-relaxed" style="border-color: var(--border-color); color: var(--text-muted);">
+      <div class="space-y-1">
+        <p class="font-medium" style="color: var(--text-secondary);">{f.copyright}</p>
+        <p>{f.statement}</p>
+      </div>
+      <nav class="flex flex-wrap gap-x-4 gap-y-2 md:justify-end">
         <a href={localizedPath(lang, 'privacy-policy')} class="hover:underline" style="color: var(--text-secondary);">{f.privacy}</a>
         <a href={localizedPath(lang, 'terms-of-service')} class="hover:underline" style="color: var(--text-secondary);">{f.terms}</a>
         <a href={localizedPath(lang, 'cookie-settings')} class="hover:underline" style="color: var(--text-secondary);">{f.cookie}</a>
       </nav>
-      <p class="pt-1 font-medium" style="color: var(--text-secondary);">{f.copyright}</p>
     </div>
   </div>
 </footer>
