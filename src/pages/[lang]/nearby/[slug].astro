@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import NearbyDetail from '../../../components/NearbyDetail.astro';
+import { nearbyGuides } from '../../../data/nearbyGuides';
+export function getStaticPaths() { return (['en','zh'] as const).flatMap(lang=>nearbyGuides.map(place=>({params:{lang,slug:place.slug},props:{place}}))); }
+const { lang }=Astro.params as {lang:'en'|'zh'};
+const {place}=Astro.props;
+---
+<BaseLayout lang={lang} title={place.content[lang].title} description={place.content[lang].intro} nearbyPlace={place}><NearbyDetail lang={lang} place={place}/></BaseLayout>

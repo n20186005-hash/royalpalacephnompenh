@@ -1,6 +1,7 @@
 ---
 import { localizedPath } from '../i18n/ui';
 import { TOPIC_SLUGS } from '../lib/topics';
+import { extendedTopic } from '../data/extendedTopics';
 
 interface Props {
   lang: string;
@@ -14,7 +15,7 @@ const heading = title ?? messages.topics?.moreLabel ?? 'More visitor guides';
 const links = TOPIC_SLUGS.map((slug) => ({
   slug,
   href: localizedPath(lang, slug),
-  label: messages.topics?.[slug]?.title ?? slug,
+  label: messages.topics?.[slug]?.title ?? extendedTopic(lang, slug)?.title ?? slug,
 }));
 ---
 

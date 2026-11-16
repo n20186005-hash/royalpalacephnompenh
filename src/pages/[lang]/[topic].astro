@@ -3,6 +3,7 @@ import { getI18n, languagesList, defaultLang } from '../../i18n/ui';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopicPage from '../../components/TopicPage.astro';
 import { TOPIC_SLUGS } from '../../lib/topics';
+import { extendedTopic } from '../../data/extendedTopics';
 
 // The default locale (km) is served at the root (see src/pages/[topic].astro),
 // so only the non-default prefixes (en, zh) live under /[lang]/.
@@ -19,7 +20,7 @@ export function getStaticPaths() {
 
 const { lang, topic } = Astro.params as { lang: string; topic: string };
 const { messages } = getI18n(Astro.url);
-const topicData = messages.topics?.[topic];
+const topicData = messages.topics?.[topic] ?? extendedTopic(lang, topic);
 
 if (!topicData) {
   return Astro.redirect(lang === defaultLang ? '/' : `/${lang}/`);

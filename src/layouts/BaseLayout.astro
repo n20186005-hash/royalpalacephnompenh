@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n, defaultLang, languagesList, localizedPath } from '../i18n/ui';
 import { ogLocale, siteConfig, resolveBaseUrl, pwaConfig } from '../config';
 import { poi, galleryImages } from '../data/poi';
+import type { nearbyGuides } from '../data/nearbyGuides';
 
 interface Props {
   title: string;
@@ -14,9 +15,11 @@ interface Props {
   lang?: string;
   /** Override the FAQ items used for the FAQPage JSON-LD (e.g. for topic pages). */
   faqItems?: { q: string; a: string }[];
+  nearbyPlace?: (typeof nearbyGuides)[number];
 }
 
 const { title, description, path = '' } = Astro.props;
+const nearbyPlace = Astro.props.nearbyPlace;
 const lang = getLangFromUrl(Astro.url);
 
 // Canonical/alternate URLs: use the explicit `path` prop when given, otherwise
@@ -58,6 +61,7 @@ const alternateNames = [
 
 // Hero + a few gallery shots so Google can render the attraction card.
 const images = [SITE + poi.heroImage, ...galleryImages.slice(1, 5).map((src) => SITE + src)];
+const ogImage = nearbyPlace ? SITE + nearbyPlace.photo : SITE + poi.heroImage;
 
 // Entity card for the search results page: a TouristAttraction that is also a
 // HistoricalLandmark. The Google Maps rating/review count is synced from the
@@ -74,7 +78,7 @@ const attractionLd = {
   image: images,
   mainEntityOfPage: { '@id': WEBSITE_ID },
   isPartOf: { '@id': WEBSITE_ID },
-  isAccessibleForFree: true,
+  isAccessibleForFree: false,
   touristType: ['Culture', 'History', 'Sightseeing'],
   address: {
     '@type': 'PostalAddress',
@@ -120,6 +124,18 @@ const attractionLd = {
     { '@type': 'PropertyValue', name: 'Opening hours', value: localOpening },
   ],
 };
+const nearbyLd = nearbyPlace ? {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  '@id': `${canonical}#place`,
+  name: nearbyPlace.name,
+  description,
+  url: canonical,
+  image: [SITE + nearbyPlace.photo],
+  hasMap: nearbyPlace.maps,
+  address: { '@type': 'PostalAddress', streetAddress: nearbyPlace.address, addressLocality: 'Phnom Penh', addressCountry: 'KH' },
+  isPartOf: { '@id': WEBSITE_ID },
+} : null;
 
 const websiteLd = {
   '@context': 'https://schema.org',
@@ -144,7 +160,7 @@ const breadcrumbLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: messages.common.home, item: `${SITE}${localizedPath(lang)}` },
     { '@type': 'ListItem', position: 2, name: `${poi.city}, ${poi.country}`, item: `${SITE}${localizedPath(lang)}#map` },
-    { '@type': 'ListItem', position: 3, name: localName, item: canonical },
+    { '@type': 'ListItem', position: 3, name: nearbyPlace?.name ?? localName, item: canonical },
   ],
 };
 
@@ -180,13 +196,13 @@ const faqLd = {
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
     <meta property="og:site_name" content={attractionName} />
-    <meta property="og:image" content={SITE + poi.heroImage} />
-    <meta property="og:image:alt" content={`${localName} in ${poi.city}`} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${nearbyPlace?.name ?? localName} in ${poi.city}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={SITE + poi.heroImage} />
-    <meta name="twitter:image:alt" content={`${localName} in ${poi.city}`} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={`${nearbyPlace?.name ?? localName} in ${poi.city}`} />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -197,7 +213,7 @@ const faqLd = {
     <meta name="apple-mobile-web-app-title" content={pwaConfig.shortName} />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(attractionLd)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(nearbyLd ?? attractionLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteLd)}></script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
     {faqItems.length > 0 && (

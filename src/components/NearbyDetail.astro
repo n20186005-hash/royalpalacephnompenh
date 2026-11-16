@@ -1,0 +1,59 @@
+---
+import { localizedPath } from '../i18n/ui';
+import { nearbyGuides } from '../data/nearbyGuides';
+interface Props { lang: 'en' | 'zh' | 'km'; place: (typeof nearbyGuides)[number] }
+const { lang, place } = Astro.props;
+const t = place.content[lang];
+const L = {
+  en: { home:'Home', manager:'About this place and who manages it', basics:'Basic information', hours:'Opening and access', tickets:'Tickets', how:'Transport', history:'History', architecture:'Architecture', culture:'What to experience', advice:'Visitor advice', route:'Walking route', photo:'Photo viewpoints', stay:'Where to stay', stayBody:'Doun Penh and the riverside offer places to stay within reach of central sights. Compare walking access, price and nighttime noise before booking.', reviews:'Visitor reviews', reviewsBody:'See the current Google Maps place listing for ratings and individual reviews. This guide does not invent a review count.', map:'Directions and map', source:'Photo source', more:'More nearby attractions', verify:'Opening and tickets should be verified at the venue.' },
+  zh: { home:'首页', manager:'关于景点及管理主体', basics:'基本资料', hours:'开放时间', tickets:'门票', how:'交通方式', history:'历史背景', architecture:'建筑特色', culture:'核心体验', advice:'游览建议', route:'编号步行路线', photo:'拍照机位', stay:'附近住宿建议', stayBody:'隆边区与河滨周边有方便串联市中心景点的住宿选择，预订前比较步行距离、价格及夜间噪声。', reviews:'游客评价', reviewsBody:'当前评分与评论请查看此地点自己的 Google 地图页面；本站不虚构评价数量。', map:'交通指南与地图', source:'照片来源', more:'更多周边景点', verify:'开放时间和门票请在现场核实。' },
+  km: { home:'ទំព័រដើម', manager:'អំពីទីតាំង និងអ្នកគ្រប់គ្រង', basics:'ព័ត៌មានមូលដ្ឋាន', hours:'ម៉ោងបើក', tickets:'សំបុត្រ', how:'ការធ្វើដំណើរ', history:'ប្រវត្តិសាស្ត្រ', architecture:'ស្ថាបត្យកម្ម', culture:'បទពិសោធន៍', advice:'ការណែនាំទស្សនា', route:'ផ្លូវដើរណែនាំ', photo:'មុំថតរូប', stay:'ការស្នាក់នៅក្បែរៗ', stayBody:'តំបន់ដូនពេញ និងមាត់ទន្លេមានកន្លែងស្នាក់នៅងាយស្រួលទៅកន្លែងទស្សនា។ សូមប្រៀបធៀបចម្ងាយ តម្លៃ និងសំឡេងរំខាន។', reviews:'មតិអ្នកទស្សនា', reviewsBody:'សូមមើលពិន្ទុ និងមតិថ្មីបំផុតនៅ Google Maps របស់ទីតាំងនេះ។ យើងមិនបង្កើតចំនួនមតិទេ។', map:'ផែនទី និងផ្លូវទៅ', source:'ប្រភពរូបភាព', more:'ទីតាំងជិតខាងបន្ថែម', verify:'សូមពិនិត្យម៉ោងបើក និងសំបុត្រនៅទីតាំង។' },
+}[lang];
+---
+<article class="section-padding">
+  <div class="container-page max-w-4xl">
+    <a href={`${localizedPath(lang)}#nearby`} class="section-eyebrow hover:opacity-70">← {L.home}</a>
+    <p class="mt-4 text-sm tracking-wide uppercase" style="color: var(--text-muted);">{t.tagline}</p>
+    <h1 class="section-title text-3xl sm:text-4xl mt-3">{t.title}</h1>
+    <p class="section-intro">{t.intro}</p>
+    <div class="mt-5 flex flex-wrap gap-3 text-sm">
+      <span class="rounded-full border px-4 py-2" style="border-color: var(--border-color);">{place.duration[lang]}</span>
+      <a href={place.maps} target="_blank" rel="noopener noreferrer" class="rounded-full border px-4 py-2" style="border-color: var(--border-color);">📍 Google Maps ↗</a>
+    </div>
+    <figure class="mt-7 overflow-hidden rounded-2xl" style="background: var(--bg-secondary);">
+      <img src={place.photo} alt={place.name} class="w-full h-72 sm:h-96 object-cover" loading="eager" />
+      <figcaption class="p-3 text-xs" style="color: var(--text-muted);">{place.name} · <a href={place.source} target="_blank" rel="noopener noreferrer" class="underline">{L.source} ↗</a></figcaption>
+    </figure>
+    <section class="mt-9 rounded-2xl p-6 sm:p-8" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      <h2 class="font-display text-2xl font-bold mb-3">{L.manager}</h2>
+      <p class="leading-relaxed" style="color: var(--text-secondary);">{t.manager}</p>
+    </section>
+    <section class="mt-9">
+      <h2 class="font-display text-2xl font-bold mb-3">{L.basics}</h2>
+      <dl class="grid gap-3 sm:grid-cols-2">
+        <div class="card p-4"><dt class="text-xs" style="color: var(--text-muted);">{place.name}</dt><dd class="font-semibold">{place.category[lang]}</dd></div>
+        <div class="card p-4"><dt class="text-xs" style="color: var(--text-muted);">{L.map}</dt><dd>{place.address}</dd></div>
+        <div class="card p-4"><dt class="text-xs" style="color: var(--text-muted);">{L.hours}</dt><dd>{place.hours[lang]}</dd></div>
+        <div class="card p-4"><dt class="text-xs" style="color: var(--text-muted);">{L.tickets}</dt><dd>{place.ticket[lang]}</dd></div>
+      </dl>
+      <p class="text-xs mt-3" style="color: var(--text-muted);">{L.verify}</p>
+    </section>
+    <div class="mt-10 grid gap-8">
+      {[[L.history,t.history],[L.architecture,t.architecture],[L.culture,t.experience],[L.advice,t.advice],[L.how,t.transport]].map(([heading,body]) => <section><h2 class="font-display text-2xl font-bold mb-3">{heading}</h2><p class="leading-relaxed" style="color: var(--text-secondary);">{body}</p></section>)}
+      <section>
+        <h2 class="font-display text-2xl font-bold mb-3">{L.route}</h2>
+        <ol class="grid gap-3">{t.route.map((step,i) => <li class="card p-4 flex gap-4"><span class="font-bold">{i+1}.</span><span>{step}</span></li>)}</ol>
+      </section>
+      {[[L.photo,t.photo],[L.stay,L.stayBody],[L.reviews,L.reviewsBody]].map(([heading,body]) => <section><h2 class="font-display text-2xl font-bold mb-3">{heading}</h2><p class="leading-relaxed" style="color: var(--text-secondary);">{body}</p></section>)}
+      <section>
+        <h2 class="font-display text-2xl font-bold mb-3">{L.map}</h2>
+        <p>{place.address}</p><a href={place.maps} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 inline-block mt-3">{place.name} · Google Maps ↗</a>
+      </section>
+      <section>
+        <h2 class="font-display text-2xl font-bold mb-3">FAQ</h2>
+        {t.faq.map((item) => <details class="card p-5 mb-3"><summary class="font-semibold cursor-pointer">{item.q}</summary><p class="mt-2" style="color: var(--text-secondary);">{item.a}</p></details>)}
+      </section>
+    </div>
+    <nav class="mt-12 pt-7 border-t" style="border-color: var(--border-color);"><h2 class="font-display text-2xl font-bold mb-4">{L.more}</h2><div class="flex flex-wrap gap-3">{nearbyGuides.filter(x=>x.slug!==place.slug).map(x=><a class="rounded-full border px-4 py-2" style="border-color: var(--border-color);" href={localizedPath(lang,`nearby/${x.slug}`)}>{x.content[lang].title} →</a>)}</div></nav>
+  </div>
+</article>

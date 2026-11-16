@@ -6,6 +6,11 @@ export const TOPIC_SLUGS = [
   'dress-code',
   'silver-pagoda',
   'how-to-get-there',
+  'throne-hall',
+  'moonlight-pavilion',
+  'royal-palace-history',
+  'palace-walking-route',
+  'royal-palace-photography',
 ] as const;
 
 export type TopicSlug = (typeof TOPIC_SLUGS)[number];

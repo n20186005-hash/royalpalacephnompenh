@@ -1,9 +1,16 @@
 ---
 import { getI18n } from '../i18n/ui';
+import { localizedPath } from '../i18n/ui';
+import { extendedTopic } from '../data/extendedTopics';
+import { topicPhotos } from '../data/topicEnhancements';
+import { nearbyGuides } from '../data/nearbyGuides';
 
 const { messages } = getI18n(Astro.url);
 const n = messages.nearby;
 const items = n.items ?? [];
+const { lang } = getI18n(Astro.url);
+const guides = ['throne-hall', 'moonlight-pavilion', 'royal-palace-history', 'palace-walking-route', 'royal-palace-photography'].map((slug) => ({ slug, data: extendedTopic(lang, slug), photo: topicPhotos[slug]?.[0] }));
+const guidesHeading = lang === 'zh' ? '继续探索王宫建筑与游览路线' : lang === 'km' ? 'ស្វែងយល់បន្ថែមពីស្ថាបត្យកម្ម និងផ្លូវទស្សនា' : 'Explore palace landmarks and walking guides';
 ---
 
 <section id="nearby" class="section-shell-alt">
@@ -14,15 +21,36 @@ const items = n.items ?? [];
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-      {items.map((it) => (
-        <div class="flex items-center justify-between rounded-2xl p-5" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+      {items.map((it, i) => (
+        <a href={localizedPath(lang, `nearby/${['national-museum-of-cambodia','sisowath-quay','wat-phnom','central-market'][i]}`)} class="flex items-center justify-between rounded-2xl p-5 hover:opacity-85" style="background: var(--card-bg); border: 1px solid var(--border-color);">
           <div class="flex items-center gap-3">
             <span class="text-xl" aria-hidden="true">📍</span>
             <span class="font-medium" style="color: var(--text-primary);">{it.name}</span>
           </div>
           <span class="text-xs px-3 py-1 rounded-full" style="background: var(--color-ocean-50, #f0f9ff); color: var(--color-ocean-700, #075985);">{it.distance}</span>
-        </div>
+        </a>
       ))}
+    </div>
+    <div class="mt-12">
+      <h3 class="font-display text-2xl font-bold mb-5" style="color: var(--text-primary);">{lang === 'zh' ? '王宫周边真实景点' : lang === 'km' ? 'ទីតាំងទស្សនាពិតៗក្បែរវាំង' : 'Nearby places to visit'}</h3>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {nearbyGuides.map((place) => <a href={localizedPath(lang,`nearby/${place.slug}`)} class="card overflow-hidden block hover:opacity-90" style="border: 1px solid var(--border-color);">
+          <img src={place.photo} alt={place.name} class="w-full h-36 object-cover" loading="lazy" />
+          <div class="p-4"><h4 class="font-semibold" style="color: var(--text-primary);">{place.content[lang].title}</h4><p class="mt-2 text-sm line-clamp-2" style="color: var(--text-secondary);">{place.content[lang].intro}</p></div>
+        </a>)}
+      </div>
+    </div>
+    <div class="mt-12">
+      <h3 class="font-display text-2xl font-bold mb-5" style="color: var(--text-primary);">{guidesHeading}</h3>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {guides.map((guide) => <a href={localizedPath(lang, guide.slug)} class="card overflow-hidden block hover:opacity-90" style="border: 1px solid var(--border-color);">
+          {guide.photo && <img src={guide.photo.src} alt={guide.photo.alt[lang] ?? guide.photo.alt.en} loading="lazy" decoding="async" class="w-full h-36 object-cover" />}
+          <div class="p-4">
+            <h4 class="font-semibold" style="color: var(--text-primary);">{guide.data?.title}</h4>
+            <p class="mt-2 text-sm line-clamp-2" style="color: var(--text-secondary);">{guide.data?.intro}</p>
+          </div>
+        </a>)}
+      </div>
     </div>
   </div>
 </section>
