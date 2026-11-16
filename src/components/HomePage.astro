@@ -26,8 +26,6 @@ import BestTime from './BestTime.astro';
 import Seasonal from './Seasonal.astro';
 import Heritage from './Heritage.astro';
 import FAQ from './FAQ.astro';
-import Sources from './Sources.astro';
-import AboutSite from './AboutSite.astro';
 
 interface Props {
   lang: string;
@@ -63,6 +61,4 @@ const { lang, messages } = Astro.props;
   <Seasonal messages={messages} />
   <Heritage messages={messages} />
   <FAQ messages={messages} />
-  <AboutSite />
-  <Sources messages={messages} />
 </BaseLayout>

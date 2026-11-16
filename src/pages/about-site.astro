@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutSite from '../components/AboutSite.astro';
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+---
+
+<BaseLayout title={`${messages.heritage.closingTitle} · ${messages.footer.siteName}`} description={messages.heritage.closingText}>
+  <AboutSite />
+</BaseLayout>

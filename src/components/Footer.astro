@@ -7,6 +7,7 @@ const f = messages.footer;
 const attr = messages.attribution ?? {};
 const mapsUrl = messages.mapsUrl ?? poi.mapsUrl;
 const h = messages.header;
+const aboutLabel = messages.heritage.closingTitle;
 ---
 
 <footer class="border-t" style="background: var(--section-bg); border-color: var(--border-color);">
@@ -30,7 +31,8 @@ const h = messages.header;
           <li><a href={`${localizedPath(lang)}#nearby`} class="hover:opacity-70">{h.nearby}</a></li>
           <li><a href={`${localizedPath(lang)}#food`} class="hover:opacity-70">{h.food}</a></li>
           <li><a href={`${localizedPath(lang)}#faq`} class="hover:opacity-70">{h.faq}</a></li>
-          <li><a href={`${localizedPath(lang)}#sources`} class="hover:opacity-70">{attr.sourcesTitle}</a></li>
+          <li><a href={localizedPath(lang, 'about-site')} class="hover:opacity-70">{aboutLabel}</a></li>
+          <li><a href={localizedPath(lang, 'sources')} class="hover:opacity-70">{attr.sourcesTitle}</a></li>
         </ul>
       </div>
 

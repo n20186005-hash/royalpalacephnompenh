@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sources from '../components/Sources.astro';
+import { getI18n } from '../i18n/ui';
+
+const { messages } = getI18n(Astro.url);
+---
+
+<BaseLayout title={`${messages.attribution.sourcesTitle} · ${messages.footer.siteName}`} description={messages.attribution.sourcesIntro}>
+  <Sources />
+</BaseLayout>

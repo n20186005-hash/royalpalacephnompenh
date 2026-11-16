@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboutSite from '../../components/AboutSite.astro';
+import { getI18n, languagesList } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return languagesList.filter((l) => l !== 'km').map((lang) => ({ params: { lang } }));
+}
+const { messages } = getI18n(Astro.url);
+---
+
+<BaseLayout title={`${messages.heritage.closingTitle} · ${messages.footer.siteName}`} description={messages.heritage.closingText}>
+  <AboutSite />
+</BaseLayout>
