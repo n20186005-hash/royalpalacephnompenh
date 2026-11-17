@@ -1,10 +1,13 @@
-export const NEARBY_SLUGS = ['national-museum-of-cambodia', 'wat-ounalom', 'sisowath-quay', 'wat-phnom', 'central-market'] as const;
+export const NEARBY_SLUGS = ['national-museum-of-cambodia', 'wat-ounalom', 'sisowath-quay', 'wat-phnom', 'central-market', 'independence-monument', 'norodom-sihanouk-memorial', 'wat-botum', 'wat-langka', 'cambodia-vietnam-friendship-monument', 'tuol-sleng-genocide-museum', 'phnom-penh-central-post-office', 'chaktomuk-conference-hall', 'phnom-penh-night-market', 'russian-market'] as const;
 
 type Language = 'en' | 'zh' | 'km';
 type Text = { title: string; tagline: string; intro: string; history: string; architecture: string; experience: string; advice: string; route: string[]; photo: string; transport: string; manager: string; faq: { q: string; a: string }[] };
-type Place = { slug: string; name: string; address: string; maps: string; photo: string; source: string; duration: Record<Language, string>; hours: Record<Language, string>; ticket: Record<Language, string>; category: Record<Language, string>; content: Record<Language, Text> };
+export type Place = { slug: string; name: string; address: string; maps: string; photo: string; source: string; duration: Record<Language, string>; hours: Record<Language, string>; ticket: Record<Language, string>; category: Record<Language, string>; content: Record<Language, Text> };
 
 const map = (name: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name}, Phnom Penh, Cambodia`)}`;
+
+import { extraNearbyGuides } from './nearbyExtra';
+import { furtherNearbyGuides } from './nearbyExtraMore';
 
 export const nearbyGuides: Place[] = [
   {
@@ -54,7 +57,9 @@ nearbyGuides.push(
       zh:{title:'金边中央市场：装饰艺术建筑与购物指南',tagline:'新市场大圆顶与金边城市生活',intro:'金边中央市场又称 Phsar Thmei，将具有辨识度的装饰艺术建筑与繁忙的本地商业活动结合在一起。',history:'市场于20世纪30年代法属殖民时期建成开放，至今仍是市中心重要商业地标。',architecture:'中央大圆顶与向外延伸的四翼结构构成建筑特色；留意采光开口和通风通道。',experience:'从中心大厅到不同市场翼楼，观察服饰、家居用品、首饰和食品等区域。',advice:'拍摄摊贩前征得同意，保管贵重物品，礼貌询价；饮食卫生按个人情况判断。',route:['先从公共入口观察外部圆顶。','进入中央大厅理解放射状布局。','从容逛一至两个翼楼。','最后到室外拍摄屋顶与周边街景。'],photo:'外部更易表现大圆顶；室内可以观察几何线条与自然采光，不要阻挡商铺。',transport:'从王宫区域向西北乘车或安排较长市区步行，使用中央市场专属地图。',manager:'中央市场是金边城市公共商业空间，设有当地市场管理及经营摊位，与王宫管理机构无关。',faq:[{q:'中央市场是博物馆吗？',a:'不是，它是在历史装饰艺术建筑内持续营业的公共市场。'},{q:'需要统一门票吗？',a:'通常没有统一入场门票，购物及服务另行付费。'}]},
       km:{title:'ផ្សារធំថ្មីភ្នំពេញ៖ ស្ថាបត្យកម្ម និងការដើរផ្សារ',tagline:'អគារដំបូលមូល និងជីវិតផ្សារកណ្ដាលក្រុង',intro:'ផ្សារធំថ្មីរួមបញ្ចូលអគាររចនាបថអាតដេកូដ៏ល្បី និងសកម្មភាពលក់ដូរប្រចាំថ្ងៃ។',history:'ផ្សារបានបើកក្នុងទសវត្សរ៍១៩៣០ នាសម័យអាណានិគមបារាំង ហើយនៅតែជាទីផ្សារសំខាន់។',architecture:'ដំបូលមូលកណ្ដាល និងស្លាបអគារបួនទិសធ្វើឱ្យសំណង់មានលក្ខណៈពិសេស។ សង្កេតពន្លឺ និងខ្យល់ក្នុងផ្លូវដើរ។',experience:'ដើរពីកណ្ដាលទៅតាមស្លាបផ្សារ ដើម្បីមើលសម្លៀកបំពាក់ គ្រឿងប្រើប្រាស់ គ្រឿងអលង្ការ និងម្ហូបអាហារ។',advice:'សួរមុនថតអ្នកលក់ រក្សាទ្រព្យសម្បត្តិ និងសួរតម្លៃដោយសុភាព។',route:['មើលដំបូលមូលពីខាងក្រៅ។','ចូលទៅទីធ្លាកណ្ដាល។','ដើរមើលស្លាបផ្សារមួយឬពីរ។','ចេញមកថតអគារ និងផ្លូវជុំវិញ។'],photo:'មុំខាងក្រៅបង្ហាញដំបូលមូលបានច្បាស់។ ខាងក្នុងសូមកុំរាំងស្ទះអ្នកលក់។',transport:'ធ្វើដំណើរទៅទិសពាយ័ព្យពីវាំងដោយមធ្យោបាយក្នុងតំបន់ ឬដើរឆ្ងាយជាងមុន។',manager:'ផ្សារធំថ្មីជាទីផ្សារសាធារណៈក្នុងរាជធានីភ្នំពេញ មានការគ្រប់គ្រងផ្សារ និងអ្នកលក់ដាច់ដោយឡែកពីវាំង។',faq:[{q:'ផ្សារនេះជាសារមន្ទីរទេ?',a:'ទេ។ វាជាផ្សារកំពុងប្រើប្រាស់ក្នុងអគារប្រវត្តិសាស្ត្រ។'},{q:'មានសំបុត្រចូលរួមទេ?',a:'ជាទូទៅមិនមានសំបុត្រចូលទេ ប៉ុន្តែទំនិញ និងសេវាកម្មត្រូវបង់ប្រាក់។'}]},
     }
-  }
+  },
+  ...extraNearbyGuides,
+  ...furtherNearbyGuides
 );
 
 export function nearbyPlace(slug: string) { return nearbyGuides.find((x) => x.slug === slug); }

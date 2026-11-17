@@ -32,7 +32,7 @@ const guidesHeading = lang === 'zh' ? '继续探索王宫建筑与游览路线' 
       ))}
     </div>
     <div class="mt-12">
-      <h3 class="font-display text-2xl font-bold mb-5" style="color: var(--text-primary);">{lang === 'zh' ? '王宫周边真实景点' : lang === 'km' ? 'ទីតាំងទស្សនាពិតៗក្បែរវាំង' : 'Nearby places to visit'}</h3>
+      <h3 class="font-display text-2xl font-bold mb-5" style="color: var(--text-primary);">{lang === 'zh' ? '探索王宫周边景点' : lang === 'km' ? 'ស្វែងយល់ពីកន្លែងទស្សនាក្បែរព្រះបរមរាជវាំង' : 'Explore nearby attractions'}</h3>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {nearbyGuides.map((place) => <a href={localizedPath(lang,`nearby/${place.slug}`)} class="card overflow-hidden block hover:opacity-90" style="border: 1px solid var(--border-color);">
           <img src={place.photo} alt={place.name} class="w-full h-36 object-cover" loading="lazy" />
